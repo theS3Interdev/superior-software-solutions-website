@@ -1,5 +1,5 @@
-import { Toaster } from "sonner";
+import { Toaster } from 'sonner';
 
 export const ToastProvider = () => {
-  return <Toaster position="top-center" richColors expand={true} />;
+	return <Toaster position="top-right" richColors expand={true} />;
 };
