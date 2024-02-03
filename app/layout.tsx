@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
+import { RecaptchaProvider } from '@/lib/providers/google-recaptcha-provider';
 import { ToastProvider } from '@/lib/providers/toast-provider';
 
 import '@/app/styles/globals.css';
@@ -31,10 +32,12 @@ const RootLayout = ({ children }: RootLayoutProps) => {
 	return (
 		<html lang="en">
 			<body className="scroll-smooth font-sans antialiased">
-				{children}
-				<Analytics />
-				<SpeedInsights />
-				<ToastProvider />
+				<RecaptchaProvider>
+					{children}
+					<Analytics />
+					<SpeedInsights />
+					<ToastProvider />
+				</RecaptchaProvider>
 			</body>
 		</html>
 	);
