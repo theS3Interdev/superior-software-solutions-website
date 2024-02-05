@@ -1,6 +1,4 @@
-import { MetadataRoute } from 'next';
-
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap() {
 	const baseUrl = process.env.NEXT_PUBLIC_PRODUCTION_URL;
 
 	return [
