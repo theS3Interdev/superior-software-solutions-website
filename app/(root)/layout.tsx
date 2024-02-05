@@ -1,4 +1,9 @@
-import { ReactNode } from 'react';
+import { ReactNode } from "react";
+
+import {
+	NavigationFooterBlock,
+	NavigationHeaderBlock,
+} from "@/components/index";
 
 type LayoutProps = {
 	children: ReactNode;
@@ -7,11 +12,15 @@ type LayoutProps = {
 const Layout = ({ children }: LayoutProps) => {
 	return (
 		<div className="flex h-screen flex-col">
-			<header>Header Section</header>
+			<header>
+				<NavigationHeaderBlock />
+			</header>
 
 			<main>{children}</main>
 
-			<footer className="mt-auto">Footer Section</footer>
+			<footer className="mt-auto">
+				<NavigationFooterBlock />
+			</footer>
 		</div>
 	);
 };
