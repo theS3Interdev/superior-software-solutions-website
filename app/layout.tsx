@@ -8,9 +8,7 @@ import { ToastProvider } from '@/lib/providers/toast-provider';
 
 import '@/app/styles/globals.css';
 
-type RootLayoutProps = {
-	children: ReactNode;
-};
+export const revalidate = 60;
 
 /* get the url depending on the environment */
 const absoluteUrl =
@@ -18,7 +16,7 @@ const absoluteUrl =
 		? process.env.NEXT_PUBLIC_PRODUCTION_URL!
 		: process.env.NEXT_PUBLIC_DEVELOPMENT_URL!;
 
-export const metadata = {
+export const metadata: Metadata = {
 	metadataBase: new URL(absoluteUrl),
 	title: {
 		default: 'Superior Software Solutions',
@@ -26,6 +24,10 @@ export const metadata = {
 	},
 	description:
 		"Kenya's premier software design studio. Superior Software Solutions: websites, webapps, success stories. Let's craft yours.",
+};
+
+type RootLayoutProps = {
+	children: ReactNode;
 };
 
 const RootLayout = ({ children }: RootLayoutProps) => {
