@@ -29,6 +29,8 @@
 		"date-fns": "^3.3.1",
 		"embla-carousel-react": "8.0.0-rc22",
 		"framer-motion": "^11.0.3",
+		"graphql": "^16.8.1",
+		"graphql-request": "^6.1.0",
 		"lucide-react": "^0.321.0",
 		"next": "14.1.0",
 		"next-themes": "^0.2.1",
