@@ -39,6 +39,10 @@ import { HomeHeroWidget } from "@/components/widgets/home-hero-widget";
 import { NavigationFooterMenuWidget } from "@/components/widgets/navigation-footer-menu-widget";
 import { PrivacyPolicyContentWidget } from "@/components/widgets/privacy-policy-content-widget";
 import { PrivacyPolicyHeroWidget } from "@/components/widgets/privacy-policy-hero-widget";
+import { ProjectContentWidget } from "@/components/widgets/project-content-widget";
+import { ProjectHeroWidget } from "@/components/widgets/project-hero-widget";
+import { ProjectsContentWidget } from "@/components/widgets/projects-content-widget";
+import { ProjectsHeroWidget } from "@/components/widgets/projects-hero-widget";
 
 /* export components */
 export {
@@ -72,4 +76,8 @@ export {
 	NavigationFooterMenuWidget,
 	PrivacyPolicyContentWidget,
 	PrivacyPolicyHeroWidget,
+	ProjectContentWidget,
+	ProjectHeroWidget,
+	ProjectsContentWidget,
+	ProjectsHeroWidget,
 };
