@@ -26,6 +26,8 @@ import {
 } from "@/components/ui/sheet";
 
 /* component widgets */
+import { AboutContentWidget } from "@/components/widgets/about-content-widget";
+import { AboutHeroWidget } from "@/components/widgets/about-hero-widget";
 import { HomeContentWidget } from "@/components/widgets/home-content-widget";
 import { HomeHeroWidget } from "@/components/widgets/home-hero-widget";
 import { NavigationFooterMenuWidget } from "@/components/widgets/navigation-footer-menu-widget";
@@ -49,6 +51,8 @@ export {
 	SheetHeader,
 	SheetTitle,
 	SheetTrigger,
+	AboutContentWidget,
+	AboutHeroWidget,
 	HomeContentWidget,
 	HomeHeroWidget,
 	NavigationFooterMenuWidget,
