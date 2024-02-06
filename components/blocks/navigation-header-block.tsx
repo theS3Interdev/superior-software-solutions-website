@@ -1,6 +1,6 @@
 type NavigationHeaderBlockProps = {
 	siteName: string;
-	siteLogo: string;
+	siteLogo: { secure_url: string };
 	ctaButton: { label: string; url: string };
 	navigationHeader: { links: { label: string; url: string }[] };
 };

@@ -13,7 +13,7 @@ type LayoutProps = {
 
 type GlobalsProps = {
 	siteName: string;
-	siteLogo: string;
+	siteLogo: { secure_url: string };
 	siteTagline: string;
 	solutionSummary: string;
 	ctaButton: { label: string; url: string };
