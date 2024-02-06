@@ -1,12 +1,12 @@
 /* component blocks */
+import { ImageDisplayBlock } from "@/components/blocks/image-display-block";
 import { NavigationFooterBlock } from "@/components/blocks/navigation-footer-block";
 import { NavigationHeaderBlock } from "@/components/blocks/navigation-header-block";
-import { NCImageDisplayBlock } from "@/components/blocks/nc-image-display-block";
 import { ThemeToggleBlock } from "@/components/blocks/theme-toggle-block";
 
 /* notification components */
 
-/* shadcn ui elements */
+/* shadcn ui components */
 import { Button } from "@/components/ui/button";
 import {
 	DropdownMenu,
@@ -15,14 +15,24 @@ import {
 	DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Separator } from "@/components/ui/separator";
+import {
+	Sheet,
+	SheetClose,
+	SheetContent,
+	SheetFooter,
+	SheetHeader,
+	SheetTitle,
+	SheetTrigger,
+} from "@/components/ui/sheet";
 
 /* component widgets */
+import { NavigationFooterMenuWidget } from "@/components/widgets/navigation-footer-menu-widget";
 
 /* export components */
 export {
+	ImageDisplayBlock,
 	NavigationFooterBlock,
 	NavigationHeaderBlock,
-	NCImageDisplayBlock,
 	ThemeToggleBlock,
 	Button,
 	DropdownMenu,
@@ -30,4 +40,12 @@ export {
 	DropdownMenuItem,
 	DropdownMenuTrigger,
 	Separator,
+	Sheet,
+	SheetClose,
+	SheetContent,
+	SheetFooter,
+	SheetHeader,
+	SheetTitle,
+	SheetTrigger,
+	NavigationFooterMenuWidget,
 };
