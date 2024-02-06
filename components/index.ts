@@ -33,6 +33,8 @@ import { ConsultHeroWidget } from "@/components/widgets/consult-hero-widget";
 import { HomeContentWidget } from "@/components/widgets/home-content-widget";
 import { HomeHeroWidget } from "@/components/widgets/home-hero-widget";
 import { NavigationFooterMenuWidget } from "@/components/widgets/navigation-footer-menu-widget";
+import { PrivacyPolicyContentWidget } from "@/components/widgets/privacy-policy-content-widget";
+import { PrivacyPolicyHeroWidget } from "@/components/widgets/privacy-policy-hero-widget";
 
 /* export components */
 export {
@@ -60,4 +62,6 @@ export {
 	HomeContentWidget,
 	HomeHeroWidget,
 	NavigationFooterMenuWidget,
+	PrivacyPolicyContentWidget,
+	PrivacyPolicyHeroWidget,
 };
