@@ -1,43 +1,53 @@
-import { ReactNode } from 'react';
-import type { Metadata } from 'next';
-import { Analytics } from '@vercel/analytics/react';
-import { SpeedInsights } from '@vercel/speed-insights/next';
+import { ReactNode } from "react";
+import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
-import { RecaptchaProvider } from '@/lib/providers/google-recaptcha-provider';
-import { ToastProvider } from '@/lib/providers/toast-provider';
+import { RecaptchaProvider } from "@/lib/providers/google-recaptcha-provider";
+import { ThemeProvider } from "@/lib/providers/theme-provider";
+import { ToastProvider } from "@/lib/providers/toast-provider";
 
-import '@/app/styles/globals.css';
+import "@/app/styles/globals.css";
 
-type RootLayoutProps = {
-	children: ReactNode;
-};
+export const revalidate = 60;
 
 /* get the url depending on the environment */
 const absoluteUrl =
-	process.env.NODE_ENV === 'production'
+	process.env.NODE_ENV === "production"
 		? process.env.NEXT_PUBLIC_PRODUCTION_URL!
 		: process.env.NEXT_PUBLIC_DEVELOPMENT_URL!;
 
-export const metadata = {
+export const metadata: Metadata = {
 	metadataBase: new URL(absoluteUrl),
 	title: {
-		default: 'Superior Software Solutions',
-		template: '%s | Superior Software Solutions',
+		default: "Superior Software Solutions",
+		template: "%s | Superior Software Solutions",
 	},
 	description:
 		"Kenya's premier software design studio. Superior Software Solutions: websites, webapps, success stories. Let's craft yours.",
+};
+
+type RootLayoutProps = {
+	children: ReactNode;
 };
 
 const RootLayout = ({ children }: RootLayoutProps) => {
 	return (
 		<html lang="en">
 			<body className="scroll-smooth font-sans antialiased">
-				<RecaptchaProvider>
-					{children}
-					<Analytics />
-					<SpeedInsights />
-					<ToastProvider />
-				</RecaptchaProvider>
+				<ThemeProvider
+					attribute="class"
+					defaultTheme="system"
+					enableSystem
+					disableTransitionOnChange
+				>
+					<RecaptchaProvider>
+						{children}
+						<Analytics />
+						<SpeedInsights />
+						<ToastProvider />
+					</RecaptchaProvider>
+				</ThemeProvider>
 			</body>
 		</html>
 	);
