@@ -28,6 +28,10 @@ import {
 /* component widgets */
 import { AboutContentWidget } from "@/components/widgets/about-content-widget";
 import { AboutHeroWidget } from "@/components/widgets/about-hero-widget";
+import { BlogContentWidget } from "@/components/widgets/blog-content-widget";
+import { BlogHeroWidget } from "@/components/widgets/blog-hero-widget";
+import { BlogsContentWidget } from "@/components/widgets/blogs-content-widget";
+import { BlogsHeroWidget } from "@/components/widgets/blogs-hero-widget";
 import { ConsultContentWidget } from "@/components/widgets/consult-content-widget";
 import { ConsultHeroWidget } from "@/components/widgets/consult-hero-widget";
 import { HomeContentWidget } from "@/components/widgets/home-content-widget";
@@ -57,6 +61,10 @@ export {
 	SheetTrigger,
 	AboutContentWidget,
 	AboutHeroWidget,
+	BlogContentWidget,
+	BlogHeroWidget,
+	BlogsContentWidget,
+	BlogsHeroWidget,
 	ConsultContentWidget,
 	ConsultHeroWidget,
 	HomeContentWidget,
