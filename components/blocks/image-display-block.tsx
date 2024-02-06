@@ -2,15 +2,15 @@
 
 import { CldImage } from "next-cloudinary";
 
-type NCImageDisplayBlockProps = {
+type ImageDisplayBlockProps = {
 	imageSrc: string;
 	imageAlt: string;
 };
 
-export const NCImageDisplayBlock = ({
+export const ImageDisplayBlock = ({
 	imageSrc,
 	imageAlt,
-}: NCImageDisplayBlockProps) => {
+}: ImageDisplayBlockProps) => {
 	return (
 		<CldImage
 			src={imageSrc}
