@@ -43,6 +43,8 @@ import { ProjectContentWidget } from "@/components/widgets/project-content-widge
 import { ProjectHeroWidget } from "@/components/widgets/project-hero-widget";
 import { ProjectsContentWidget } from "@/components/widgets/projects-content-widget";
 import { ProjectsHeroWidget } from "@/components/widgets/projects-hero-widget";
+import { TestimonialsContentWidget } from "@/components/widgets/testimonials-content-widget";
+import { TestimonialsHeroWidget } from "@/components/widgets/testimonials-hero-widget";
 
 /* export components */
 export {
@@ -80,4 +82,6 @@ export {
 	ProjectHeroWidget,
 	ProjectsContentWidget,
 	ProjectsHeroWidget,
+	TestimonialsContentWidget,
+	TestimonialsHeroWidget,
 };
