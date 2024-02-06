@@ -4,7 +4,8 @@ import { Facebook, Github, Instagram, Linkedin, Twitter } from "lucide-react";
 import { Container } from "@/components/container";
 import {
 	Button,
-	NCImageDisplayBlock,
+	ImageDisplayBlock,
+	NavigationFooterMenuWidget,
 	Separator,
 	ThemeToggleBlock,
 } from "@/components/index";
@@ -55,82 +56,40 @@ export const NavigationFooterBlock = ({
 					<div className="lg:col-span-2 lg:max-w-lg">
 						<Link href="/" className="inline-flex items-center">
 							<div className="relative h-8 w-8">
-								<NCImageDisplayBlock
+								<ImageDisplayBlock
 									imageSrc={siteLogo.secure_url}
 									imageAlt={siteName}
 								/>
 							</div>
 
-							<span className="ml-1 text-lg font-medium lg:text-2xl">
+							<p className="ml-1 text-lg font-semibold lg:text-2xl">
 								{siteName}
-							</span>
+							</p>
 						</Link>
 
-						<div className="mt-4 space-y-5 text-muted-foreground">
+						<div className="mt-3 space-y-5 text-muted-foreground">
 							<p className="text-pretty leading-loose sm:max-w-sm">
 								{solutionSummary}
 							</p>
-							<p className="text-sm font-medium">{siteTagline}</p>
+							<p className="text-sm font-semibold">{siteTagline}</p>
 						</div>
 					</div>
 
 					<div className="grid grid-cols-2 gap-5 lg:col-span-3 lg:grid-cols-3">
-						<div>
-							<p className="font-medium uppercase tracking-wide">
-								{navigationFooterSolutions.title}
-							</p>
+						<NavigationFooterMenuWidget
+							title={navigationFooterSolutions.title}
+							links={navigationFooterSolutions.links}
+						/>
 
-							<ul className="mt-3 space-y-3">
-								{navigationFooterSolutions.links.map((link, index) => (
-									<li key={index}>
-										<Link
-											href={link.url}
-											className="cursor-pointer text-muted-foreground duration-300 hover:text-primary hover:underline"
-										>
-											{link.label}
-										</Link>
-									</li>
-								))}
-							</ul>
-						</div>
+						<NavigationFooterMenuWidget
+							title={navigationFooterResources.title}
+							links={navigationFooterResources.links}
+						/>
 
-						<div>
-							<p className="font-medium uppercase tracking-wide">
-								{navigationFooterResources.title}
-							</p>
-
-							<ul className="mt-3 space-y-3">
-								{navigationFooterResources.links.map((link, index) => (
-									<li key={index}>
-										<Link
-											href={link.url}
-											className="cursor-pointer text-muted-foreground duration-300 hover:text-primary hover:underline"
-										>
-											{link.label}
-										</Link>
-									</li>
-								))}
-							</ul>
-						</div>
-
-						<div>
-							<p className="font-medium uppercase tracking-wide">
-								{navigationFooterBusiness.title}
-							</p>
-
-							<ul className="mt-3 space-y-3">
-								{navigationFooterBusiness.links.map((link, index) => (
-									<li key={index}>
-										<Link
-											href={link.url}
-											className="cursor-pointer text-muted-foreground duration-300 hover:text-primary hover:underline"
-										>
-											{link.label}
-										</Link>
-									</li>
-								))}
-							</ul>
-						</div>
+						<NavigationFooterMenuWidget
+							title={navigationFooterBusiness.title}
+							links={navigationFooterBusiness.links}
+						/>
 					</div>
 				</div>
 
