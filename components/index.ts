@@ -26,6 +26,8 @@ import {
 } from "@/components/ui/sheet";
 
 /* component widgets */
+import { HomeContentWidget } from "@/components/widgets/home-content-widget";
+import { HomeHeroWidget } from "@/components/widgets/home-hero-widget";
 import { NavigationFooterMenuWidget } from "@/components/widgets/navigation-footer-menu-widget";
 
 /* export components */
@@ -47,5 +49,7 @@ export {
 	SheetHeader,
 	SheetTitle,
 	SheetTrigger,
+	HomeContentWidget,
+	HomeHeroWidget,
 	NavigationFooterMenuWidget,
 };
