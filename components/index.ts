@@ -43,6 +43,10 @@ import { ProjectContentWidget } from "@/components/widgets/project-content-widge
 import { ProjectHeroWidget } from "@/components/widgets/project-hero-widget";
 import { ProjectsContentWidget } from "@/components/widgets/projects-content-widget";
 import { ProjectsHeroWidget } from "@/components/widgets/projects-hero-widget";
+import { SolutionContentWidget } from "@/components/widgets/solution-content-widget";
+import { SolutionHeroWidget } from "@/components/widgets/solution-hero-widget";
+import { SolutionsContentWidget } from "@/components/widgets/solutions-content-widget";
+import { SolutionsHeroWidget } from "@/components/widgets/solutions-hero-widget";
 import { SupportContentWidget } from "@/components/widgets/support-content-widget";
 import { SupportHeroWidget } from "@/components/widgets/support-hero-widget";
 import { TestimonialsContentWidget } from "@/components/widgets/testimonials-content-widget";
@@ -84,6 +88,10 @@ export {
 	ProjectHeroWidget,
 	ProjectsContentWidget,
 	ProjectsHeroWidget,
+	SolutionContentWidget,
+	SolutionHeroWidget,
+	SolutionsContentWidget,
+	SolutionsHeroWidget,
 	SupportContentWidget,
 	SupportHeroWidget,
 	TestimonialsContentWidget,
