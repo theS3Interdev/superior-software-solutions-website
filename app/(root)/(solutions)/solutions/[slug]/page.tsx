@@ -5,7 +5,9 @@ const SolutionPage = () => {
 		<article className="mt-24 space-y-8">
 			<section id="hero">
 				<SolutionHeroWidget />
+			</section>
 
+			<section id="content">
 				<SolutionContentWidget />
 			</section>
 		</article>

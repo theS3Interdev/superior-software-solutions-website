@@ -61,7 +61,9 @@ const PrivacyPolicyPage = async () => {
 		<article className="mt-24 space-y-8">
 			<section id="hero">
 				<PrivacyPolicyHeroWidget heroActionBlock={heroActionBlock} />
+			</section>
 
+			<section id="content">
 				<PrivacyPolicyContentWidget pasBlock={pasBlock} />
 			</section>
 		</article>
