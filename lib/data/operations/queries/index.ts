@@ -59,3 +59,37 @@ export const qryGlobals = gql`
 		}
 	}
 `;
+
+/* query to retrieve privacy policy page data */
+export const qryPrivacyPolicyPage = gql`
+	query qryPrivacyPolicyPage {
+		pages(where: { slug: "privacy-policy" }) {
+			pageTitle
+			slug
+			pageMetaDescription
+			heroActionBlock {
+				content {
+					content {
+						header {
+							title
+						}
+					}
+					image
+				}
+			}
+			pasBlock {
+				header {
+					content {
+						header {
+							title
+							subtitle
+						}
+						content {
+							html
+						}
+					}
+				}
+			}
+		}
+	}
+`;

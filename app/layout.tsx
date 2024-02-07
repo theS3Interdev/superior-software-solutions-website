@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 		template: "%s | Superior Software Solutions",
 	},
 	description:
-		"Kenya's premier software design studio. Superior Software Solutions: websites, webapps, success stories. Let's craft yours.",
+		"Small business? Get powerful websites, emails, and apps to unleash your brand story. Focus on what you love, we'll handle the web. Superior Software Solutions.",
 };
 
 type RootLayoutProps = {

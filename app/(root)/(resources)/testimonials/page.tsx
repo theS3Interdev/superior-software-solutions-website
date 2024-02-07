@@ -8,7 +8,9 @@ const TestimonialsPage = () => {
 		<article className="mt-24 space-y-8">
 			<section id="hero">
 				<TestimonialsHeroWidget />
+			</section>
 
+			<section id="content">
 				<TestimonialsContentWidget />
 			</section>
 		</article>

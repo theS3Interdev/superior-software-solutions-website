@@ -1,4 +1,7 @@
 /* component blocks */
+import { ContentDisplayBlock } from "@/components/blocks/content-display-block";
+import { HeaderDisplayBlock } from "@/components/blocks/header-display-block";
+import { HeroDisplayBlock } from "@/components/blocks/hero-display-block";
 import { ImageDisplayBlock } from "@/components/blocks/image-display-block";
 import { NavigationFooterBlock } from "@/components/blocks/navigation-footer-block";
 import { NavigationHeaderBlock } from "@/components/blocks/navigation-header-block";
@@ -54,6 +57,9 @@ import { TestimonialsHeroWidget } from "@/components/widgets/testimonials-hero-w
 
 /* export components */
 export {
+	ContentDisplayBlock,
+	HeaderDisplayBlock,
+	HeroDisplayBlock,
 	ImageDisplayBlock,
 	NavigationFooterBlock,
 	NavigationHeaderBlock,
