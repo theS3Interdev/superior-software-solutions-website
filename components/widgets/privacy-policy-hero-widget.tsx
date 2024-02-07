@@ -1,5 +1,23 @@
-type PrivacyPolicyHeroWidgetProps = {};
+import { HeroDisplayBlock } from "@/components/index";
 
-export const PrivacyPolicyHeroWidget = ({}: PrivacyPolicyHeroWidgetProps) => {
-	return <div className="mx-1">Privacy Policy Hero Widget</div>;
+type PrivacyPolicyHeroWidgetProps = {
+	heroActionBlock: {
+		content: {
+			content: { header: { title: string } };
+			image: { public_id: string };
+		};
+	};
+};
+
+export const PrivacyPolicyHeroWidget = ({
+	heroActionBlock,
+}: PrivacyPolicyHeroWidgetProps) => {
+	return (
+		<div className="mx-1">
+			<HeroDisplayBlock
+				title={heroActionBlock.content.content.header.title}
+				image={heroActionBlock.content.image.public_id}
+			/>
+		</div>
+	);
 };

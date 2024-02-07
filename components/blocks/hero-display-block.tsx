@@ -2,7 +2,7 @@ import { ImageDisplayBlock } from "@/components/index";
 
 type HeroDisplayBlockProps = {
 	title: string;
-	subtitle: string;
+	subtitle?: string;
 	image: string;
 };
 
@@ -17,7 +17,7 @@ export const HeroDisplayBlock = ({
 				<ImageDisplayBlock imageSrc={image} imageAlt="Hero Image" />
 			</div>
 
-			<div className="absolute left-0 top-0 h-full w-full rounded-lg bg-black/30"></div>
+			<div className="absolute left-0 top-0 h-full w-full rounded-lg bg-black/20"></div>
 
 			{title && (
 				<div className="absolute left-1/2 top-1/2 w-72 -translate-x-1/2 -translate-y-1/2 rounded-lg bg-black/70 px-5 py-3 text-center lg:w-auto">
