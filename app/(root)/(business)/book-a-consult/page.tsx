@@ -5,7 +5,9 @@ const ConsultPage = () => {
 		<article className="mt-24 space-y-8">
 			<section id="hero">
 				<ConsultHeroWidget />
+			</section>
 
+			<section id="content">
 				<ConsultContentWidget />
 			</section>
 		</article>

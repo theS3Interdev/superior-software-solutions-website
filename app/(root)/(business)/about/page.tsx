@@ -5,7 +5,9 @@ const AboutPage = () => {
 		<article className="mt-24 space-y-8">
 			<section id="hero">
 				<AboutHeroWidget />
+			</section>
 
+			<section id="content">
 				<AboutContentWidget />
 			</section>
 		</article>
