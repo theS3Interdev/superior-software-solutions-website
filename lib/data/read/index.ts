@@ -1,5 +1,6 @@
 import {
 	qryGlobals,
+	qryHomePage,
 	qryPrivacyPolicyPage,
 } from "@/lib/data/operations/queries/index";
 
@@ -37,5 +38,22 @@ export const getPrivacyPolicyPage = async () => {
 		return data.pages[0];
 	} catch (error) {
 		console.log("[GET_PRIVACY_POLICY_PAGE]", error);
+	}
+};
+
+/* get home page */
+export const getHomePage = async () => {
+	try {
+		const result = await fetch(endpoint, {
+			method: "POST",
+			body: JSON.stringify({ query: qryHomePage }),
+			headers: { "Content-Type": "application/json" },
+		});
+
+		const { data } = await result.json();
+
+		return data.pages[0];
+	} catch (error) {
+		console.log("[GET_HOME_PAGE]", error);
 	}
 };
