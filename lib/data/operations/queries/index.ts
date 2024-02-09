@@ -93,3 +93,29 @@ export const qryPrivacyPolicyPage = gql`
 		}
 	}
 `;
+
+/* query to retrieve home page data */
+export const qryHomePage = gql`
+	query qryHomePage {
+		pages(where: { slug: "home" }) {
+			pageTitle
+			slug
+			pageMetaDescription
+			heroActionBlock {
+				content {
+					content {
+						header {
+							title
+							subtitle
+						}
+					}
+					image
+				}
+				links {
+					label
+					url
+				}
+			}
+		}
+	}
+`;
