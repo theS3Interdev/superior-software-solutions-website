@@ -116,6 +116,17 @@ export const qryHomePage = gql`
 					url
 				}
 			}
+			callToAction {
+				image
+				title
+				content {
+					html
+				}
+				link {
+					label
+					url
+				}
+			}
 		}
 	}
 `;

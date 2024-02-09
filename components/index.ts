@@ -1,4 +1,5 @@
 /* component blocks */
+import { CallToActionBlock } from "@/components/blocks/call-to-action-block";
 import { ContentDisplayBlock } from "@/components/blocks/content-display-block";
 import { HeaderDisplayBlock } from "@/components/blocks/header-display-block";
 import { HeroDisplayBlock } from "@/components/blocks/hero-display-block";
@@ -57,6 +58,7 @@ import { TestimonialsHeroWidget } from "@/components/widgets/testimonials-hero-w
 
 /* export components */
 export {
+	CallToActionBlock,
 	ContentDisplayBlock,
 	HeaderDisplayBlock,
 	HeroDisplayBlock,
