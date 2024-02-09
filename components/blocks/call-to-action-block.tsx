@@ -29,12 +29,12 @@ export const CallToActionBlock = ({
 				</div>
 			</div>
 
-			<div className="max-w-xl space-y-4 px-6 py-12 lg:w-1/2 lg:max-w-5xl">
-				<h2 className="text-2xl font-semibold tracking-wide">{title}</h2>
+			<div className="max-w-xl px-5 py-12 lg:w-1/2 lg:max-w-5xl">
+				<h2 className="mb-5 text-2xl font-semibold tracking-wide">{title}</h2>
 
 				<ContentDisplayBlock content={content} />
 
-				<div className="mt-6 inline-flex w-full sm:w-auto">
+				<div className="mt-5 inline-flex w-full sm:w-auto">
 					<Button asChild className="uppercase">
 						<Link href={url}>{label}</Link>
 					</Button>
