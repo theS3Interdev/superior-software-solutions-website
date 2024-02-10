@@ -23,7 +23,7 @@ export const CallToActionBlock = ({
 }: CallToActionBlockProps) => {
 	return (
 		<div className="lg:flex lg:justify-center">
-			<div className="overflow-hidden border bg-secondary dark:bg-transparent lg:mx-8 lg:flex lg:w-full lg:max-w-6xl lg:rounded-lg lg:shadow-md">
+			<div className="overflow-hidden border bg-secondary lg:mx-8 lg:flex lg:w-full lg:max-w-6xl lg:rounded-lg lg:shadow-md">
 				<div className="lg:w-1/2">
 					<div className="relative h-64 bg-cover lg:h-full">
 						<ImageDisplayBlock

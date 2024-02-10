@@ -1,5 +1,7 @@
 import {
+	qryAllBlogSummary,
 	qryAllTestimonials,
+	qryBlogsPage,
 	qryGlobals,
 	qryHomePage,
 	qryPrivacyPolicyPage,
@@ -91,5 +93,39 @@ export const getAllTestimonials = async () => {
 		return data.testimonials;
 	} catch (error) {
 		console.log("[GET_ALL_TESTIMONIALS]", error);
+	}
+};
+
+/* get blogs page */
+export const getBlogsPage = async () => {
+	try {
+		const result = await fetch(endpoint, {
+			method: "POST",
+			body: JSON.stringify({ query: qryBlogsPage }),
+			headers: { "Content-Type": "application/json" },
+		});
+
+		const { data } = await result.json();
+
+		return data.pages[0];
+	} catch (error) {
+		console.log("[GET_BLOGS_PAGE]", error);
+	}
+};
+
+/* retrieve all blogs in summary */
+export const getAllBlogSummary = async () => {
+	try {
+		const result = await fetch(endpoint, {
+			method: "POST",
+			body: JSON.stringify({ query: qryAllBlogSummary }),
+			headers: { "Content-Type": "application/json" },
+		});
+
+		const { data } = await result.json();
+
+		return data.blogs;
+	} catch (error) {
+		console.log("GET_ALL_BLOG_SUMMARY", error);
 	}
 };
