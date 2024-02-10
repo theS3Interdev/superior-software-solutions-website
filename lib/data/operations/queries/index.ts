@@ -116,6 +116,74 @@ export const qryHomePage = gql`
 					url
 				}
 			}
+			callToAction {
+				image
+				title
+				content {
+					html
+				}
+				link {
+					label
+					url
+				}
+			}
+		}
+	}
+`;
+
+/* query to retrieve testimonials page data */
+export const qryTestimonialsPage = gql`
+	query qryTestimonialsPage {
+		pages(where: { slug: "testimonials" }) {
+			pageTitle
+			slug
+			pageMetaDescription
+			heroActionBlock {
+				content {
+					content {
+						header {
+							title
+						}
+					}
+					image
+				}
+			}
+			pasBlock {
+				header {
+					content {
+						header {
+							title
+							subtitle
+						}
+					}
+				}
+			}
+			callToAction {
+				image
+				title
+				content {
+					html
+				}
+				link {
+					label
+					url
+				}
+			}
+		}
+	}
+`;
+
+/* query to retrieve all testimonials */
+export const qryAllTestimonials = gql`
+	query qryAllTestimonials {
+		testimonials(first: 89) {
+			image
+			name
+			title
+			rating
+			content {
+				html
+			}
 		}
 	}
 `;

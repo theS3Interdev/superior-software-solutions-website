@@ -18,6 +18,17 @@ type HomePageProps = {
 			url: string;
 		}[];
 	};
+	callToAction: {
+		image: { public_id: string };
+		title: string;
+		content: {
+			html: string;
+		};
+		link: {
+			label: string;
+			url: string;
+		};
+	};
 };
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -44,7 +55,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 const HomePage = async () => {
-	const { heroActionBlock }: HomePageProps = await getHomePage();
+	const { heroActionBlock, callToAction }: HomePageProps = await getHomePage();
 
 	return (
 		<article className="mt-24 space-y-8">
@@ -53,7 +64,7 @@ const HomePage = async () => {
 			</section>
 
 			<section id="content">
-				<HomeContentWidget />
+				<HomeContentWidget callToAction={callToAction} />
 			</section>
 		</article>
 	);

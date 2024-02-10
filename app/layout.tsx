@@ -7,6 +7,7 @@ import { RecaptchaProvider } from "@/lib/providers/google-recaptcha-provider";
 import { ThemeProvider } from "@/lib/providers/theme-provider";
 import { ToastProvider } from "@/lib/providers/toast-provider";
 
+import "@smastrom/react-rating/style.css";
 import "@/app/styles/globals.css";
 
 export const revalidate = 60;
