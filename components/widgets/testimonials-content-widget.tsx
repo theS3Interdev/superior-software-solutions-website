@@ -54,7 +54,7 @@ export const TestimonialsContentWidget = async ({
 
 					<div>
 						{testimonials.length === 0 ? (
-							<p className="text-center leading-loose text-muted-foreground">
+							<p className="my-8 text-center leading-loose text-muted-foreground">
 								There are currently no client testimonials...
 							</p>
 						) : (
