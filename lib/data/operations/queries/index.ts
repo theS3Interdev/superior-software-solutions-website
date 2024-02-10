@@ -233,7 +233,7 @@ export const qryBlogsPage = gql`
 /* query to retrieve all blogs in summary */
 export const qryAllBlogSummary = gql`
 	query qryAllBlogSummary {
-		blogs {
+		blogs(first: 89) {
 			title
 			slug
 			date
