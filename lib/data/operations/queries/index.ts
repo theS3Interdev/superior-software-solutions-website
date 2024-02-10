@@ -242,3 +242,40 @@ export const qryAllBlogSummary = gql`
 		}
 	}
 `;
+
+/* query retrieve blog by slug */
+export const qryBlogBySlug = gql`
+	query qryBlogBySlug($slug: String!) {
+		blogs(where: { slug: $slug }) {
+			title
+			slug
+			author {
+				image
+				name
+				bio {
+					html
+				}
+			}
+			date
+			category {
+				title
+			}
+			image
+			excerpt
+			content {
+				html
+			}
+			callToAction {
+				image
+				title
+				content {
+					html
+				}
+				link {
+					label
+					url
+				}
+			}
+		}
+	}
+`;

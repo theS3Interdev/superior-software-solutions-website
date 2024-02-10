@@ -15,6 +15,7 @@ import { ThemeToggleBlock } from "@/components/blocks/theme-toggle-block";
 /* notification components */
 
 /* shadcn ui components */
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
 	DropdownMenu,
@@ -37,7 +38,6 @@ import {
 import { AboutContentWidget } from "@/components/widgets/about-content-widget";
 import { AboutHeroWidget } from "@/components/widgets/about-hero-widget";
 import { BlogContentWidget } from "@/components/widgets/blog-content-widget";
-import { BlogHeroWidget } from "@/components/widgets/blog-hero-widget";
 import { BlogsContentWidget } from "@/components/widgets/blogs-content-widget";
 import { BlogsHeroWidget } from "@/components/widgets/blogs-hero-widget";
 import { ConsultContentWidget } from "@/components/widgets/consult-content-widget";
@@ -74,6 +74,7 @@ export {
 	RatingBlock,
 	TestimonialCardBlock,
 	ThemeToggleBlock,
+	Badge,
 	Button,
 	DropdownMenu,
 	DropdownMenuContent,
@@ -90,7 +91,6 @@ export {
 	AboutContentWidget,
 	AboutHeroWidget,
 	BlogContentWidget,
-	BlogHeroWidget,
 	BlogsContentWidget,
 	BlogsHeroWidget,
 	ConsultContentWidget,
