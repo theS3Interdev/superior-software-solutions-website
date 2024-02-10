@@ -1,5 +1,23 @@
-type TestimonialsHeroWidgetProps = {};
+import { HeroDisplayBlock } from "@/components/index";
 
-export const TestimonialsHeroWidget = ({}: TestimonialsHeroWidgetProps) => {
-	return <div className="mx-1">Testimonials Hero Widget</div>;
+type TestimonialsHeroWidgetProps = {
+	heroActionBlock: {
+		content: {
+			content: { header: { title: string } };
+			image: { public_id: string };
+		};
+	};
+};
+
+export const TestimonialsHeroWidget = ({
+	heroActionBlock,
+}: TestimonialsHeroWidgetProps) => {
+	return (
+		<div className="mx-1">
+			<HeroDisplayBlock
+				title={heroActionBlock.content.content.header.title}
+				image={heroActionBlock.content.image.public_id}
+			/>
+		</div>
+	);
 };
