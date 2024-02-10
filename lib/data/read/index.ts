@@ -1,7 +1,9 @@
 import {
+	qryAllTestimonials,
 	qryGlobals,
 	qryHomePage,
 	qryPrivacyPolicyPage,
+	qryTestimonialsPage,
 } from "@/lib/data/operations/queries/index";
 
 /* graphql endpoint */
@@ -55,5 +57,39 @@ export const getHomePage = async () => {
 		return data.pages[0];
 	} catch (error) {
 		console.log("[GET_HOME_PAGE]", error);
+	}
+};
+
+/* get testimonials page */
+export const getTestimonialsPage = async () => {
+	try {
+		const result = await fetch(endpoint, {
+			method: "POST",
+			body: JSON.stringify({ query: qryTestimonialsPage }),
+			headers: { "Content-Type": "application/json" },
+		});
+
+		const { data } = await result.json();
+
+		return data.pages[0];
+	} catch (error) {
+		console.log("[GET_TESTIMONIALS_PAGE]", error);
+	}
+};
+
+/* get all testimonials */
+export const getAllTestimonials = async () => {
+	try {
+		const result = await fetch(endpoint, {
+			method: "POST",
+			body: JSON.stringify({ query: qryAllTestimonials }),
+			headers: { "Content-Type": "application/json" },
+		});
+
+		const { data } = await result.json();
+
+		return data.testimonials;
+	} catch (error) {
+		console.log("[GET_ALL_TESTIMONIALS]", error);
 	}
 };

@@ -1,10 +1,13 @@
 /* component blocks */
+import { CallToActionBlock } from "@/components/blocks/call-to-action-block";
 import { ContentDisplayBlock } from "@/components/blocks/content-display-block";
 import { HeaderDisplayBlock } from "@/components/blocks/header-display-block";
 import { HeroDisplayBlock } from "@/components/blocks/hero-display-block";
 import { ImageDisplayBlock } from "@/components/blocks/image-display-block";
 import { NavigationFooterBlock } from "@/components/blocks/navigation-footer-block";
 import { NavigationHeaderBlock } from "@/components/blocks/navigation-header-block";
+import { RatingBlock } from "@/components/blocks/rating-block";
+import { TestimonialCardBlock } from "@/components/blocks/testimonial-card-block";
 import { ThemeToggleBlock } from "@/components/blocks/theme-toggle-block";
 
 /* notification components */
@@ -57,12 +60,15 @@ import { TestimonialsHeroWidget } from "@/components/widgets/testimonials-hero-w
 
 /* export components */
 export {
+	CallToActionBlock,
 	ContentDisplayBlock,
 	HeaderDisplayBlock,
 	HeroDisplayBlock,
 	ImageDisplayBlock,
 	NavigationFooterBlock,
 	NavigationHeaderBlock,
+	RatingBlock,
+	TestimonialCardBlock,
 	ThemeToggleBlock,
 	Button,
 	DropdownMenu,
