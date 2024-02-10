@@ -1,6 +1,8 @@
 /* component blocks */
+import { BlogSummaryCardBlock } from "@/components/blocks/blog-summary-card-block";
 import { CallToActionBlock } from "@/components/blocks/call-to-action-block";
 import { ContentDisplayBlock } from "@/components/blocks/content-display-block";
+import { DateDisplayBlock } from "@/components/blocks/date-display-block";
 import { HeaderDisplayBlock } from "@/components/blocks/header-display-block";
 import { HeroDisplayBlock } from "@/components/blocks/hero-display-block";
 import { ImageDisplayBlock } from "@/components/blocks/image-display-block";
@@ -60,8 +62,10 @@ import { TestimonialsHeroWidget } from "@/components/widgets/testimonials-hero-w
 
 /* export components */
 export {
+	BlogSummaryCardBlock,
 	CallToActionBlock,
 	ContentDisplayBlock,
+	DateDisplayBlock,
 	HeaderDisplayBlock,
 	HeroDisplayBlock,
 	ImageDisplayBlock,
