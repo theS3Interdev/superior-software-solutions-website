@@ -187,3 +187,58 @@ export const qryAllTestimonials = gql`
 		}
 	}
 `;
+
+/* query to retrieve blogs page data */
+export const qryBlogsPage = gql`
+	query qryBlogsPage {
+		pages(where: { slug: "blogs" }) {
+			pageTitle
+			slug
+			pageMetaDescription
+			heroActionBlock {
+				content {
+					content {
+						header {
+							title
+						}
+					}
+					image
+				}
+			}
+			pasBlock {
+				header {
+					content {
+						header {
+							title
+							subtitle
+						}
+					}
+				}
+			}
+			callToAction {
+				image
+				title
+				content {
+					html
+				}
+				link {
+					label
+					url
+				}
+			}
+		}
+	}
+`;
+
+/* query to retrieve all blogs in summary */
+export const qryAllBlogSummary = gql`
+	query qryAllBlogSummary {
+		blogs {
+			title
+			slug
+			date
+			image
+			excerpt
+		}
+	}
+`;
