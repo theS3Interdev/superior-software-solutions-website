@@ -3,6 +3,7 @@ import {
 	BlogSummaryCardBlock,
 	CallToActionBlock,
 	HeaderDisplayBlock,
+	Separator,
 } from "@/components/index";
 import { getAllBlogSummary } from "@/lib/data/read/index";
 
@@ -71,6 +72,8 @@ export const BlogsContentWidget = async ({
 							</div>
 						)}
 					</div>
+
+					<Separator className="my-8" />
 
 					<CallToActionBlock
 						image={callToAction.image.public_id}

@@ -1,5 +1,5 @@
 import { Container } from "@/components/container";
-import { CallToActionBlock } from "@/components/index";
+import { CallToActionBlock, Separator } from "@/components/index";
 
 type HomeContentWidgetProps = {
 	callToAction: {
@@ -21,6 +21,8 @@ export const HomeContentWidget = ({ callToAction }: HomeContentWidgetProps) => {
 			<div className="py-8">
 				<div className="space-y-8">
 					<div>Home Content Widget</div>
+
+					<Separator className="my-8" />
 
 					<CallToActionBlock
 						image={callToAction.image.public_id}
