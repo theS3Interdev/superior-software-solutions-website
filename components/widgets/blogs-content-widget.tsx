@@ -51,24 +51,26 @@ export const BlogsContentWidget = async ({
 						subtitle={pasBlock.header.content.header.subtitle}
 					/>
 
-					{blogs.length === 0 ? (
-						<p className="my-8 text-center leading-loose text-muted-foreground">
-							There are currently no blogs...
-						</p>
-					) : (
-						<div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
-							{blogs.map((blog, index) => (
-								<BlogSummaryCardBlock
-									key={index}
-									image={blog.image.public_id}
-									title={blog.title}
-									slug={blog.slug}
-									excerpt={blog.excerpt}
-									date={blog.date}
-								/>
-							))}
-						</div>
-					)}
+					<div>
+						{blogs.length === 0 ? (
+							<p className="my-8 text-center leading-loose text-muted-foreground">
+								There are currently no blogs...
+							</p>
+						) : (
+							<div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
+								{blogs.map((blog, index) => (
+									<BlogSummaryCardBlock
+										key={index}
+										image={blog.image.public_id}
+										title={blog.title}
+										slug={blog.slug}
+										excerpt={blog.excerpt}
+										date={blog.date}
+									/>
+								))}
+							</div>
+						)}
+					</div>
 
 					<CallToActionBlock
 						image={callToAction.image.public_id}

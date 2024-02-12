@@ -18,7 +18,7 @@ export const ImageDisplayBlock = ({
 			fill
 			crop="fill"
 			gravity="auto"
-			sizes="100vw"
+			sizes="(max-width:768px) 100vw, 100vw"
 			className="absolute h-auto w-full rounded-lg object-cover"
 		/>
 	);

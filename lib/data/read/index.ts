@@ -1,6 +1,8 @@
 import {
 	qryAllBlogSummary,
+	qryAllBlogSummaryCount,
 	qryAllTestimonials,
+	qryBlogBySlug,
 	qryBlogsPage,
 	qryGlobals,
 	qryHomePage,
@@ -113,7 +115,7 @@ export const getBlogsPage = async () => {
 	}
 };
 
-/* retrieve all blogs in summary */
+/* get all blogs in summary */
 export const getAllBlogSummary = async () => {
 	try {
 		const result = await fetch(endpoint, {
@@ -127,5 +129,42 @@ export const getAllBlogSummary = async () => {
 		return data.blogs;
 	} catch (error) {
 		console.log("GET_ALL_BLOG_SUMMARY", error);
+	}
+};
+
+/* get blog by slug */
+export const getBlogBySlug = async (slug: string) => {
+	try {
+		const res = await fetch(endpoint, {
+			method: "POST",
+			body: JSON.stringify({
+				query: qryBlogBySlug,
+				variables: { slug: slug },
+			}),
+			headers: { "Content-Type": "application/json" },
+		});
+
+		const { data } = await res.json();
+
+		return data.blogs[0];
+	} catch (error) {
+		console.log("GET_BLOG_BY_SLUG", error);
+	}
+};
+
+/* get all blogs allowing for counting */
+export const getAllBlogSummaryCount = async () => {
+	try {
+		const result = await fetch(endpoint, {
+			method: "POST",
+			body: JSON.stringify({ query: qryAllBlogSummaryCount }),
+			headers: { "Content-Type": "application/json" },
+		});
+
+		const { data } = await result.json();
+
+		return data.blogs;
+	} catch (error) {
+		console.log("GET_ALL_BLOG_SUMMARY_COUNT", error);
 	}
 };
