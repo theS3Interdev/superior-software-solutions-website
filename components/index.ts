@@ -1,4 +1,5 @@
 /* component blocks */
+import { BlogAuthorDetailsBlock } from "@/components/blocks/blog-author-details-block";
 import { BlogSummaryCardBlock } from "@/components/blocks/blog-summary-card-block";
 import { CallToActionBlock } from "@/components/blocks/call-to-action-block";
 import { ContentDisplayBlock } from "@/components/blocks/content-display-block";
@@ -9,6 +10,7 @@ import { ImageDisplayBlock } from "@/components/blocks/image-display-block";
 import { NavigationFooterBlock } from "@/components/blocks/navigation-footer-block";
 import { NavigationHeaderBlock } from "@/components/blocks/navigation-header-block";
 import { RatingBlock } from "@/components/blocks/rating-block";
+import { SocialMediaSharingBlock } from "@/components/blocks/social-media-sharing-block";
 import { TestimonialCardBlock } from "@/components/blocks/testimonial-card-block";
 import { ThemeToggleBlock } from "@/components/blocks/theme-toggle-block";
 
@@ -38,6 +40,7 @@ import {
 import { AboutContentWidget } from "@/components/widgets/about-content-widget";
 import { AboutHeroWidget } from "@/components/widgets/about-hero-widget";
 import { BlogContentWidget } from "@/components/widgets/blog-content-widget";
+import { BlogHeroWidget } from "@/components/widgets/blog-hero-widget";
 import { BlogsContentWidget } from "@/components/widgets/blogs-content-widget";
 import { BlogsHeroWidget } from "@/components/widgets/blogs-hero-widget";
 import { ConsultContentWidget } from "@/components/widgets/consult-content-widget";
@@ -62,6 +65,7 @@ import { TestimonialsHeroWidget } from "@/components/widgets/testimonials-hero-w
 
 /* export components */
 export {
+	BlogAuthorDetailsBlock,
 	BlogSummaryCardBlock,
 	CallToActionBlock,
 	ContentDisplayBlock,
@@ -71,6 +75,7 @@ export {
 	ImageDisplayBlock,
 	NavigationFooterBlock,
 	NavigationHeaderBlock,
+	SocialMediaSharingBlock,
 	RatingBlock,
 	TestimonialCardBlock,
 	ThemeToggleBlock,
@@ -91,6 +96,7 @@ export {
 	AboutContentWidget,
 	AboutHeroWidget,
 	BlogContentWidget,
+	BlogHeroWidget,
 	BlogsContentWidget,
 	BlogsHeroWidget,
 	ConsultContentWidget,

@@ -1,5 +1,6 @@
 import {
 	qryAllBlogSummary,
+	qryAllBlogSummaryCount,
 	qryAllTestimonials,
 	qryBlogBySlug,
 	qryBlogsPage,
@@ -148,5 +149,22 @@ export const getBlogBySlug = async (slug: string) => {
 		return data.blogs[0];
 	} catch (error) {
 		console.log("GET_BLOG_BY_SLUG", error);
+	}
+};
+
+/* get all blogs allowing for counting */
+export const getAllBlogSummaryCount = async () => {
+	try {
+		const result = await fetch(endpoint, {
+			method: "POST",
+			body: JSON.stringify({ query: qryAllBlogSummaryCount }),
+			headers: { "Content-Type": "application/json" },
+		});
+
+		const { data } = await result.json();
+
+		return data.blogs;
+	} catch (error) {
+		console.log("GET_ALL_BLOG_SUMMARY_COUNT", error);
 	}
 };

@@ -243,6 +243,15 @@ export const qryAllBlogSummary = gql`
 	}
 `;
 
+/* retrieve all blogs allow for counting */
+export const qryAllBlogSummaryCount = gql`
+	query qryAllBlogSummaryCount {
+		blogs(first: 89) {
+			slug
+		}
+	}
+`;
+
 /* query retrieve blog by slug */
 export const qryBlogBySlug = gql`
 	query qryBlogBySlug($slug: String!) {

@@ -3,9 +3,9 @@ import { getCldOgImageUrl } from "next-cloudinary";
 
 import { getBlogBySlug } from "@/lib/data/read/index";
 
-import { BlogContentWidget } from "@/components/index";
+import { BlogContentWidget, BlogHeroWidget } from "@/components/index";
 
-const url = process.env.NEXT_PUBLIC_PRODUCTION_URL;
+const url = process.env.NEXT_PUBLIC_PRODUCTION_URL!;
 
 type BlogPageProps = {
 	title: string;
@@ -39,12 +39,15 @@ type BlogPageProps = {
 			url: string;
 		};
 	};
+};
+
+type ParamsProps = {
 	params: { slug: string };
 };
 
 export async function generateMetadata({
 	params,
-}: BlogPageProps): Promise<Metadata> {
+}: ParamsProps): Promise<Metadata> {
 	const { excerpt, image, title }: BlogPageProps = await getBlogBySlug(
 		params.slug,
 	);
@@ -73,7 +76,7 @@ export async function generateMetadata({
 	};
 }
 
-const BlogPage = async ({ params }: BlogPageProps) => {
+const BlogPage = async ({ params }: ParamsProps) => {
 	const {
 		title,
 		image,
@@ -85,18 +88,28 @@ const BlogPage = async ({ params }: BlogPageProps) => {
 		callToAction,
 	}: BlogPageProps = await getBlogBySlug(params.slug);
 
+	const { alternates } = await generateMetadata({ params });
+
+	const blogAbsoluteUrl = `${url}${alternates?.canonical}`;
+
 	return (
 		<article className="mt-24 space-y-8">
+			<section id="hero">
+				<BlogHeroWidget title={title} image={image.public_id} />
+			</section>
+
 			<section id="content">
 				<BlogContentWidget
-					title={title}
-					image={image.public_id}
 					authorName={author.name}
 					authorImage={author.image.public_id}
+					authorBio={author.bio.html}
 					date={date}
 					category={category.title}
 					excerpt={excerpt}
 					content={content.html}
+					shareSummary={excerpt}
+					shareTitle={title}
+					shareUrl={blogAbsoluteUrl}
 					ctaImage={callToAction.image.public_id}
 					ctaTitle={callToAction.title}
 					ctaContent={callToAction.content.html}
