@@ -31,7 +31,6 @@ type BlogsPageProps = {
 			url: string;
 		};
 	};
-	searchParams: { [key: string]: string | string[] | undefined };
 };
 
 import { BlogsContentWidget, BlogsHeroWidget } from "@/components/index";
@@ -70,11 +69,7 @@ const BlogsPage = async () => {
 			</section>
 
 			<section id="content">
-				<BlogsContentWidget
-					pasBlock={pasBlock}
-					callToAction={callToAction}
-					searchParams={{}}
-				/>
+				<BlogsContentWidget pasBlock={pasBlock} callToAction={callToAction} />
 			</section>
 		</article>
 	);

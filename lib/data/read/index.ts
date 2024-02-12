@@ -116,15 +116,12 @@ export const getBlogsPage = async () => {
 };
 
 /* get all blogs in summary */
-export const getAllBlogSummary = async (page = 1, limit = 4, query: any) => {
-	const skip = (page - 1) * limit;
-
+export const getAllBlogSummary = async () => {
 	try {
 		const result = await fetch(endpoint, {
 			method: "POST",
 			body: JSON.stringify({
 				query: qryAllBlogSummary,
-				variables: { first: limit, skip: skip, query: query },
 			}),
 			headers: { "Content-Type": "application/json" },
 		});
