@@ -233,12 +233,58 @@ export const qryBlogsPage = gql`
 /* query to retrieve all blogs in summary */
 export const qryAllBlogSummary = gql`
 	query qryAllBlogSummary {
-		blogs {
+		blogs(first: 89) {
 			title
 			slug
 			date
 			image
 			excerpt
+		}
+	}
+`;
+
+/* retrieve all blogs allow for counting */
+export const qryAllBlogSummaryCount = gql`
+	query qryAllBlogSummaryCount {
+		blogs(first: 89) {
+			slug
+		}
+	}
+`;
+
+/* query retrieve blog by slug */
+export const qryBlogBySlug = gql`
+	query qryBlogBySlug($slug: String!) {
+		blogs(where: { slug: $slug }) {
+			title
+			slug
+			author {
+				image
+				name
+				bio {
+					html
+				}
+			}
+			date
+			category {
+				title
+			}
+			image
+			excerpt
+			content {
+				html
+			}
+			callToAction {
+				image
+				title
+				content {
+					html
+				}
+				link {
+					label
+					url
+				}
+			}
 		}
 	}
 `;

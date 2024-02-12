@@ -1,4 +1,5 @@
 /* component blocks */
+import { BlogAuthorDetailsBlock } from "@/components/blocks/blog-author-details-block";
 import { BlogSummaryCardBlock } from "@/components/blocks/blog-summary-card-block";
 import { CallToActionBlock } from "@/components/blocks/call-to-action-block";
 import { ContentDisplayBlock } from "@/components/blocks/content-display-block";
@@ -9,12 +10,14 @@ import { ImageDisplayBlock } from "@/components/blocks/image-display-block";
 import { NavigationFooterBlock } from "@/components/blocks/navigation-footer-block";
 import { NavigationHeaderBlock } from "@/components/blocks/navigation-header-block";
 import { RatingBlock } from "@/components/blocks/rating-block";
+import { SocialMediaSharingBlock } from "@/components/blocks/social-media-sharing-block";
 import { TestimonialCardBlock } from "@/components/blocks/testimonial-card-block";
 import { ThemeToggleBlock } from "@/components/blocks/theme-toggle-block";
 
 /* notification components */
 
 /* shadcn ui components */
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
 	DropdownMenu,
@@ -62,6 +65,7 @@ import { TestimonialsHeroWidget } from "@/components/widgets/testimonials-hero-w
 
 /* export components */
 export {
+	BlogAuthorDetailsBlock,
 	BlogSummaryCardBlock,
 	CallToActionBlock,
 	ContentDisplayBlock,
@@ -71,9 +75,11 @@ export {
 	ImageDisplayBlock,
 	NavigationFooterBlock,
 	NavigationHeaderBlock,
+	SocialMediaSharingBlock,
 	RatingBlock,
 	TestimonialCardBlock,
 	ThemeToggleBlock,
+	Badge,
 	Button,
 	DropdownMenu,
 	DropdownMenuContent,
