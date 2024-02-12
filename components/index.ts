@@ -9,7 +9,9 @@ import { HeroDisplayBlock } from "@/components/blocks/hero-display-block";
 import { ImageDisplayBlock } from "@/components/blocks/image-display-block";
 import { NavigationFooterBlock } from "@/components/blocks/navigation-footer-block";
 import { NavigationHeaderBlock } from "@/components/blocks/navigation-header-block";
+import { PaginationButtonsBlock } from "@/components/blocks/pagination-buttons-block";
 import { RatingBlock } from "@/components/blocks/rating-block";
+import { SearchBoxBlock } from "@/components/blocks/search-box-block";
 import { SocialMediaSharingBlock } from "@/components/blocks/social-media-sharing-block";
 import { TestimonialCardBlock } from "@/components/blocks/testimonial-card-block";
 import { ThemeToggleBlock } from "@/components/blocks/theme-toggle-block";
@@ -25,6 +27,7 @@ import {
 	DropdownMenuItem,
 	DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
 import {
 	Sheet,
@@ -75,8 +78,10 @@ export {
 	ImageDisplayBlock,
 	NavigationFooterBlock,
 	NavigationHeaderBlock,
-	SocialMediaSharingBlock,
+	PaginationButtonsBlock,
 	RatingBlock,
+	SearchBoxBlock,
+	SocialMediaSharingBlock,
 	TestimonialCardBlock,
 	ThemeToggleBlock,
 	Badge,
@@ -85,6 +90,7 @@ export {
 	DropdownMenuContent,
 	DropdownMenuItem,
 	DropdownMenuTrigger,
+	Input,
 	Separator,
 	Sheet,
 	SheetClose,
