@@ -232,8 +232,13 @@ export const qryBlogsPage = gql`
 
 /* query to retrieve all blogs in summary */
 export const qryAllBlogSummary = gql`
-	query qryAllBlogSummary {
-		blogs(first: 89) {
+	query qryAllBlogSummary($first: Int!, $skip: Int!, $query: String) {
+		blogs(
+			first: $first
+			skip: $skip
+			where: { title_contains: $query }
+			orderBy: createdAt_DESC
+		) {
 			title
 			slug
 			date
