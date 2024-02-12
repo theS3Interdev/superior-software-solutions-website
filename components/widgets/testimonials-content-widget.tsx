@@ -4,6 +4,7 @@ import { Container } from "@/components/container";
 import {
 	CallToActionBlock,
 	HeaderDisplayBlock,
+	Separator,
 	TestimonialCardBlock,
 } from "@/components/index";
 
@@ -72,6 +73,8 @@ export const TestimonialsContentWidget = async ({
 							</div>
 						)}
 					</div>
+
+					<Separator className="my-8" />
 
 					<CallToActionBlock
 						image={callToAction.image.public_id}
