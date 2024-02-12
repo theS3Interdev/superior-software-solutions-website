@@ -4,6 +4,7 @@ import {
 	qryAllTestimonials,
 	qryBlogBySlug,
 	qryBlogsPage,
+	qryBookAConsultPage,
 	qryGlobals,
 	qryHomePage,
 	qryPrivacyPolicyPage,
@@ -168,5 +169,22 @@ export const getAllBlogSummaryCount = async () => {
 		return data.blogs;
 	} catch (error) {
 		console.log("GET_ALL_BLOG_SUMMARY_COUNT", error);
+	}
+};
+
+/* get the book a consult page */
+export const getBookAConsultPage = async () => {
+	try {
+		const result = await fetch(endpoint, {
+			method: "POST",
+			body: JSON.stringify({ query: qryBookAConsultPage }),
+			headers: { "Content-Type": "application/json" },
+		});
+
+		const { data } = await result.json();
+
+		return data.pages[0];
+	} catch (error) {
+		console.log("GET_BOOK_A_CONSULT_PAGE", error);
 	}
 };

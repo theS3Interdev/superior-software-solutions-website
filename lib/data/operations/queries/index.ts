@@ -243,7 +243,7 @@ export const qryAllBlogSummary = gql`
 	}
 `;
 
-/* retrieve all blogs allow for counting */
+/* query to retrieve all blogs allow for counting */
 export const qryAllBlogSummaryCount = gql`
 	query qryAllBlogSummaryCount {
 		blogs(first: 89) {
@@ -273,6 +273,52 @@ export const qryBlogBySlug = gql`
 			excerpt
 			content {
 				html
+			}
+			callToAction {
+				image
+				title
+				content {
+					html
+				}
+				link {
+					label
+					url
+				}
+			}
+		}
+	}
+`;
+
+/* query to retrieve the book a consult page */
+export const qryBookAConsultPage = gql`
+	query qryBookAConsultPage {
+		pages(where: { slug: "book-a-consult" }) {
+			pageTitle
+			slug
+			pageMetaDescription
+			heroActionBlock {
+				content {
+					content {
+						header {
+							title
+						}
+					}
+					image
+				}
+				links {
+					label
+					url
+				}
+			}
+			pasBlock {
+				header {
+					content {
+						header {
+							title
+							subtitle
+						}
+					}
+				}
 			}
 			callToAction {
 				image
