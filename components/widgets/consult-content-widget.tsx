@@ -6,6 +6,7 @@ import { Container } from "@/components/container";
 import {
 	Button,
 	CallToActionBlock,
+	ConsultationFormBlock,
 	HeaderDisplayBlock,
 	Separator,
 } from "@/components/index";
@@ -59,7 +60,19 @@ export const ConsultContentWidget = async ({
 					/>
 
 					<div className="flex flex-col lg:flex-row">
-						<div className="lg:w-3/4"></div>
+						<div className="lg:w-3/4">
+							<div className="mx-auto max-w-full rounded-lg border bg-secondary p-3">
+								<div className="space-y-5">
+									<HeaderDisplayBlock
+										title="Book a Free Consultation"
+										subtitle="We are here to help you and we shall get back to you within 24
+										hours of the receipt of your request."
+									/>
+
+									<ConsultationFormBlock />
+								</div>
+							</div>
+						</div>
 
 						<div className="mt-5 space-y-3 lg:mt-0 lg:w-1/4 lg:px-3">
 							<div className="mx-auto max-w-full rounded-lg border bg-secondary p-3">
@@ -68,7 +81,7 @@ export const ConsultContentWidget = async ({
 										Contact Information
 									</h3>
 
-									<Separator className="my-3" />
+									<Separator className="my-3 " />
 
 									{siteContactDetails.list.map((contactDetail, index) => {
 										return (
@@ -77,7 +90,7 @@ export const ConsultContentWidget = async ({
 													{contactDetail.header.title}
 												</p>
 
-												<p className="text-sm">
+												<p className="text-pretty text-sm leading-loose">
 													{contactDetail.header.subtitle}
 												</p>
 											</div>
