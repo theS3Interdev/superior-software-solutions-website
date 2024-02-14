@@ -1,5 +1,23 @@
-type ConsultHeroWidgetProps = {};
+import { HeroDisplayBlock } from "@/components/index";
 
-export const ConsultHeroWidget = ({}: ConsultHeroWidgetProps) => {
-	return <div className="mx-1">Consult Hero Widget</div>;
+type ConsultHeroWidgetProps = {
+	heroActionBlock: {
+		content: {
+			content: { header: { title: string } };
+			image: { public_id: string };
+		};
+	};
+};
+
+export const ConsultHeroWidget = ({
+	heroActionBlock,
+}: ConsultHeroWidgetProps) => {
+	return (
+		<div className="mx-1">
+			<HeroDisplayBlock
+				title={heroActionBlock.content.content.header.title}
+				image={heroActionBlock.content.image.public_id}
+			/>
+		</div>
+	);
 };

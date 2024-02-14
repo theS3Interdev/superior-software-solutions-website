@@ -2,6 +2,7 @@
 import { BlogAuthorDetailsBlock } from "@/components/blocks/blog-author-details-block";
 import { BlogSummaryCardBlock } from "@/components/blocks/blog-summary-card-block";
 import { CallToActionBlock } from "@/components/blocks/call-to-action-block";
+import { ConsultationFormBlock } from "@/components/blocks/consultation-form-block";
 import { ContentDisplayBlock } from "@/components/blocks/content-display-block";
 import { DateDisplayBlock } from "@/components/blocks/date-display-block";
 import { HeaderDisplayBlock } from "@/components/blocks/header-display-block";
@@ -9,25 +10,41 @@ import { HeroDisplayBlock } from "@/components/blocks/hero-display-block";
 import { ImageDisplayBlock } from "@/components/blocks/image-display-block";
 import { NavigationFooterBlock } from "@/components/blocks/navigation-footer-block";
 import { NavigationHeaderBlock } from "@/components/blocks/navigation-header-block";
-import { PaginationButtonsBlock } from "@/components/blocks/pagination-buttons-block";
 import { RatingBlock } from "@/components/blocks/rating-block";
-import { SearchBoxBlock } from "@/components/blocks/search-box-block";
 import { SocialMediaSharingBlock } from "@/components/blocks/social-media-sharing-block";
 import { TestimonialCardBlock } from "@/components/blocks/testimonial-card-block";
 import { ThemeToggleBlock } from "@/components/blocks/theme-toggle-block";
 
 /* notification components */
+import { ConsultBookingNotification } from "@/components/email/consult-booking-notification";
 
 /* shadcn ui components */
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Checkbox } from "@/components/ui/checkbox";
 import {
 	DropdownMenu,
 	DropdownMenuContent,
 	DropdownMenuItem,
 	DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import {
+	Form,
+	FormControl,
+	FormField,
+	FormItem,
+	FormLabel,
+	FormMessage,
+} from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import {
+	Select,
+	SelectContent,
+	SelectItem,
+	SelectTrigger,
+	SelectValue,
+} from "@/components/ui/select";
 import { Separator } from "@/components/ui/separator";
 import {
 	Sheet,
@@ -38,6 +55,7 @@ import {
 	SheetTitle,
 	SheetTrigger,
 } from "@/components/ui/sheet";
+import { Textarea } from "@/components/ui/textarea";
 
 /* component widgets */
 import { AboutContentWidget } from "@/components/widgets/about-content-widget";
@@ -71,6 +89,7 @@ export {
 	BlogAuthorDetailsBlock,
 	BlogSummaryCardBlock,
 	CallToActionBlock,
+	ConsultationFormBlock,
 	ContentDisplayBlock,
 	DateDisplayBlock,
 	HeaderDisplayBlock,
@@ -78,19 +97,31 @@ export {
 	ImageDisplayBlock,
 	NavigationFooterBlock,
 	NavigationHeaderBlock,
-	PaginationButtonsBlock,
 	RatingBlock,
-	SearchBoxBlock,
 	SocialMediaSharingBlock,
 	TestimonialCardBlock,
 	ThemeToggleBlock,
+	ConsultBookingNotification,
 	Badge,
 	Button,
+	Checkbox,
 	DropdownMenu,
 	DropdownMenuContent,
 	DropdownMenuItem,
 	DropdownMenuTrigger,
+	Form,
+	FormControl,
+	FormField,
+	FormItem,
+	FormLabel,
+	FormMessage,
 	Input,
+	Label,
+	Select,
+	SelectContent,
+	SelectItem,
+	SelectTrigger,
+	SelectValue,
 	Separator,
 	Sheet,
 	SheetClose,
@@ -99,6 +130,7 @@ export {
 	SheetHeader,
 	SheetTitle,
 	SheetTrigger,
+	Textarea,
 	AboutContentWidget,
 	AboutHeroWidget,
 	BlogContentWidget,
