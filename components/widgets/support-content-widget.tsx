@@ -8,6 +8,7 @@ import {
 	HeaderDisplayBlock,
 	ImageDisplayBlock,
 	Separator,
+	SupportFormBlock,
 } from "@/components/index";
 
 type SupportContentWidgetProps = {
@@ -72,7 +73,18 @@ export const SupportContentWidget = ({
 					<Separator className="my-8" />
 
 					<div className="flex flex-col lg:flex-row">
-						<div className="lg:w-3/4"></div>
+						<div className="lg:w-3/4">
+							<div className="mx-auto max-w-full rounded-lg border bg-secondary p-3">
+								<div className="space-y-5">
+									<HeaderDisplayBlock
+										title="Support Request"
+										subtitle="Complete the form and we shall add it to our schedule, once the support request is complete, you will be notified via email."
+									/>
+
+									<SupportFormBlock />
+								</div>
+							</div>
+						</div>
 
 						<div className="mt-5 space-y-3 lg:mt-0 lg:w-1/4 lg:px-3">
 							<div className="mx-auto max-w-full rounded-lg border bg-secondary p-3">
@@ -112,7 +124,7 @@ export const SupportContentWidget = ({
 
 										<div className="text-pretty text-sm leading-loose">
 											<p className="font-semibold">Cost</p>
-											<p>$65/hour</p>
+											<p>$59/hour</p>
 											<p className="text-xs">Free if on a maintenance plan.</p>
 										</div>
 									</div>
@@ -170,11 +182,11 @@ export const SupportContentWidget = ({
 											<p>Depends on the source of the issue</p>
 											<p>
 												<span className="font-semibold">Plugin issue:</span>{" "}
-												$65/hour
+												$59/hour
 											</p>
 											<p>
 												<span className="font-semibold">Client error:</span>{" "}
-												$65/hour
+												$59/hour
 											</p>
 											<p>
 												<span className="font-semibold">

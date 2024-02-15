@@ -12,15 +12,18 @@ import { NavigationFooterBlock } from "@/components/blocks/navigation-footer-blo
 import { NavigationHeaderBlock } from "@/components/blocks/navigation-header-block";
 import { RatingBlock } from "@/components/blocks/rating-block";
 import { SocialMediaSharingBlock } from "@/components/blocks/social-media-sharing-block";
+import { SupportFormBlock } from "@/components/blocks/support-form-block";
 import { TestimonialCardBlock } from "@/components/blocks/testimonial-card-block";
 import { ThemeToggleBlock } from "@/components/blocks/theme-toggle-block";
 
 /* notification components */
 import { ConsultBookingNotification } from "@/components/email/consult-booking-notification";
+import { SupportRequestNotification } from "@/components/email/support-request-notification";
 
 /* shadcn ui components */
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Calendar } from "@/components/ui/calendar";
 import { Checkbox } from "@/components/ui/checkbox";
 import {
 	DropdownMenu,
@@ -38,6 +41,11 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import {
+	Popover,
+	PopoverContent,
+	PopoverTrigger,
+} from "@/components/ui/popover";
 import {
 	Select,
 	SelectContent,
@@ -99,11 +107,14 @@ export {
 	NavigationHeaderBlock,
 	RatingBlock,
 	SocialMediaSharingBlock,
+	SupportFormBlock,
 	TestimonialCardBlock,
 	ThemeToggleBlock,
 	ConsultBookingNotification,
+	SupportRequestNotification,
 	Badge,
 	Button,
+	Calendar,
 	Checkbox,
 	DropdownMenu,
 	DropdownMenuContent,
@@ -117,6 +128,9 @@ export {
 	FormMessage,
 	Input,
 	Label,
+	Popover,
+	PopoverContent,
+	PopoverTrigger,
 	Select,
 	SelectContent,
 	SelectItem,
