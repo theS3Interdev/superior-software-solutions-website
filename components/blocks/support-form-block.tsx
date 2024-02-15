@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback } from "react";
+import { useCallback, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import * as z from "zod";
@@ -66,6 +66,8 @@ const formSchema = z.object({
 });
 
 export const SupportFormBlock = () => {
+	const [isSubmitting, setIsSubmitting] = useState(false);
+
 	const router = useRouter();
 
 	const form = useForm({
@@ -88,6 +90,8 @@ export const SupportFormBlock = () => {
 
 	const handleRequest = useCallback(
 		async (values: z.infer<typeof formSchema>) => {
+			setIsSubmitting(true);
+
 			if (!executeRecaptcha) {
 				console.error("Could not get the reCAPTCHA token.");
 				return;
@@ -123,10 +127,12 @@ export const SupportFormBlock = () => {
 				/* redirect to home page after a slight delay */
 				setTimeout(() => {
 					router.push("/");
-				}, 3400);
+				}, 3000);
 
 				/* show success toast */
 				toast.success("Thank you! We'll be in touch soon.");
+
+				setIsSubmitting(false);
 
 				/* send notification email */
 				await fetch(notificationEndpoint, {
@@ -137,6 +143,8 @@ export const SupportFormBlock = () => {
 			} catch (error) {
 				/* the response was not successful */
 				toast.error("An unknown error has occured. Please try again.");
+
+				setIsSubmitting(false);
 			}
 		},
 		[executeRecaptcha, router],
@@ -382,7 +390,11 @@ export const SupportFormBlock = () => {
 						/>
 					</div>
 
-					<Button type="submit" className="mt-5 w-full font-semibold uppercase">
+					<Button
+						type="submit"
+						disabled={isSubmitting}
+						className="mt-5 w-full font-semibold uppercase"
+					>
 						Send Support Request
 					</Button>
 				</form>
