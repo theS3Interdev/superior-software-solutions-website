@@ -81,7 +81,7 @@ export const ConsultContentWidget = async ({
 										Contact Information
 									</h3>
 
-									<Separator className="my-3 " />
+									<Separator className="my-3" />
 
 									{siteContactDetails.list.map((contactDetail, index) => {
 										return (
