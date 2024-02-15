@@ -1,5 +1,8 @@
+import Link from "next/link";
+
 import { Container } from "@/components/container";
 import {
+	Button,
 	CallToActionBlock,
 	ContentDisplayBlock,
 	HeaderDisplayBlock,
@@ -66,6 +69,8 @@ export const SupportContentWidget = ({
 						</div>
 					</div>
 
+					<Separator className="my-8" />
+
 					<div className="flex flex-col lg:flex-row">
 						<div className="lg:w-3/4"></div>
 
@@ -77,6 +82,40 @@ export const SupportContentWidget = ({
 									</h3>
 
 									<Separator className="my-3" />
+
+									<div className="flex flex-col space-y-3">
+										<div className="text-pretty text-sm leading-loose">
+											<p className="font-semibold">Description</p>
+											<p>
+												This covers basic edits to text, images, adding new
+												sections. If your request is to make forklift changes to
+												custom app, or a new domain to your email account,
+												please{" "}
+												<Link
+													href="https://calendly.com/superior-software-solutions"
+													target="_blank"
+													className="text-blue-500 hover:underline"
+												>
+													schedule an appointment
+												</Link>{" "}
+												to discuss.
+											</p>
+										</div>
+
+										<div className="text-pretty text-sm leading-loose">
+											<p className="font-semibold">Duration</p>
+											<p>4-10 business days</p>
+											<p className="text-xs">
+												This depends on request complexity.
+											</p>
+										</div>
+
+										<div className="text-pretty text-sm leading-loose">
+											<p className="font-semibold">Cost</p>
+											<p>$65/hour</p>
+											<p className="text-xs">Free if on a maintenance plan.</p>
+										</div>
+									</div>
 								</div>
 							</div>
 
@@ -87,6 +126,24 @@ export const SupportContentWidget = ({
 									</h3>
 
 									<Separator className="my-3" />
+
+									<div className="flex flex-col space-y-3">
+										<div className="text-pretty text-sm leading-loose">
+											<p className="font-semibold">Duration</p>
+											<p>1-3 business days</p>
+											<p className="text-xs">
+												This depends on request complexity.
+											</p>
+										</div>
+
+										<div className="text-pretty text-sm leading-loose">
+											<p className="font-semibold">Cost</p>
+											<p>$99/hour</p>
+											<p className="text-xs">
+												$29/hour if on a maintenance plan.
+											</p>
+										</div>
+									</div>
 								</div>
 							</div>
 
@@ -97,6 +154,61 @@ export const SupportContentWidget = ({
 									</h3>
 
 									<Separator className="my-3" />
+
+									<div className="flex flex-col space-y-3">
+										<div className="text-pretty text-sm leading-loose">
+											<p className="font-semibold">Description</p>
+											<p>
+												Any software issue that is hindering business continuity
+												(e.g. website down, e-mails are not working or custom
+												webapp cannot be accessed)
+											</p>
+										</div>
+
+										<div className="text-pretty text-sm leading-loose">
+											<p className="font-semibold">Cost</p>
+											<p>Depends on the source of the issue</p>
+											<p>
+												<span className="font-semibold">Plugin issue:</span>{" "}
+												$65/hour
+											</p>
+											<p>
+												<span className="font-semibold">Client error:</span>{" "}
+												$65/hour
+											</p>
+											<p>
+												<span className="font-semibold">
+													Bug from developer error:
+												</span>{" "}
+												Free
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div className="mx-auto max-w-full rounded-lg border bg-secondary p-3">
+								<div>
+									<h3 className="mb-3 text-lg font-semibold tracking-wide">
+										Speed Dial
+									</h3>
+
+									<Separator className="my-3" />
+
+									<p className="text-pretty text-sm leading-loose">
+										While we are based in Nairobi, Kenya, we meet most of our
+										clients virtually from any location.
+									</p>
+
+									<Button asChild className="mt-3 w-full">
+										<Link
+											href="https://calendly.com/superior-software-solutions"
+											target="_blank"
+											className="text-lg font-semibold uppercase"
+										>
+											Schedule an Appointment
+										</Link>
+									</Button>
 								</div>
 							</div>
 						</div>

@@ -101,10 +101,26 @@ export const ConsultContentWidget = async ({
 
 							<div className="mx-auto max-w-full rounded-lg border bg-secondary p-3">
 								<div className="flex flex-col space-y-2">
+									<h3 className="mb-3 text-lg font-semibold tracking-wide">
+										Speed Dial
+									</h3>
+
+									<Separator className="my-3" />
+
 									<p className="text-pretty text-sm leading-loose">
 										While we are based in Nairobi, Kenya, we meet most of our
 										clients virtually from any location.
 									</p>
+
+									<Button asChild>
+										<Link
+											href="https://calendly.com/superior-software-solutions"
+											target="_blank"
+											className="text-lg font-semibold uppercase"
+										>
+											Schedule an Appointment
+										</Link>
+									</Button>
 
 									<Button asChild>
 										<Link
