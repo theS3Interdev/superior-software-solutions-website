@@ -8,6 +8,7 @@ import {
 	qryGlobals,
 	qryHomePage,
 	qryPrivacyPolicyPage,
+	qrySupportPage,
 	qryTestimonialsPage,
 } from "@/lib/data/operations/queries/index";
 
@@ -186,5 +187,22 @@ export const getBookAConsultPage = async () => {
 		return data.pages[0];
 	} catch (error) {
 		console.log("GET_BOOK_A_CONSULT_PAGE", error);
+	}
+};
+
+/* get the support page */
+export const getSupportPage = async () => {
+	try {
+		const result = await fetch(endpoint, {
+			method: "POST",
+			body: JSON.stringify({ query: qrySupportPage }),
+			headers: { "Content-Type": "application/json" },
+		});
+
+		const { data } = await result.json();
+
+		return data.pages[0];
+	} catch (error) {
+		console.log("GET_SUPPORT_PAGE", error);
 	}
 };

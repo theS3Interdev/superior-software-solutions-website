@@ -334,3 +334,53 @@ export const qryBookAConsultPage = gql`
 		}
 	}
 `;
+
+/* query to retrieve the support page */
+export const qrySupportPage = gql`
+	query qrySupportPage {
+		pages(where: { slug: "support" }) {
+			pageTitle
+			slug
+			pageMetaDescription
+			heroActionBlock {
+				content {
+					content {
+						header {
+							title
+						}
+					}
+					image
+				}
+				links {
+					label
+					url
+				}
+			}
+			pasBlock {
+				header {
+					content {
+						header {
+							title
+							subtitle
+						}
+						content {
+							html
+						}
+					}
+					image
+				}
+			}
+			callToAction {
+				image
+				title
+				content {
+					html
+				}
+				link {
+					label
+					url
+				}
+			}
+		}
+	}
+`;

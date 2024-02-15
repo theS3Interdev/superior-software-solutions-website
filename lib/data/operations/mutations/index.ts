@@ -26,3 +26,32 @@ export const createConsultBookingRequest = gql`
 		}
 	}
 `;
+
+/* create a support request */
+export const createSupportRequest = gql`
+	mutation createSupportRequest(
+		$businessName: String!
+		$firstName: String!
+		$lastName: String!
+		$emailAddress: String!
+		$requestDate: Date!
+		$supportService: String!
+		$supportDescription: String!
+		$requestPriority: String!
+	) {
+		createSupportRequest(
+			data: {
+				businessName: $businessName
+				firstName: $firstName
+				lastName: $lastName
+				emailAddress: $emailAddress
+				requestDate: $requestDate
+				supportService: $supportService
+				supportDescription: $supportDescription
+				requestPriority: $requestPriority
+			}
+		) {
+			id
+		}
+	}
+`;

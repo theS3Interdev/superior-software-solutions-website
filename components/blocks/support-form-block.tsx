@@ -8,8 +8,13 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "sonner";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
+import { format } from "date-fns";
+import { CalendarIcon } from "lucide-react";
+
+import { cn } from "@/lib/utils/utils";
 
 import { Button } from "@/components/index";
+import { Calendar } from "@/components/index";
 import { Checkbox } from "@/components/index";
 import {
 	Form,
@@ -21,6 +26,7 @@ import {
 } from "@/components/index";
 import { Input } from "@/components/index";
 import { Label } from "@/components/index";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/index";
 import {
 	Select,
 	SelectContent,
@@ -31,20 +37,25 @@ import {
 import { Textarea } from "@/components/index";
 
 const formSchema = z.object({
+	businessName: z.string().min(1, { message: "What is your business called?" }),
 	firstName: z.string().min(1, { message: "What is your first name?" }),
 	lastName: z.string().min(1, { message: "What is your last name?" }),
 	emailAddress: z.string().email({ message: "What is your email address?" }),
-	phoneNumber: z.string().optional(),
-	webUrl: z.string().optional(),
-	projectInterest: z.string({
-		required_error: "What service are you interested in?",
+	requestDate: z.date({
+		required_error: "Please select a date.",
 	}),
-	projectDetails: z
+	supportService: z.string({
+		required_error: "Which of our services are you subscribed to?",
+	}),
+	supportDescription: z
 		.string()
-		.min(10, { message: "What do you want us to help you achieve?" })
+		.min(10, { message: "Describe the issue you want us to help you with?" })
 		.max(500, {
-			message: "Your project details should not be longer than 500 characters.",
+			message: "Your support description is overly verbose.",
 		}),
+	requestPriority: z.string({
+		required_error: "What is your priority for this support call?",
+	}),
 	consent: z.boolean({
 		required_error:
 			"Do you consent for us to use the information provided to contact you?",
@@ -54,19 +65,20 @@ const formSchema = z.object({
 	}),
 });
 
-export const ConsultationFormBlock = () => {
+export const SupportFormBlock = () => {
 	const router = useRouter();
 
 	const form = useForm({
 		resolver: zodResolver(formSchema),
 		defaultValues: {
+			businessName: "",
 			firstName: "",
 			lastName: "",
 			emailAddress: "",
-			phoneNumber: "",
-			webUrl: "",
-			projectInterest: "",
-			projectDetails: "",
+			requestDate: new Date(),
+			supportService: "",
+			supportDescription: "",
+			requestPriority: "",
 			consent: false,
 			policy: false,
 		},
@@ -83,9 +95,7 @@ export const ConsultationFormBlock = () => {
 
 			try {
 				/* get token from the reCAPTCHA servers */
-				const gRecaptchaToken = await executeRecaptcha(
-					"ConsultBookingRequestForm",
-				);
+				const gRecaptchaToken = await executeRecaptcha("SupportRequestForm");
 
 				console.log("reCAPTCHA token: ", gRecaptchaToken);
 
@@ -96,9 +106,9 @@ export const ConsultationFormBlock = () => {
 
 				const token = { gRecaptchaToken: gRecaptchaToken };
 
-				const postingEndpoint = "/api/consult-booking-request";
+				const postingEndpoint = "/api/support-request";
 
-				const notificationEndpoint = "/api/send/consult-booking-request";
+				const notificationEndpoint = "/api/send/support-request";
 
 				/* post values + reCAPTCHA token to the backend */
 				await fetch(postingEndpoint, {
@@ -136,6 +146,22 @@ export const ConsultationFormBlock = () => {
 		<div className="mx-auto max-w-4xl rounded-md bg-secondary p-3">
 			<Form {...form}>
 				<form onSubmit={form.handleSubmit(handleRequest)}>
+					<div className="mt-3 grid grid-cols-1 gap-5">
+						<FormField
+							control={form.control}
+							name="businessName"
+							render={({ field }) => (
+								<FormItem>
+									<FormLabel>Business Name</FormLabel>
+									<FormControl>
+										<Input placeholder="Business Name" {...field} />
+									</FormControl>
+									<FormMessage />
+								</FormItem>
+							)}
+						/>
+					</div>
+
 					<div className="mt-3 grid grid-cols-1 gap-5 sm:grid-cols-2">
 						<FormField
 							control={form.control}
@@ -185,13 +211,41 @@ export const ConsultationFormBlock = () => {
 
 						<FormField
 							control={form.control}
-							name="phoneNumber"
+							name="requestDate"
 							render={({ field }) => (
 								<FormItem>
-									<FormLabel>Phone Number</FormLabel>
-									<FormControl>
-										<Input placeholder="Phone Number" {...field} />
-									</FormControl>
+									<FormLabel>Support Request Date</FormLabel>
+									<Popover>
+										<PopoverTrigger asChild>
+											<FormControl>
+												<Button
+													variant={"outline"}
+													className={cn(
+														"w-full pl-3 text-left font-normal",
+														!field.value && "text-muted-foreground",
+													)}
+												>
+													{field.value ? (
+														format(field.value, "yyyy-MM-dd")
+													) : (
+														<span>Enter a Date</span>
+													)}
+													<CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
+												</Button>
+											</FormControl>
+										</PopoverTrigger>
+										<PopoverContent className="w-auto p-0" align="start">
+											<Calendar
+												mode="single"
+												selected={field.value}
+												onSelect={field.onChange}
+												disabled={(date) =>
+													date < new Date(new Date().setHours(0, 0, 0, 0))
+												}
+												initialFocus
+											/>
+										</PopoverContent>
+									</Popover>
 									<FormMessage />
 								</FormItem>
 							)}
@@ -201,31 +255,16 @@ export const ConsultationFormBlock = () => {
 					<div className="mt-3 grid grid-cols-1 gap-5">
 						<FormField
 							control={form.control}
-							name="webUrl"
+							name="supportService"
 							render={({ field }) => (
 								<FormItem>
-									<FormLabel>Website URL</FormLabel>
-									<FormControl>
-										<Input
-											placeholder="https://www.businessname.com"
-											{...field}
-										/>
-									</FormControl>
-									<FormMessage />
-								</FormItem>
-							)}
-						/>
-
-						<FormField
-							control={form.control}
-							name="projectInterest"
-							render={({ field }) => (
-								<FormItem>
-									<FormLabel>What service are you interested in?</FormLabel>
+									<FormLabel>
+										Which of our services are you subscribed to?
+									</FormLabel>
 									<Select onValueChange={field.onChange}>
 										<FormControl>
 											<SelectTrigger>
-												<SelectValue placeholder="Our services" />
+												<SelectValue placeholder="Our Services" />
 											</SelectTrigger>
 										</FormControl>
 										<SelectContent>
@@ -241,8 +280,6 @@ export const ConsultationFormBlock = () => {
 											<SelectItem value="Custom Webapp Development">
 												Custom Webapp Development
 											</SelectItem>
-											<SelectItem value="Consulting">Consulting</SelectItem>
-											<SelectItem value="Other">Other</SelectItem>
 										</SelectContent>
 									</Select>
 									<FormMessage />
@@ -252,16 +289,42 @@ export const ConsultationFormBlock = () => {
 
 						<FormField
 							control={form.control}
-							name="projectDetails"
+							name="supportDescription"
 							render={({ field }) => (
 								<FormItem>
-									<FormLabel>Project Details</FormLabel>
+									<FormLabel>Support Description</FormLabel>
 									<FormControl>
 										<Textarea
-											placeholder="Type the details of your project here"
+											placeholder="Share your concern with clarity, providing as much detail as needed without being overly verbose."
 											{...field}
 										/>
 									</FormControl>
+									<FormMessage />
+								</FormItem>
+							)}
+						/>
+
+						<FormField
+							control={form.control}
+							name="requestPriority"
+							render={({ field }) => (
+								<FormItem>
+									<FormLabel>
+										What is the priority level of this request?
+									</FormLabel>
+									<Select onValueChange={field.onChange}>
+										<FormControl>
+											<SelectTrigger>
+												<SelectValue placeholder="Priority Level" />
+											</SelectTrigger>
+										</FormControl>
+										<SelectContent>
+											<SelectItem value="Urgent">Urgent</SelectItem>
+											<SelectItem value="High">Important</SelectItem>
+											<SelectItem value="Normal">Normal</SelectItem>
+											<SelectItem value="Low">Low</SelectItem>
+										</SelectContent>
+									</Select>
 									<FormMessage />
 								</FormItem>
 							)}
@@ -320,17 +383,15 @@ export const ConsultationFormBlock = () => {
 					</div>
 
 					<Button type="submit" className="mt-5 w-full font-semibold uppercase">
-						Book a Consult
+						Send Support Request
 					</Button>
 				</form>
 
 				<div className="my-5 space-y-3 text-pretty text-center text-xs">
 					<p>
-						Your email address will be added to our database where we shall
-						occasionally send you useful information and offers. We will never
-						sell your data.
+						If this is a more complex request, please use the calendar link to
+						schedule a call to discuss.
 					</p>
-
 					<p>
 						Do you know of any other person or business that may like our
 						services? Please, consider providing a referral.
