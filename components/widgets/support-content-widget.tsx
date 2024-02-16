@@ -187,7 +187,7 @@ export const SupportContentWidget = ({
 											<p>
 												Any software issue that is hindering business continuity
 												&#40;e.g. website down, e-mails are not working or
-												custom webapp cannot be accessed&#41;
+												custom webapp cannot be accessed.&#41;
 											</p>
 										</div>
 
