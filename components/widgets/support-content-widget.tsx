@@ -117,15 +117,23 @@ export const SupportContentWidget = ({
 										<div className="text-pretty text-sm leading-loose">
 											<p className="font-semibold">Duration</p>
 											<p>4-10 business days</p>
-											<p className="text-xs">
-												This depends on request complexity.
-											</p>
+											<p>This depends on request complexity.</p>
 										</div>
 
 										<div className="text-pretty text-sm leading-loose">
 											<p className="font-semibold">Cost</p>
-											<p>$59/hour</p>
-											<p className="text-xs">Free if on a maintenance plan.</p>
+											<p>
+												<span className="font-semibold">
+													Not on maintenance plan:
+												</span>{" "}
+												$69/hour
+											</p>
+											<p>
+												<span className="font-semibold">
+													On maintenance plan:
+												</span>{" "}
+												Free
+											</p>
 										</div>
 									</div>
 								</div>
@@ -143,16 +151,22 @@ export const SupportContentWidget = ({
 										<div className="text-pretty text-sm leading-loose">
 											<p className="font-semibold">Duration</p>
 											<p>1-3 business days</p>
-											<p className="text-xs">
-												This depends on request complexity.
-											</p>
+											<p>This depends on request complexity.</p>
 										</div>
 
 										<div className="text-pretty text-sm leading-loose">
 											<p className="font-semibold">Cost</p>
-											<p>$99/hour</p>
-											<p className="text-xs">
-												$29/hour if on a maintenance plan.
+											<p>
+												<span className="font-semibold">
+													Not on maintenance plan:
+												</span>{" "}
+												$99/hour
+											</p>
+											<p>
+												<span className="font-semibold">
+													On maintenance plan:
+												</span>{" "}
+												$29/hour
 											</p>
 										</div>
 									</div>
@@ -172,8 +186,8 @@ export const SupportContentWidget = ({
 											<p className="font-semibold">Description</p>
 											<p>
 												Any software issue that is hindering business continuity
-												(e.g. website down, e-mails are not working or custom
-												webapp cannot be accessed)
+												&#40;e.g. website down, e-mails are not working or
+												custom webapp cannot be accessed&#41;
 											</p>
 										</div>
 
@@ -181,12 +195,8 @@ export const SupportContentWidget = ({
 											<p className="font-semibold">Cost</p>
 											<p>Depends on the source of the issue</p>
 											<p>
-												<span className="font-semibold">Plugin issue:</span>{" "}
-												$59/hour
-											</p>
-											<p>
 												<span className="font-semibold">Client error:</span>{" "}
-												$59/hour
+												$69/hour
 											</p>
 											<p>
 												<span className="font-semibold">
