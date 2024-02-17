@@ -12,7 +12,7 @@ export const HeroDisplayBlock = ({
 	image,
 }: HeroDisplayBlockProps) => {
 	return (
-		<div className="relative h-96 w-full lg:h-[30rem]">
+		<div className="relative h-96 w-full lg:h-[34rem]">
 			<div className="relative h-full w-full rounded-lg border">
 				<ImageDisplayBlock imageSrc={image} imageAlt="Hero Image" />
 			</div>
