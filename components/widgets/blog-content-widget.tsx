@@ -79,9 +79,13 @@ export const BlogContentWidget = ({
 						<Separator className="mt-5" />
 					</div>
 
-					<HeaderDisplayBlock subtitle={excerpt} />
+					<div>
+						<HeaderDisplayBlock subtitle={excerpt} />
+					</div>
 
-					<ContentDisplayBlock content={content} />
+					<div>
+						<ContentDisplayBlock content={content} />
+					</div>
 
 					<div className="my-5 items-center justify-between sm:flex">
 						<div className="mb-5">
@@ -96,21 +100,25 @@ export const BlogContentWidget = ({
 						</div>
 					</div>
 
-					<BlogAuthorDetailsBlock
-						authorName={authorName}
-						authorImage={authorImage}
-						authorBio={authorBio}
-					/>
+					<div>
+						<BlogAuthorDetailsBlock
+							authorName={authorName}
+							authorImage={authorImage}
+							authorBio={authorBio}
+						/>
+					</div>
 
 					<Separator className="my-8" />
 
-					<CallToActionBlock
-						image={ctaImage}
-						title={ctaTitle}
-						content={ctaContent}
-						label={ctaLabel}
-						url={ctaUrl}
-					/>
+					<div>
+						<CallToActionBlock
+							image={ctaImage}
+							title={ctaTitle}
+							content={ctaContent}
+							label={ctaLabel}
+							url={ctaUrl}
+						/>
+					</div>
 				</div>
 			</div>
 		</Container>

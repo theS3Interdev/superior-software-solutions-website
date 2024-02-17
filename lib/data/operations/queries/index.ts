@@ -384,3 +384,53 @@ export const qrySupportPage = gql`
 		}
 	}
 `;
+
+/* query to retrieve projects page */
+export const qryProjectsPage = gql`
+	query qryProjectsPage {
+		pages(where: { slug: "projects" }) {
+			pageTitle
+			slug
+			pageMetaDescription
+			heroActionBlock {
+				content {
+					content {
+						header {
+							title
+						}
+					}
+					image
+				}
+				links {
+					label
+					url
+				}
+			}
+			pasBlock {
+				header {
+					content {
+						header {
+							title
+							subtitle
+						}
+						content {
+							html
+						}
+					}
+					image
+				}
+			}
+			callToAction {
+				image
+				title
+				content {
+					html
+				}
+				link {
+					label
+					url
+				}
+			}
+		}
+	}
+`;

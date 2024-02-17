@@ -59,17 +59,24 @@ export const NavigationHeaderBlock = ({
 								<div className="flex flex-col text-center">
 									<Separator className="my-3" />
 
-									{navigationHeader.links.map((link, index) => (
-										<Button key={index} variant="link" asChild className="mb-3">
-											<Link
-												href={link.url}
-												className="text-lg font-semibold uppercase dark:text-white"
-												onClick={() => setIsMenuOpen(false)}
+									<>
+										{navigationHeader.links.map((link, index) => (
+											<Button
+												key={index}
+												variant="link"
+												asChild
+												className="mb-3"
 											>
-												{link.label}
-											</Link>
-										</Button>
-									))}
+												<Link
+													href={link.url}
+													className="text-lg font-semibold uppercase dark:text-white"
+													onClick={() => setIsMenuOpen(false)}
+												>
+													{link.label}
+												</Link>
+											</Button>
+										))}
+									</>
 								</div>
 
 								<Separator className="my-3" />

@@ -18,7 +18,7 @@ export const BlogSummaryCardBlock = ({
 	date,
 }: BlogSummaryCardBlockProps) => {
 	return (
-		<div className="">
+		<div>
 			<div className="relative z-10 h-96 w-full">
 				<ImageDisplayBlock imageSrc={image} imageAlt={title} />
 			</div>
