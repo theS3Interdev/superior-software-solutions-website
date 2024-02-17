@@ -1,6 +1,8 @@
 import {
 	qryAllBlogSummary,
 	qryAllBlogSummaryCount,
+	qryAllProjectSummary,
+	qryAllProjectSummaryCount,
 	qryAllTestimonials,
 	qryBlogBySlug,
 	qryBlogsPage,
@@ -222,5 +224,41 @@ export const getProjectsPage = async () => {
 		return data.pages[0];
 	} catch (error) {
 		console.log("GET_PROJECTS_PAGE", error);
+	}
+};
+
+/* get all projects in summary */
+export const getAllProjectSummary = async () => {
+	try {
+		const result = await fetch(endpoint, {
+			method: "POST",
+			body: JSON.stringify({
+				query: qryAllProjectSummary,
+			}),
+			headers: { "Content-Type": "application/json" },
+		});
+
+		const { data } = await result.json();
+
+		return data.projects;
+	} catch (error) {
+		console.log("GET_ALL_PROJECT_SUMMARY", error);
+	}
+};
+
+/* get all projects allowing for counting */
+export const getAllProjectSummaryCount = async () => {
+	try {
+		const result = await fetch(endpoint, {
+			method: "POST",
+			body: JSON.stringify({ query: qryAllProjectSummaryCount }),
+			headers: { "Content-Type": "application/json" },
+		});
+
+		const { data } = await result.json();
+
+		return data.projects;
+	} catch (error) {
+		console.log("GET_ALL_PROJECT_SUMMARY_COUNT", error);
 	}
 };

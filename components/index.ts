@@ -10,6 +10,7 @@ import { HeroDisplayBlock } from "@/components/blocks/hero-display-block";
 import { ImageDisplayBlock } from "@/components/blocks/image-display-block";
 import { NavigationFooterBlock } from "@/components/blocks/navigation-footer-block";
 import { NavigationHeaderBlock } from "@/components/blocks/navigation-header-block";
+import { ProjectSummaryCardBlock } from "@/components/blocks/project-summary-card-block";
 import { RatingBlock } from "@/components/blocks/rating-block";
 import { SocialMediaSharingBlock } from "@/components/blocks/social-media-sharing-block";
 import { SupportFormBlock } from "@/components/blocks/support-form-block";
@@ -103,6 +104,7 @@ export {
 	HeaderDisplayBlock,
 	HeroDisplayBlock,
 	ImageDisplayBlock,
+	ProjectSummaryCardBlock,
 	NavigationFooterBlock,
 	NavigationHeaderBlock,
 	RatingBlock,

@@ -233,7 +233,7 @@ export const qryBlogsPage = gql`
 /* query to retrieve all blogs in summary */
 export const qryAllBlogSummary = gql`
 	query qryAllBlogSummary {
-		blogs(orderBy: createdAt_DESC) {
+		blogs(first: 89, orderBy: createdAt_DESC) {
 			title
 			slug
 			date
@@ -431,6 +431,30 @@ export const qryProjectsPage = gql`
 					url
 				}
 			}
+		}
+	}
+`;
+
+/* query to retrieve all blogs in summary */
+export const qryAllProjectSummary = gql`
+	query qryAllProjectSummary {
+		projects(first: 89, orderBy: createdAt_DESC) {
+			title
+			slug
+			image
+			solutions {
+				title
+			}
+			excerpt
+		}
+	}
+`;
+
+/* query to retrieve all blogs allow for counting */
+export const qryAllProjectSummaryCount = gql`
+	query qryAllProjectSummaryCount {
+		projects(first: 89) {
+			slug
 		}
 	}
 `;
