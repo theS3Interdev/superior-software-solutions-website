@@ -24,9 +24,13 @@ export const TestimonialCardBlock = ({
 		<div className="overflow-hidden rounded-lg border bg-secondary dark:bg-transparent">
 			<div className="p-5">
 				<div className="space-y-3">
-					<RatingBlock rating={rating} />
+					<div>
+						<RatingBlock rating={rating} />
+					</div>
 
-					<ContentDisplayBlock content={content} />
+					<div>
+						<ContentDisplayBlock content={content} />
+					</div>
 				</div>
 
 				<Separator className="my-5" />

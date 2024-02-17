@@ -54,22 +54,28 @@ export const ConsultContentWidget = async ({
 		<Container>
 			<div className="py-8">
 				<div className="space-y-8">
-					<HeaderDisplayBlock
-						title={pasBlock.header.content.header.title}
-						subtitle={pasBlock.header.content.header.subtitle}
-					/>
+					<div>
+						<HeaderDisplayBlock
+							title={pasBlock.header.content.header.title}
+							subtitle={pasBlock.header.content.header.subtitle}
+						/>
+					</div>
 
 					<div className="flex flex-col lg:flex-row">
 						<div className="lg:w-3/4">
 							<div className="mx-auto max-w-full rounded-lg border bg-secondary p-3">
 								<div className="space-y-5">
-									<HeaderDisplayBlock
-										title="Book a Free Consultation"
-										subtitle="We are here to help you and we shall get back to you within 24
+									<div>
+										<HeaderDisplayBlock
+											title="Book a Free Consultation"
+											subtitle="We are here to help you and we shall get back to you within 24
 										hours of the receipt of your request."
-									/>
+										/>
+									</div>
 
-									<ConsultationFormBlock />
+									<div>
+										<ConsultationFormBlock />
+									</div>
 								</div>
 							</div>
 						</div>
@@ -83,19 +89,21 @@ export const ConsultContentWidget = async ({
 
 									<Separator className="my-3" />
 
-									{siteContactDetails.list.map((contactDetail, index) => {
-										return (
-											<div className="mb-2" key={index}>
-												<p className="font-semibold tracking-wide">
-													{contactDetail.header.title}
-												</p>
+									<div>
+										{siteContactDetails.list.map((contactDetail, index) => {
+											return (
+												<div className="mb-2" key={index}>
+													<p className="font-semibold tracking-wide">
+														{contactDetail.header.title}
+													</p>
 
-												<p className="text-pretty text-sm leading-loose">
-													{contactDetail.header.subtitle}
-												</p>
-											</div>
-										);
-									})}
+													<p className="text-pretty text-sm leading-loose">
+														{contactDetail.header.subtitle}
+													</p>
+												</div>
+											);
+										})}
+									</div>
 								</div>
 							</div>
 
@@ -173,13 +181,15 @@ export const ConsultContentWidget = async ({
 
 					<Separator className="my-8" />
 
-					<CallToActionBlock
-						image={callToAction.image.public_id}
-						title={callToAction.title}
-						content={callToAction.content.html}
-						label={callToAction.link.label}
-						url={callToAction.link.url}
-					/>
+					<div>
+						<CallToActionBlock
+							image={callToAction.image.public_id}
+							title={callToAction.title}
+							content={callToAction.content.html}
+							label={callToAction.link.label}
+							url={callToAction.link.url}
+						/>
+					</div>
 				</div>
 			</div>
 		</Container>

@@ -19,12 +19,18 @@ export const PrivacyPolicyContentWidget = ({
 		<Container>
 			<div className="py-8">
 				<div className="space-y-8">
-					<HeaderDisplayBlock
-						title={pasBlock.header.content.header.title}
-						subtitle={pasBlock.header.content.header.subtitle}
-					/>
+					<div>
+						<HeaderDisplayBlock
+							title={pasBlock.header.content.header.title}
+							subtitle={pasBlock.header.content.header.subtitle}
+						/>
+					</div>
 
-					<ContentDisplayBlock content={pasBlock.header.content.content.html} />
+					<div>
+						<ContentDisplayBlock
+							content={pasBlock.header.content.content.html}
+						/>
+					</div>
 				</div>
 			</div>
 		</Container>

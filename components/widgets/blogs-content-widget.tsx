@@ -47,10 +47,12 @@ export const BlogsContentWidget = async ({
 		<Container>
 			<div className="py-8">
 				<div className="space-y-8">
-					<HeaderDisplayBlock
-						title={pasBlock.header.content.header.title}
-						subtitle={pasBlock.header.content.header.subtitle}
-					/>
+					<div>
+						<HeaderDisplayBlock
+							title={pasBlock.header.content.header.title}
+							subtitle={pasBlock.header.content.header.subtitle}
+						/>
+					</div>
 
 					<div>
 						{summary.length === 0 ? (
@@ -75,13 +77,15 @@ export const BlogsContentWidget = async ({
 
 					<Separator className="my-8" />
 
-					<CallToActionBlock
-						image={callToAction.image.public_id}
-						title={callToAction.title}
-						content={callToAction.content.html}
-						label={callToAction.link.label}
-						url={callToAction.link.url}
-					/>
+					<div>
+						<CallToActionBlock
+							image={callToAction.image.public_id}
+							title={callToAction.title}
+							content={callToAction.content.html}
+							label={callToAction.link.label}
+							url={callToAction.link.url}
+						/>
+					</div>
 				</div>
 			</div>
 		</Container>
