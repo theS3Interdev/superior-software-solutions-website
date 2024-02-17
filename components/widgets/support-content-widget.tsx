@@ -42,10 +42,12 @@ export const SupportContentWidget = ({
 		<Container>
 			<div className="py-8">
 				<div className="space-y-8">
-					<HeaderDisplayBlock
-						title={pasBlock.header.content.header.title}
-						subtitle={pasBlock.header.content.header.subtitle}
-					/>
+					<div>
+						<HeaderDisplayBlock
+							title={pasBlock.header.content.header.title}
+							subtitle={pasBlock.header.content.header.subtitle}
+						/>
+					</div>
 
 					<div className="lg:flex lg:justify-center">
 						<div className="overflow-hidden border bg-secondary lg:mx-3 lg:flex lg:w-full lg:max-w-7xl lg:rounded-lg lg:shadow-md">
@@ -76,12 +78,16 @@ export const SupportContentWidget = ({
 						<div className="lg:w-3/4">
 							<div className="mx-auto max-w-full rounded-lg border bg-secondary p-3">
 								<div className="space-y-5">
-									<HeaderDisplayBlock
-										title="Support Request"
-										subtitle="Complete the form and we shall add it to our schedule, once the support request is complete, you will be notified via email."
-									/>
+									<div>
+										<HeaderDisplayBlock
+											title="Support Request"
+											subtitle="Complete the form and we shall add it to our schedule, once the support request is complete, you will be notified via email."
+										/>
+									</div>
 
-									<SupportFormBlock />
+									<div>
+										<SupportFormBlock />
+									</div>
 								</div>
 							</div>
 						</div>
@@ -238,13 +244,15 @@ export const SupportContentWidget = ({
 
 					<Separator className="my-8" />
 
-					<CallToActionBlock
-						image={callToAction.image.public_id}
-						title={callToAction.title}
-						content={callToAction.content.html}
-						label={callToAction.link.label}
-						url={callToAction.link.url}
-					/>
+					<div>
+						<CallToActionBlock
+							image={callToAction.image.public_id}
+							title={callToAction.title}
+							content={callToAction.content.html}
+							label={callToAction.link.label}
+							url={callToAction.link.url}
+						/>
+					</div>
 				</div>
 			</div>
 		</Container>

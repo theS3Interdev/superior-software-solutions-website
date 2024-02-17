@@ -149,7 +149,9 @@ export const NavigationFooterBlock = ({
 						&copy; Copyright {currentYear} {siteName}.
 					</p>
 
-					<ThemeToggleBlock />
+					<div>
+						<ThemeToggleBlock />
+					</div>
 				</div>
 			</Container>
 		</div>
