@@ -1,5 +1,11 @@
-type ProjectHeroWidgetProps = {};
+import { HeroDisplayBlock } from "@/components/index";
 
-export const ProjectHeroWidget = ({}: ProjectHeroWidgetProps) => {
-	return <div className="mx-1"></div>;
+type ProjectHeroWidgetProps = { title: string; image: string };
+
+export const ProjectHeroWidget = ({ title, image }: ProjectHeroWidgetProps) => {
+	return (
+		<div className="mx-1">
+			<HeroDisplayBlock title={title} image={image} />
+		</div>
+	);
 };
