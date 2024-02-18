@@ -61,7 +61,7 @@ export const TestimonialsContentWidget = async ({
 								There are currently no client testimonials...
 							</p>
 						) : (
-							<div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+							<div className="grid grid-cols-1 gap-5 lg:grid-cols-3">
 								{testimonials.map((testimonial, index) => (
 									<TestimonialCardBlock
 										key={index}
