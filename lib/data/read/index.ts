@@ -10,6 +10,7 @@ import {
 	qryGlobals,
 	qryHomePage,
 	qryPrivacyPolicyPage,
+	qryProjectBySlug,
 	qryProjectsPage,
 	qrySupportPage,
 	qryTestimonialsPage,
@@ -260,5 +261,25 @@ export const getAllProjectSummaryCount = async () => {
 		return data.projects;
 	} catch (error) {
 		console.log("GET_ALL_PROJECT_SUMMARY_COUNT", error);
+	}
+};
+
+/* get project by slug */
+export const getProjectBySlug = async (slug: string) => {
+	try {
+		const res = await fetch(endpoint, {
+			method: "POST",
+			body: JSON.stringify({
+				query: qryProjectBySlug,
+				variables: { slug: slug },
+			}),
+			headers: { "Content-Type": "application/json" },
+		});
+
+		const { data } = await res.json();
+
+		return data.projects[0];
+	} catch (error) {
+		console.log("GET_PROJECT_BY_SLUG", error);
 	}
 };

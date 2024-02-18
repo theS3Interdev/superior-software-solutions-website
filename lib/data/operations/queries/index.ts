@@ -458,3 +458,32 @@ export const qryAllProjectSummaryCount = gql`
 		}
 	}
 `;
+
+/* query retrieve project by slug */
+export const qryProjectBySlug = gql`
+	query qryProjectBySlug($slug: String!) {
+		projects(where: { slug: $slug }) {
+			title
+			slug
+			image
+			excerpt
+			solutions {
+				title
+			}
+			content {
+				html
+			}
+			callToAction {
+				image
+				title
+				content {
+					html
+				}
+				link {
+					label
+					url
+				}
+			}
+		}
+	}
+`;

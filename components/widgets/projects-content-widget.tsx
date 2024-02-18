@@ -43,6 +43,7 @@ export const ProjectsContentWidget = async ({
 	callToAction,
 }: ProjectsContentWidgetProps) => {
 	const summary: ProjectProps = await getAllProjectSummary();
+
 	return (
 		<Container>
 			<div className="py-8">
