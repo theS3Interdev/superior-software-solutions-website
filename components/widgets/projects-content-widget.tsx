@@ -61,7 +61,7 @@ export const ProjectsContentWidget = async ({
 								There are currently no projects...
 							</p>
 						) : (
-							<div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
+							<div className="grid grid-cols-1 gap-5 lg:grid-cols-2">
 								{summary.map((project, index) => (
 									<ProjectSummaryCardBlock
 										key={index}
