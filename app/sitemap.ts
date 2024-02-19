@@ -3,11 +3,7 @@ import {
 	getAllProjectSummaryCount,
 } from "@/lib/data/read/index";
 
-type BlogType = {
-	slug: string;
-};
-
-type ProjectType = {
+type SitemapType = {
 	slug: string;
 };
 
@@ -16,7 +12,7 @@ export default async function sitemap() {
 
 	const blogs = await getAllBlogSummaryCount();
 
-	const blogsUrl = blogs.map((blog: BlogType) => ({
+	const blogsUrl = blogs.map((blog: SitemapType) => ({
 		url: `${baseUrl}/blogs/${blog.slug}`,
 		lastModified: new Date(),
 		changeFrequency: "weekly",
@@ -25,7 +21,7 @@ export default async function sitemap() {
 
 	const projects = await getAllProjectSummaryCount();
 
-	const projectUrl = projects.map((project: ProjectType) => ({
+	const projectUrl = projects.map((project: SitemapType) => ({
 		url: `${baseUrl}/projects/${project.slug}`,
 		lastModified: new Date(),
 		changeFrequency: "weekly",
