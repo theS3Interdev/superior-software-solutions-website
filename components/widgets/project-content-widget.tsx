@@ -40,10 +40,6 @@ export const ProjectContentWidget = ({
 			<div className="py-8">
 				<div className="space-y-8">
 					<div>
-						<HeaderDisplayBlock subtitle={excerpt} />
-					</div>
-
-					<div>
 						<Separator className="mb-5" />
 
 						<div>
@@ -63,6 +59,10 @@ export const ProjectContentWidget = ({
 						</div>
 
 						<Separator className="mt-5" />
+					</div>
+
+					<div>
+						<HeaderDisplayBlock subtitle={excerpt} />
 					</div>
 
 					<div>
