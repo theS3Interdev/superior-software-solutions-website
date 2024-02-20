@@ -95,7 +95,15 @@ const BlogPage = async ({ params }: ParamsProps) => {
 	return (
 		<article className="mt-24 space-y-8">
 			<section id="hero">
-				<BlogHeroWidget title={title} image={image.public_id} />
+				<BlogHeroWidget
+					authorName={author.name}
+					authorImage={author.image.public_id}
+					category={category.title}
+					date={date}
+					excerpt={excerpt}
+					image={image.public_id}
+					title={title}
+				/>
 			</section>
 
 			<section id="content">
@@ -103,9 +111,6 @@ const BlogPage = async ({ params }: ParamsProps) => {
 					authorName={author.name}
 					authorImage={author.image.public_id}
 					authorBio={author.bio.html}
-					date={date}
-					category={category.title}
-					excerpt={excerpt}
 					content={content.html}
 					shareSummary={excerpt}
 					shareTitle={title}
