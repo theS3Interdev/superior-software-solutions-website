@@ -16,7 +16,6 @@ type ConsultPageProps = {
 		header: {
 			content: {
 				header: { title: string; subtitle: string };
-				content: { html: string };
 			};
 		};
 	};
@@ -72,7 +71,7 @@ const ConsultPage = async () => {
 			</section>
 
 			<section id="content">
-				<ConsultContentWidget pasBlock={pasBlock} callToAction={callToAction} />
+				<ConsultContentWidget callToAction={callToAction} />
 			</section>
 		</article>
 	);

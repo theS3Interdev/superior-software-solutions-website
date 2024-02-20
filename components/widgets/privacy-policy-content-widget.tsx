@@ -1,5 +1,5 @@
 import { Container } from "@/components/container";
-import { ContentDisplayBlock, HeaderDisplayBlock } from "@/components/index";
+import { ContentDisplayBlock } from "@/components/index";
 
 type PrivacyPolicyContentWidgetProps = {
 	pasBlock: {

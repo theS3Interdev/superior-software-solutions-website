@@ -12,14 +12,6 @@ import {
 } from "@/components/index";
 
 type ConsultContentWidgetProps = {
-	pasBlock: {
-		header: {
-			content: {
-				header: { title: string; subtitle: string };
-				content: { html: string };
-			};
-		};
-	};
 	callToAction: {
 		image: { public_id: string };
 		title: string;

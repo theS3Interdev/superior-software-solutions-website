@@ -3,20 +3,11 @@ import { getAllTestimonials } from "@/lib/data/read/index";
 import { Container } from "@/components/container";
 import {
 	CallToActionBlock,
-	HeaderDisplayBlock,
 	Separator,
 	TestimonialCardBlock,
 } from "@/components/index";
 
 type TestimonialsContentWidgetProps = {
-	pasBlock: {
-		header: {
-			content: {
-				header: { title: string; subtitle: string };
-				content: { html: string };
-			};
-		};
-	};
 	callToAction: {
 		image: { public_id: string };
 		title: string;
@@ -39,7 +30,6 @@ type Testimonial = {
 }[];
 
 export const TestimonialsContentWidget = async ({
-	pasBlock,
 	callToAction,
 }: TestimonialsContentWidgetProps) => {
 	const testimonials: Testimonial = await getAllTestimonials();
@@ -48,13 +38,6 @@ export const TestimonialsContentWidget = async ({
 		<Container>
 			<div className="py-8">
 				<div className="space-y-8">
-					<div>
-						<HeaderDisplayBlock
-							title={pasBlock.header.content.header.title}
-							subtitle={pasBlock.header.content.header.subtitle}
-						/>
-					</div>
-
 					<div>
 						{testimonials.length === 0 ? (
 							<p className="my-8 text-center leading-loose text-muted-foreground">
