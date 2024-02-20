@@ -73,13 +73,16 @@ const ProjectPage = async ({ params }: ParamsProps) => {
 	return (
 		<article className="mt-24 space-y-8">
 			<section id="hero">
-				<ProjectHeroWidget title={title} image={image.public_id} />
+				<ProjectHeroWidget
+					title={title}
+					image={image.public_id}
+					solutions={solutions}
+					excerpt={excerpt}
+				/>
 			</section>
 
 			<section id="content">
 				<ProjectContentWidget
-					solutions={solutions}
-					excerpt={excerpt}
 					content={content.html}
 					shareSummary={excerpt}
 					shareTitle={title}

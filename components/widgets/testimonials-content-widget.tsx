@@ -3,20 +3,11 @@ import { getAllTestimonials } from "@/lib/data/read/index";
 import { Container } from "@/components/container";
 import {
 	CallToActionBlock,
-	HeaderDisplayBlock,
 	Separator,
 	TestimonialCardBlock,
 } from "@/components/index";
 
 type TestimonialsContentWidgetProps = {
-	pasBlock: {
-		header: {
-			content: {
-				header: { title: string; subtitle: string };
-				content: { html: string };
-			};
-		};
-	};
 	callToAction: {
 		image: { public_id: string };
 		title: string;
@@ -39,7 +30,6 @@ type Testimonial = {
 }[];
 
 export const TestimonialsContentWidget = async ({
-	pasBlock,
 	callToAction,
 }: TestimonialsContentWidgetProps) => {
 	const testimonials: Testimonial = await getAllTestimonials();
@@ -49,19 +39,12 @@ export const TestimonialsContentWidget = async ({
 			<div className="py-8">
 				<div className="space-y-8">
 					<div>
-						<HeaderDisplayBlock
-							title={pasBlock.header.content.header.title}
-							subtitle={pasBlock.header.content.header.subtitle}
-						/>
-					</div>
-
-					<div>
 						{testimonials.length === 0 ? (
 							<p className="my-8 text-center leading-loose text-muted-foreground">
 								There are currently no client testimonials...
 							</p>
 						) : (
-							<div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+							<div className="grid grid-cols-1 gap-5 lg:grid-cols-3">
 								{testimonials.map((testimonial, index) => (
 									<TestimonialCardBlock
 										key={index}

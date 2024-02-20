@@ -20,6 +20,9 @@ module.exports = {
 			},
 		},
 		extend: {
+			fontFamily: {
+				sans: ["var(--font-inter)"],
+			},
 			colors: {
 				border: "hsl(var(--border))",
 				input: "hsl(var(--input))",
@@ -74,9 +77,6 @@ module.exports = {
 				"accordion-down": "accordion-down 0.2s ease-out",
 				"accordion-up": "accordion-up 0.2s ease-out",
 			},
-		},
-		fontFamily: {
-			sans: "Poppins, sans-serif",
 		},
 	},
 	plugins: [require("@tailwindcss/typography"), require("tailwindcss-animate")],

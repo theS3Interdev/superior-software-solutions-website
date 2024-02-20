@@ -16,7 +16,6 @@ type ProjectsPageProps = {
 		header: {
 			content: {
 				header: { title: string; subtitle: string };
-				content: { html: string };
 			};
 		};
 	};
@@ -65,14 +64,14 @@ const ProjectsPage = async () => {
 	return (
 		<article className="mt-24 space-y-8">
 			<section id="hero">
-				<ProjectsHeroWidget heroActionBlock={heroActionBlock} />
+				<ProjectsHeroWidget
+					heroActionBlock={heroActionBlock}
+					pasBlock={pasBlock}
+				/>
 			</section>
 
 			<section id="content">
-				<ProjectsContentWidget
-					pasBlock={pasBlock}
-					callToAction={callToAction}
-				/>
+				<ProjectsContentWidget callToAction={callToAction} />
 			</section>
 		</article>
 	);

@@ -16,7 +16,6 @@ type ConsultPageProps = {
 		header: {
 			content: {
 				header: { title: string; subtitle: string };
-				content: { html: string };
 			};
 		};
 	};
@@ -65,11 +64,14 @@ const ConsultPage = async () => {
 	return (
 		<article className="mt-24 space-y-8">
 			<section id="hero">
-				<ConsultHeroWidget heroActionBlock={heroActionBlock} />
+				<ConsultHeroWidget
+					heroActionBlock={heroActionBlock}
+					pasBlock={pasBlock}
+				/>
 			</section>
 
 			<section id="content">
-				<ConsultContentWidget pasBlock={pasBlock} callToAction={callToAction} />
+				<ConsultContentWidget callToAction={callToAction} />
 			</section>
 		</article>
 	);
