@@ -9,14 +9,6 @@ import {
 import { getAllBlogSummary } from "@/lib/data/read/index";
 
 type BlogsContentWidgetProps = {
-	pasBlock: {
-		header: {
-			content: {
-				header: { title: string; subtitle: string };
-				content: { html: string };
-			};
-		};
-	};
 	callToAction: {
 		image: { public_id: string };
 		title: string;
@@ -39,7 +31,6 @@ type BlogProps = {
 }[];
 
 export const BlogsContentWidget = async ({
-	pasBlock,
 	callToAction,
 }: BlogsContentWidgetProps) => {
 	const summary: BlogProps = await getAllBlogSummary();
@@ -49,19 +40,12 @@ export const BlogsContentWidget = async ({
 			<div className="py-8">
 				<div className="space-y-8">
 					<div>
-						<HeaderDisplayBlock
-							title={pasBlock.header.content.header.title}
-							subtitle={pasBlock.header.content.header.subtitle}
-						/>
-					</div>
-
-					<div>
 						{summary.length === 0 ? (
 							<p className="my-8 text-center leading-loose text-muted-foreground">
 								There are currently no blogs...
 							</p>
 						) : (
-							<div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
+							<div className="grid grid-cols-1 gap-5 lg:grid-cols-2">
 								{summary.map((blog, index) => (
 									<BlogSummaryCardBlock
 										key={index}

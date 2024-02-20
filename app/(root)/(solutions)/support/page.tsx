@@ -66,7 +66,10 @@ const SupportPage = async () => {
 	return (
 		<article className="mt-24 space-y-8">
 			<section id="hero">
-				<SupportHeroWidget heroActionBlock={heroActionBlock} />
+				<SupportHeroWidget
+					heroActionBlock={heroActionBlock}
+					pasBlock={pasBlock}
+				/>
 			</section>
 
 			<section id="content">

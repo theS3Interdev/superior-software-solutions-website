@@ -71,14 +71,14 @@ const TestimonialsPage = async () => {
 	return (
 		<article className="mt-24 space-y-8">
 			<section id="hero">
-				<TestimonialsHeroWidget heroActionBlock={heroActionBlock} />
+				<TestimonialsHeroWidget
+					heroActionBlock={heroActionBlock}
+					pasBlock={pasBlock}
+				/>
 			</section>
 
 			<section id="content">
-				<TestimonialsContentWidget
-					pasBlock={pasBlock}
-					callToAction={callToAction}
-				/>
+				<TestimonialsContentWidget callToAction={callToAction} />
 			</section>
 		</article>
 	);

@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { Inter } from "next/font/google";
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -11,6 +12,12 @@ import "@smastrom/react-rating/style.css";
 import "@/app/styles/globals.css";
 
 export const revalidate = 60;
+
+const inter = Inter({
+	subsets: ["latin"],
+	display: "swap",
+	variable: "--font-inter",
+});
 
 /* get the url depending on the environment */
 const absoluteUrl =
@@ -34,7 +41,7 @@ type RootLayoutProps = {
 
 const RootLayout = ({ children }: RootLayoutProps) => {
 	return (
-		<html lang="en">
+		<html lang="en" className={`${inter.variable}`}>
 			<body className="scroll-smooth font-sans antialiased">
 				<ThemeProvider
 					attribute="class"

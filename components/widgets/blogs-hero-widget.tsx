@@ -1,4 +1,4 @@
-import { HeroDisplayBlock } from "@/components/index";
+import { HeroDisplayAlternateBlock } from "@/components/index";
 
 type BlogsHeroWidgetProps = {
 	heroActionBlock: {
@@ -7,14 +7,26 @@ type BlogsHeroWidgetProps = {
 			image: { public_id: string };
 		};
 	};
+	pasBlock: {
+		header: {
+			content: {
+				header: { title: string; subtitle: string };
+			};
+		};
+	};
 };
 
-export const BlogsHeroWidget = ({ heroActionBlock }: BlogsHeroWidgetProps) => {
+export const BlogsHeroWidget = ({
+	heroActionBlock,
+	pasBlock,
+}: BlogsHeroWidgetProps) => {
 	return (
 		<div className="mx-1">
-			<HeroDisplayBlock
-				title={heroActionBlock.content.content.header.title}
+			<HeroDisplayAlternateBlock
 				image={heroActionBlock.content.image.public_id}
+				title={heroActionBlock.content.content.header.title}
+				subtitleHT={pasBlock.header.content.header.title}
+				subtitleHS={pasBlock.header.content.header.subtitle}
 			/>
 		</div>
 	);

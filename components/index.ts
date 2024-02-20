@@ -5,6 +5,7 @@ import { CallToActionBlock } from "@/components/blocks/call-to-action-block";
 import { ConsultationFormBlock } from "@/components/blocks/consultation-form-block";
 import { ContentDisplayBlock } from "@/components/blocks/content-display-block";
 import { DateDisplayBlock } from "@/components/blocks/date-display-block";
+import { HeroDisplayAlternateBlock } from "@/components/blocks/hero-display-alternate-block";
 import { HeaderDisplayBlock } from "@/components/blocks/header-display-block";
 import { HeroDisplayBlock } from "@/components/blocks/hero-display-block";
 import { ImageDisplayBlock } from "@/components/blocks/image-display-block";
@@ -102,6 +103,7 @@ export {
 	ContentDisplayBlock,
 	DateDisplayBlock,
 	HeaderDisplayBlock,
+	HeroDisplayAlternateBlock,
 	HeroDisplayBlock,
 	ImageDisplayBlock,
 	ProjectSummaryCardBlock,
