@@ -45,7 +45,6 @@ type GlobalsProps = {
 };
 
 export const ConsultContentWidget = async ({
-	pasBlock,
 	callToAction,
 }: ConsultContentWidgetProps) => {
 	const { siteContactDetails }: GlobalsProps = await getGlobals();
@@ -54,13 +53,6 @@ export const ConsultContentWidget = async ({
 		<Container>
 			<div className="py-8">
 				<div className="space-y-8">
-					<div>
-						<HeaderDisplayBlock
-							title={pasBlock.header.content.header.title}
-							subtitle={pasBlock.header.content.header.subtitle}
-						/>
-					</div>
-
 					<div className="flex flex-col lg:flex-row">
 						<div className="lg:w-3/4">
 							<div className="mx-auto max-w-full rounded-lg border bg-secondary p-3">

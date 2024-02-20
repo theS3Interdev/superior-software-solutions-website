@@ -65,7 +65,10 @@ const ConsultPage = async () => {
 	return (
 		<article className="mt-24 space-y-8">
 			<section id="hero">
-				<ConsultHeroWidget heroActionBlock={heroActionBlock} />
+				<ConsultHeroWidget
+					heroActionBlock={heroActionBlock}
+					pasBlock={pasBlock}
+				/>
 			</section>
 
 			<section id="content">
