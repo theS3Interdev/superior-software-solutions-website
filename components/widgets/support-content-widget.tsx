@@ -15,7 +15,6 @@ type SupportContentWidgetProps = {
 	pasBlock: {
 		header: {
 			content: {
-				header: { title: string; subtitle: string };
 				content: { html: string };
 			};
 			image: { public_id: string };
@@ -42,13 +41,6 @@ export const SupportContentWidget = ({
 		<Container>
 			<div className="py-8">
 				<div className="space-y-8">
-					<div>
-						<HeaderDisplayBlock
-							title={pasBlock.header.content.header.title}
-							subtitle={pasBlock.header.content.header.subtitle}
-						/>
-					</div>
-
 					<div className="lg:flex lg:justify-center">
 						<div className="overflow-hidden border bg-secondary lg:mx-3 lg:flex lg:w-full lg:max-w-7xl lg:rounded-lg lg:shadow-md">
 							<div className="lg:w-1/2">
