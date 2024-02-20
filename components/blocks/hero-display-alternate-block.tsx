@@ -17,6 +17,7 @@ type HeroDisplayAlternateBlockProps = {
 	authorImage?: string;
 	authorName?: string;
 	date?: string;
+	solutions?: { title: string }[];
 };
 
 export const HeroDisplayAlternateBlock = ({
@@ -29,6 +30,7 @@ export const HeroDisplayAlternateBlock = ({
 	authorImage,
 	authorName,
 	date,
+	solutions,
 }: HeroDisplayAlternateBlockProps) => {
 	return (
 		<Container>
@@ -39,6 +41,21 @@ export const HeroDisplayAlternateBlock = ({
 							<Badge className="m-[1px] text-sm">{category}</Badge>
 						</div>
 					)}
+
+					{solutions &&
+						solutions.map((service, index) =>
+							index === 0 ? (
+								<Badge key={index} className="m-[1px] mb-3 text-sm">
+									{service.title}
+								</Badge>
+							) : (
+								service.title && (
+									<Badge key={index} className="m-[1px] mb-3 text-sm">
+										{service.title}
+									</Badge>
+								)
+							),
+						)}
 
 					{title && (
 						<div className="lg:max-w-lg">

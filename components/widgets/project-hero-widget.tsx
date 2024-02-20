@@ -1,11 +1,26 @@
-import { HeroDisplayBlock } from "@/components/index";
+import { HeroDisplayAlternateBlock } from "@/components/index";
 
-type ProjectHeroWidgetProps = { title: string; image: string };
+type ProjectHeroWidgetProps = {
+	excerpt: string;
+	solutions: { title: string }[];
+	title: string;
+	image: string;
+};
 
-export const ProjectHeroWidget = ({ title, image }: ProjectHeroWidgetProps) => {
+export const ProjectHeroWidget = ({
+	excerpt,
+	solutions,
+	title,
+	image,
+}: ProjectHeroWidgetProps) => {
 	return (
 		<div className="mx-1">
-			<HeroDisplayBlock title={title} image={image} />
+			<HeroDisplayAlternateBlock
+				excerpt={excerpt}
+				image={image}
+				solutions={solutions}
+				title={title}
+			/>
 		</div>
 	);
 };

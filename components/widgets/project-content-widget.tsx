@@ -1,16 +1,12 @@
 import { Container } from "@/components/container";
 import {
-	Badge,
 	CallToActionBlock,
 	ContentDisplayBlock,
-	HeaderDisplayBlock,
 	Separator,
 	SocialMediaSharingBlock,
 } from "@/components/index";
 
 type ProjectContentWidgetProps = {
-	excerpt: string;
-	solutions: { title: string }[];
 	content: string;
 	shareSummary: string;
 	shareTitle: string;
@@ -23,8 +19,6 @@ type ProjectContentWidgetProps = {
 };
 
 export const ProjectContentWidget = ({
-	excerpt,
-	solutions,
 	content,
 	shareSummary,
 	shareTitle,
@@ -39,32 +33,6 @@ export const ProjectContentWidget = ({
 		<Container>
 			<div className="py-8">
 				<div className="space-y-8">
-					<div>
-						<HeaderDisplayBlock subtitle={excerpt} />
-					</div>
-
-					<div>
-						<Separator className="mb-5" />
-
-						<div>
-							{solutions.map((service, index) =>
-								index === 0 ? (
-									<Badge key={index} className="m-[1px] text-sm">
-										{service.title}
-									</Badge>
-								) : (
-									service.title && (
-										<Badge key={index} className="m-[1px] text-sm">
-											{service.title}
-										</Badge>
-									)
-								),
-							)}
-						</div>
-
-						<Separator className="mt-5" />
-					</div>
-
 					<div>
 						<ContentDisplayBlock content={content} />
 					</div>
