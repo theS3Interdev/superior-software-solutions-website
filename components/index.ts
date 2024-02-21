@@ -1,4 +1,5 @@
 /* component blocks */
+import { BenefitCardBlock } from "@/components/blocks/benefit-card-block";
 import { BlogAuthorDetailsBlock } from "@/components/blocks/blog-author-details-block";
 import { BlogSummaryCardBlock } from "@/components/blocks/blog-summary-card-block";
 import { CallToActionBlock } from "@/components/blocks/call-to-action-block";
@@ -98,6 +99,7 @@ import { TestimonialsHeroWidget } from "@/components/widgets/testimonials-hero-w
 
 /* export components */
 export {
+	BenefitCardBlock,
 	BlogAuthorDetailsBlock,
 	BlogSummaryCardBlock,
 	CallToActionBlock,

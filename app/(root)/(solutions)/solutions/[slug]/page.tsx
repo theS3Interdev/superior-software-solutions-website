@@ -36,6 +36,24 @@ type SolutionPageProps = {
 			image: { public_id: string };
 		};
 	};
+	benefitsBlock: {
+		header: {
+			content: {
+				header: {
+					title: string;
+					subtitle: string;
+				};
+			};
+		};
+		list: {
+			content: {
+				header: {
+					title: string;
+					subtitle: string;
+				};
+			}[];
+		};
+	};
 	callToAction: {
 		image: { public_id: string };
 		title: string;
@@ -84,8 +102,18 @@ export async function generateMetadata({
 }
 
 const SolutionPage = async ({ params }: ParamsProps) => {
-	const { title, heroActionBlock, pasBlock, callToAction } =
-		await getSolutionBySlug(params.slug);
+	const {
+		title,
+		metaDescription,
+		heroActionBlock,
+		pasBlock,
+		benefitsBlock,
+		callToAction,
+	} = await getSolutionBySlug(params.slug);
+
+	const { alternates } = await generateMetadata({ params });
+
+	const solutionAbsoluteUrl = `${url}${alternates?.canonical}`;
 
 	return (
 		<article className="mt-24 space-y-8">
@@ -96,6 +124,10 @@ const SolutionPage = async ({ params }: ParamsProps) => {
 			<section id="content">
 				<SolutionContentWidget
 					pasBlock={pasBlock}
+					benefitsBlock={benefitsBlock}
+					shareSummary={metaDescription}
+					shareTitle={title}
+					shareUrl={solutionAbsoluteUrl}
 					ctaImage={callToAction.image.public_id}
 					ctaTitle={callToAction.title}
 					ctaContent={callToAction.content.html}
