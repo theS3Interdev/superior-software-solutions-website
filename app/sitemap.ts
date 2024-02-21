@@ -31,12 +31,12 @@ export default async function sitemap() {
 
 	const solutions = await getAllSolutionSummaryCount();
 
-	const solutionUrl = solutions.map((solution: SitemapType) => ({
-		url: `${baseUrl}/solutions/${solution.slug}`,
-		lastModified: new Date(),
-		changeFrequency: "weekly",
-		priority: 0.5,
-	}));
+	// const solutionUrl = solutions.map((solution: SitemapType) => ({
+	// 	url: `${baseUrl}/solutions/${solution.slug}`,
+	// 	lastModified: new Date(),
+	// 	changeFrequency: "weekly",
+	// 	priority: 0.5,
+	// }));
 
 	return [
 		{
@@ -65,7 +65,7 @@ export default async function sitemap() {
 			changeFrequency: "weekly",
 			priority: 0.5,
 		},
-		...solutionUrl,
+		//...solutionUrl,
 		{
 			url: `${baseUrl}/about`,
 			lastModified: new Date(),
