@@ -11,6 +11,7 @@ import { HeroDisplayBlock } from "@/components/blocks/hero-display-block";
 import { ImageDisplayBlock } from "@/components/blocks/image-display-block";
 import { NavigationFooterBlock } from "@/components/blocks/navigation-footer-block";
 import { NavigationHeaderBlock } from "@/components/blocks/navigation-header-block";
+import { PASHeaderBlock } from "@/components/blocks/pas-header-block";
 import { ProjectSummaryCardBlock } from "@/components/blocks/project-summary-card-block";
 import { RatingBlock } from "@/components/blocks/rating-block";
 import { SocialMediaSharingBlock } from "@/components/blocks/social-media-sharing-block";
@@ -110,6 +111,7 @@ export {
 	ProjectSummaryCardBlock,
 	NavigationFooterBlock,
 	NavigationHeaderBlock,
+	PASHeaderBlock,
 	RatingBlock,
 	SocialMediaSharingBlock,
 	SolutionsSummaryCardBlock,

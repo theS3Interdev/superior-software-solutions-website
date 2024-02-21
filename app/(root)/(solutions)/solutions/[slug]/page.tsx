@@ -22,6 +22,20 @@ type SolutionPageProps = {
 			image: { public_id: string };
 		};
 	};
+	pasBlock: {
+		header: {
+			content: {
+				header: {
+					title: string;
+					subtitle: string;
+				};
+				content: {
+					html: string;
+				};
+			};
+			image: { public_id: string };
+		};
+	};
 	callToAction: {
 		image: { public_id: string };
 		title: string;
@@ -70,9 +84,8 @@ export async function generateMetadata({
 }
 
 const SolutionPage = async ({ params }: ParamsProps) => {
-	const { title, heroActionBlock, callToAction } = await getSolutionBySlug(
-		params.slug,
-	);
+	const { title, heroActionBlock, pasBlock, callToAction } =
+		await getSolutionBySlug(params.slug);
 
 	return (
 		<article className="mt-24 space-y-8">
@@ -81,7 +94,14 @@ const SolutionPage = async ({ params }: ParamsProps) => {
 			</section>
 
 			<section id="content">
-				<SolutionContentWidget />
+				<SolutionContentWidget
+					pasBlock={pasBlock}
+					ctaImage={callToAction.image.public_id}
+					ctaTitle={callToAction.title}
+					ctaContent={callToAction.content.html}
+					ctaLabel={callToAction.link.label}
+					ctaUrl={callToAction.link.url}
+				/>
 			</section>
 		</article>
 	);

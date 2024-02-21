@@ -579,6 +579,20 @@ export const qrySolutionBySlug = gql`
 					image
 				}
 			}
+			pasBlock {
+				header {
+					content {
+						header {
+							title
+							subtitle
+						}
+						content {
+							html
+						}
+					}
+					image
+				}
+			}
 			callToAction {
 				image
 				title
