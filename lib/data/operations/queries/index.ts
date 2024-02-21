@@ -450,7 +450,7 @@ export const qryAllProjectSummary = gql`
 	}
 `;
 
-/* query to retrieve all blogs allow for counting */
+/* query to retrieve all blogs and allow for counting */
 export const qryAllProjectSummaryCount = gql`
 	query qryAllProjectSummaryCount {
 		projects(first: 89) {
@@ -526,6 +526,37 @@ export const qrySolutionsPage = gql`
 					url
 				}
 			}
+		}
+	}
+`;
+
+/* query to retrieve all solutions in summary */
+export const qryAllSolutionSummary = gql`
+	query qryAllSolutionSummary {
+		solutions(first: 89, orderBy: createdAt_DESC) {
+			title
+			slug
+			metaDescription
+			heroActionBlock {
+				content {
+					content {
+						header {
+							title
+							subtitle
+						}
+					}
+					image
+				}
+			}
+		}
+	}
+`;
+
+/* query to retrieve all solutions and allow for counting */
+export const qryAllSolutionSummaryCount = gql`
+	query qryAllSolutionSummaryCount {
+		projects(first: 89) {
+			slug
 		}
 	}
 `;

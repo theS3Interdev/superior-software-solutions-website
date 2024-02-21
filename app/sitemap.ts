@@ -1,6 +1,7 @@
 import {
 	getAllBlogSummaryCount,
 	getAllProjectSummaryCount,
+	getAllSolutionSummaryCount,
 } from "@/lib/data/read/index";
 
 type SitemapType = {
@@ -28,6 +29,15 @@ export default async function sitemap() {
 		priority: 0.5,
 	}));
 
+	const solutions = await getAllSolutionSummaryCount();
+
+	const solutionUrl = solutions.map((solution: SitemapType) => ({
+		url: `${baseUrl}/solutions/${solution.slug}`,
+		lastModified: new Date(),
+		changeFrequency: "weekly",
+		priority: 0.5,
+	}));
+
 	return [
 		{
 			url: `${baseUrl}`,
@@ -49,6 +59,25 @@ export default async function sitemap() {
 			priority: 0.5,
 		},
 		...projectUrl,
+		{
+			url: `${baseUrl}/solutions`,
+			lastModified: new Date(),
+			changeFrequency: "weekly",
+			priority: 0.5,
+		},
+		...solutionUrl,
+		{
+			url: `${baseUrl}/about`,
+			lastModified: new Date(),
+			changeFrequency: "monthly",
+			priority: 0.5,
+		},
+		{
+			url: `${baseUrl}/testimonials`,
+			lastModified: new Date(),
+			changeFrequency: "monthly",
+			priority: 0.5,
+		},
 		{
 			url: `${baseUrl}/book-a-consult`,
 			lastModified: new Date(),

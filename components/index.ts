@@ -14,6 +14,7 @@ import { NavigationHeaderBlock } from "@/components/blocks/navigation-header-blo
 import { ProjectSummaryCardBlock } from "@/components/blocks/project-summary-card-block";
 import { RatingBlock } from "@/components/blocks/rating-block";
 import { SocialMediaSharingBlock } from "@/components/blocks/social-media-sharing-block";
+import { SolutionsSummaryCardBlock } from "@/components/blocks/solutions-summary-card-block";
 import { SupportFormBlock } from "@/components/blocks/support-form-block";
 import { TestimonialCardBlock } from "@/components/blocks/testimonial-card-block";
 import { ThemeToggleBlock } from "@/components/blocks/theme-toggle-block";
@@ -111,6 +112,7 @@ export {
 	NavigationHeaderBlock,
 	RatingBlock,
 	SocialMediaSharingBlock,
+	SolutionsSummaryCardBlock,
 	SupportFormBlock,
 	TestimonialCardBlock,
 	ThemeToggleBlock,
