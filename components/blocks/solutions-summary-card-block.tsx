@@ -1,22 +1,20 @@
 import Link from "next/link";
 
-import { DateDisplayBlock, ImageDisplayBlock } from "@/components/index";
+import { ImageDisplayBlock } from "@/components/index";
 
-type BlogSummaryCardBlockProps = {
+type SolutionsSummaryCardBlockProps = {
 	image: string;
-	title: string;
 	slug: string;
-	excerpt: string;
-	date: string;
+	subtitle: string;
+	title: string;
 };
 
-export const BlogSummaryCardBlock = ({
+export const SolutionsSummaryCardBlock = ({
 	image,
-	title,
 	slug,
-	excerpt,
-	date,
-}: BlogSummaryCardBlockProps) => {
+	subtitle,
+	title,
+}: SolutionsSummaryCardBlockProps) => {
 	return (
 		<div>
 			<div className="relative z-10 h-96 w-full">
@@ -24,19 +22,15 @@ export const BlogSummaryCardBlock = ({
 			</div>
 
 			<div className="relative z-20 mx-auto -mt-20 max-w-lg rounded-lg border bg-secondary p-5 shadow">
-				<Link href={`/blogs/${slug}`}>
+				<Link href={`/solutions/${slug}`}>
 					<span className="text-balance font-semibold hover:cursor-pointer hover:text-primary hover:underline md:text-lg">
 						{title}
 					</span>
 				</Link>
 
 				<p className="my-3 line-clamp-5 text-sm tracking-wide md:line-clamp-3">
-					{excerpt}
+					{subtitle}
 				</p>
-
-				<div className="text-sm text-blue-500">
-					<DateDisplayBlock date={date} />
-				</div>
 			</div>
 		</div>
 	);

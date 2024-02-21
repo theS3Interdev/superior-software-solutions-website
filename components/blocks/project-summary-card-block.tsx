@@ -30,7 +30,9 @@ export const ProjectSummaryCardBlock = ({
 					</span>
 				</Link>
 
-				<p className="my-3 line-clamp-5 text-sm md:line-clamp-3">{excerpt}</p>
+				<p className="my-3 line-clamp-5 text-sm tracking-wide md:line-clamp-3">
+					{excerpt}
+				</p>
 
 				<div>
 					{solutions &&

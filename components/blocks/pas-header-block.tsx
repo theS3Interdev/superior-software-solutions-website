@@ -1,26 +1,22 @@
-import Link from "next/link";
-
 import {
-	Button,
 	ContentDisplayBlock,
+	HeaderDisplayBlock,
 	ImageDisplayBlock,
 } from "@/components/index";
 
-type CallToActionBlockProps = {
+type PASHeaderBlockProps = {
 	image: string;
 	title: string;
+	subtitle?: string;
 	content: string;
-	label: string;
-	url: string;
 };
 
-export const CallToActionBlock = ({
+export const PASHeaderBlock = ({
 	image,
 	title,
+	subtitle,
 	content,
-	label,
-	url,
-}: CallToActionBlockProps) => {
+}: PASHeaderBlockProps) => {
 	return (
 		<div className="lg:flex lg:justify-center">
 			<div className="overflow-hidden border bg-secondary lg:mx-3 lg:flex lg:w-full lg:max-w-7xl lg:rounded-lg lg:shadow-md">
@@ -33,17 +29,13 @@ export const CallToActionBlock = ({
 					</div>
 				</div>
 
-				<div className="max-w-xl px-5 py-12 lg:w-1/2 lg:max-w-5xl">
-					<h3 className="mb-5 text-2xl font-semibold tracking-wide">{title}</h3>
+				<div className="max-w-xl space-y-5 p-5 lg:w-1/2 lg:max-w-5xl">
+					<div>
+						<HeaderDisplayBlock title={title} subtitle={subtitle} />
+					</div>
 
 					<div>
 						<ContentDisplayBlock content={content} />
-					</div>
-
-					<div className="mt-5 inline-flex w-full sm:w-auto">
-						<Button asChild className="uppercase">
-							<Link href={url}>{label}</Link>
-						</Button>
 					</div>
 				</div>
 			</div>

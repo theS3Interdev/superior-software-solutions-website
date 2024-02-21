@@ -450,7 +450,7 @@ export const qryAllProjectSummary = gql`
 	}
 `;
 
-/* query to retrieve all blogs allow for counting */
+/* query to retrieve all blogs and allow for counting */
 export const qryAllProjectSummaryCount = gql`
 	query qryAllProjectSummaryCount {
 		projects(first: 89) {
@@ -513,6 +513,84 @@ export const qrySolutionsPage = gql`
 							subtitle
 						}
 					}
+				}
+			}
+			callToAction {
+				image
+				title
+				content {
+					html
+				}
+				link {
+					label
+					url
+				}
+			}
+		}
+	}
+`;
+
+/* query to retrieve all solutions in summary */
+export const qryAllSolutionSummary = gql`
+	query qryAllSolutionSummary {
+		solutions(first: 89, orderBy: createdAt_DESC) {
+			title
+			slug
+			metaDescription
+			heroActionBlock {
+				content {
+					content {
+						header {
+							title
+							subtitle
+						}
+					}
+					image
+				}
+			}
+		}
+	}
+`;
+
+/* query to retrieve all solutions and allow for counting */
+export const qryAllSolutionSummaryCount = gql`
+	query qryAllSolutionSummaryCount {
+		projects(first: 89) {
+			slug
+		}
+	}
+`;
+
+/* query retrieve solution by slug */
+export const qrySolutionBySlug = gql`
+	query qrySolutionBySlug($slug: String!) {
+		solutions(where: { slug: $slug }) {
+			title
+			slug
+			metaDescription
+			heroActionBlock {
+				content {
+					content {
+						header {
+							title
+							subtitle
+						}
+					}
+					image
+				}
+			}
+			pasBlock {
+				header {
+					content {
+						header {
+							title
+							subtitle
+						}
+						content {
+							html
+						}
+					}
+					image
 				}
 			}
 			callToAction {
