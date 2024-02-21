@@ -487,3 +487,45 @@ export const qryProjectBySlug = gql`
 		}
 	}
 `;
+
+/* query to retrieve solutions page */
+export const qrySolutionsPage = gql`
+	query qrySolutionsPage {
+		pages(where: { slug: "solutions" }) {
+			pageTitle
+			slug
+			pageMetaDescription
+			heroActionBlock {
+				content {
+					content {
+						header {
+							title
+						}
+					}
+					image
+				}
+			}
+			pasBlock {
+				header {
+					content {
+						header {
+							title
+							subtitle
+						}
+					}
+				}
+			}
+			callToAction {
+				image
+				title
+				content {
+					html
+				}
+				link {
+					label
+					url
+				}
+			}
+		}
+	}
+`;

@@ -2,7 +2,6 @@ import { Container } from "@/components/container";
 import {
 	BlogSummaryCardBlock,
 	CallToActionBlock,
-	HeaderDisplayBlock,
 	Separator,
 } from "@/components/index";
 
