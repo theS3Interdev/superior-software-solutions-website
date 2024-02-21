@@ -1,11 +1,11 @@
+import { getAllSolutionSummary } from "@/lib/data/read/index";
+
 import { Container } from "@/components/container";
 import {
 	CallToActionBlock,
 	Separator,
 	SolutionsSummaryCardBlock,
 } from "@/components/index";
-
-import { getAllSolutionSummary } from "@/lib/data/read/index";
 
 type SolutionsContentWidgetProps = {
 	callToAction: {
