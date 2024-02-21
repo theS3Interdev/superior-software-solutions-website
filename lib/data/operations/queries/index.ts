@@ -593,6 +593,24 @@ export const qrySolutionBySlug = gql`
 					image
 				}
 			}
+			benefitsBlock {
+				header {
+					content {
+						header {
+							title
+							subtitle
+						}
+					}
+				}
+				list {
+					content {
+						header {
+							title
+							subtitle
+						}
+					}
+				}
+			}
 			callToAction {
 				image
 				title
