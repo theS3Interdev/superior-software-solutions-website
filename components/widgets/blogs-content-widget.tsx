@@ -1,11 +1,11 @@
+import { getAllBlogSummary } from "@/lib/data/read/index";
+
 import { Container } from "@/components/container";
 import {
 	BlogSummaryCardBlock,
 	CallToActionBlock,
 	Separator,
 } from "@/components/index";
-
-import { getAllBlogSummary } from "@/lib/data/read/index";
 
 type BlogsContentWidgetProps = {
 	callToAction: {

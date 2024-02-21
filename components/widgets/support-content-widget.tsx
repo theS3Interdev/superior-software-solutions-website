@@ -4,9 +4,8 @@ import { Container } from "@/components/container";
 import {
 	Button,
 	CallToActionBlock,
-	ContentDisplayBlock,
 	HeaderDisplayBlock,
-	ImageDisplayBlock,
+	PASHeaderBlock,
 	Separator,
 	SupportFormBlock,
 } from "@/components/index";
@@ -41,27 +40,12 @@ export const SupportContentWidget = ({
 		<Container>
 			<div className="py-8">
 				<div className="space-y-8">
-					<div className="lg:flex lg:justify-center">
-						<div className="overflow-hidden border bg-secondary lg:mx-3 lg:flex lg:w-full lg:max-w-7xl lg:rounded-lg lg:shadow-md">
-							<div className="lg:w-1/2">
-								<div className="relative h-64 bg-cover lg:h-full">
-									<ImageDisplayBlock
-										imageSrc={pasBlock.header.image.public_id}
-										imageAlt="Call to Action Image"
-									/>
-								</div>
-							</div>
-
-							<div className="max-w-xl px-5 py-12 lg:w-1/2 lg:max-w-5xl">
-								<h3 className="mb-5 text-2xl font-semibold tracking-wide">
-									Support Charter
-								</h3>
-
-								<ContentDisplayBlock
-									content={pasBlock.header.content.content.html}
-								/>
-							</div>
-						</div>
+					<div>
+						<PASHeaderBlock
+							image={pasBlock.header.image.public_id}
+							title="Support Charter"
+							content={pasBlock.header.content.content.html}
+						/>
 					</div>
 
 					<Separator className="my-8" />

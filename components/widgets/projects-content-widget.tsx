@@ -1,11 +1,11 @@
+import { getAllProjectSummary } from "@/lib/data/read/index";
+
 import { Container } from "@/components/container";
 import {
 	CallToActionBlock,
 	ProjectSummaryCardBlock,
 	Separator,
 } from "@/components/index";
-
-import { getAllProjectSummary } from "@/lib/data/read/index";
 
 type ProjectsContentWidgetProps = {
 	callToAction: {
