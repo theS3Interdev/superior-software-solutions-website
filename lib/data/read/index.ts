@@ -12,6 +12,7 @@ import {
 	qryPrivacyPolicyPage,
 	qryProjectBySlug,
 	qryProjectsPage,
+	qrySolutionsPage,
 	qrySupportPage,
 	qryTestimonialsPage,
 } from "@/lib/data/operations/queries/index";
@@ -281,5 +282,22 @@ export const getProjectBySlug = async (slug: string) => {
 		return data.projects[0];
 	} catch (error) {
 		console.log("GET_PROJECT_BY_SLUG", error);
+	}
+};
+
+/* get solution page */
+export const getSolutionsPage = async () => {
+	try {
+		const result = await fetch(endpoint, {
+			method: "POST",
+			body: JSON.stringify({ query: qrySolutionsPage }),
+			headers: { "Content-Type": "application/json" },
+		});
+
+		const { data } = await result.json();
+
+		return data.pages[0];
+	} catch (error) {
+		console.log("[GET_SOLUTIONS_PAGE]", error);
 	}
 };
