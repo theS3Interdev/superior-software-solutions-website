@@ -43,7 +43,7 @@ const formSchema = z.object({
 		.string()
 		.min(10, { message: "What do you want us to help you achieve?" })
 		.max(500, {
-			message: "Your project details should not be longer than 500 characters.",
+			message: "Your project details are overly verbose.",
 		}),
 	consent: z.boolean({
 		required_error:
@@ -59,7 +59,7 @@ export const ConsultationFormBlock = () => {
 
 	const router = useRouter();
 
-	const form = useForm({
+	const form = useForm<z.infer<typeof formSchema>>({
 		resolver: zodResolver(formSchema),
 		defaultValues: {
 			firstName: "",
@@ -69,8 +69,6 @@ export const ConsultationFormBlock = () => {
 			webUrl: "",
 			projectInterest: "",
 			projectDetails: "",
-			consent: false,
-			policy: false,
 		},
 	});
 

@@ -70,19 +70,16 @@ export const SupportFormBlock = () => {
 
 	const router = useRouter();
 
-	const form = useForm({
+	const form = useForm<z.infer<typeof formSchema>>({
 		resolver: zodResolver(formSchema),
 		defaultValues: {
 			businessName: "",
 			firstName: "",
 			lastName: "",
 			emailAddress: "",
-			requestDate: new Date(),
 			supportService: "",
 			supportDescription: "",
 			requestPriority: "",
-			consent: false,
-			policy: false,
 		},
 	});
 
@@ -236,7 +233,7 @@ export const SupportFormBlock = () => {
 													{field.value ? (
 														format(field.value, "yyyy-MM-dd")
 													) : (
-														<span>Enter a Date</span>
+														<span>Pick a Date</span>
 													)}
 													<CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
 												</Button>

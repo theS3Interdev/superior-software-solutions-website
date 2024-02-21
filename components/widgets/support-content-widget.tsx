@@ -48,8 +48,6 @@ export const SupportContentWidget = ({
 						/>
 					</div>
 
-					<Separator className="my-8" />
-
 					<div className="flex flex-col lg:flex-row">
 						<div className="lg:w-3/4">
 							<div className="mx-auto max-w-full rounded-lg border bg-secondary p-3">
