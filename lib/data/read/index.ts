@@ -14,6 +14,7 @@ import {
 	qryPrivacyPolicyPage,
 	qryProjectBySlug,
 	qryProjectsPage,
+	qrySolutionBySlug,
 	qrySolutionsPage,
 	qrySupportPage,
 	qryTestimonialsPage,
@@ -337,5 +338,25 @@ export const getAllSolutionSummaryCount = async () => {
 		return data.solutions;
 	} catch (error) {
 		console.log("GET_ALL_SOLUTION_SUMMARY_COUNT", error);
+	}
+};
+
+/* get solution by slug */
+export const getSolutionBySlug = async (slug: string) => {
+	try {
+		const res = await fetch(endpoint, {
+			method: "POST",
+			body: JSON.stringify({
+				query: qrySolutionBySlug,
+				variables: { slug: slug },
+			}),
+			headers: { "Content-Type": "application/json" },
+		});
+
+		const { data } = await res.json();
+
+		return data.solutions[0];
+	} catch (error) {
+		console.log("GET_SOLUTION_BY_SLUG", error);
 	}
 };

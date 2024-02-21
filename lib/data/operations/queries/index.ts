@@ -560,3 +560,36 @@ export const qryAllSolutionSummaryCount = gql`
 		}
 	}
 `;
+
+/* query retrieve solution by slug */
+export const qrySolutionBySlug = gql`
+	query qrySolutionBySlug($slug: String!) {
+		solutions(where: { slug: $slug }) {
+			title
+			slug
+			metaDescription
+			heroActionBlock {
+				content {
+					content {
+						header {
+							title
+							subtitle
+						}
+					}
+					image
+				}
+			}
+			callToAction {
+				image
+				title
+				content {
+					html
+				}
+				link {
+					label
+					url
+				}
+			}
+		}
+	}
+`;
