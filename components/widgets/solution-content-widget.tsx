@@ -1,5 +1,6 @@
 import { Container } from "@/components/container";
 import {
+	AccordionBlock,
 	BenefitCardBlock,
 	CallToActionBlock,
 	HeaderDisplayBlock,
@@ -78,6 +79,25 @@ type SolutionContentWidgetProps = {
 			}[];
 		};
 	}[];
+	faqHeader: {
+		header: {
+			title: string;
+			subtitle: string;
+		};
+	};
+	faqs: {
+		title: string;
+		faqs: {
+			list: {
+				header: {
+					title: string;
+				};
+				content: {
+					html: string;
+				};
+			}[];
+		};
+	};
 	shareSummary: string;
 	shareTitle: string;
 	shareUrl: string;
@@ -95,6 +115,8 @@ export const SolutionContentWidget = ({
 	projects,
 	pricingHeaderBlock,
 	solutionPrices,
+	faqHeader,
+	faqs,
 	shareSummary,
 	shareTitle,
 	shareUrl,
@@ -172,7 +194,26 @@ export const SolutionContentWidget = ({
 						</div>
 					)}
 
-					<div className="space-y-8">FAQs</div>
+					{faqHeader && (
+						<div className="space-y-8">
+							<div>
+								<HeaderDisplayBlock
+									title={faqHeader.header.title}
+									subtitle={faqHeader.header.subtitle}
+								/>
+							</div>
+
+							<div>
+								{faqs.faqs.list.map((faq, index) => (
+									<AccordionBlock
+										key={index}
+										title={faq.header.title}
+										content={faq.content.html}
+									/>
+								))}
+							</div>
+						</div>
+					)}
 
 					<div className="my-5 items-center justify-between sm:flex">
 						<div className="mb-5">
