@@ -4,8 +4,10 @@ import {
 	CallToActionBlock,
 	HeaderDisplayBlock,
 	PASHeaderBlock,
+	ProjectsCarouselBlock,
 	Separator,
 	SocialMediaSharingBlock,
+	SolutionsPriceListBlock,
 } from "@/components/index";
 
 type SolutionContentWidgetProps = {
@@ -41,6 +43,41 @@ type SolutionContentWidgetProps = {
 			};
 		}[];
 	};
+	projectsHeaderBlock: {
+		header: {
+			title: string;
+			subtitle: string;
+		};
+	};
+	projects: {
+		title: string;
+		slug: string;
+		image: { public_id: string };
+		excerpt: string;
+	}[];
+	pricingHeaderBlock?: {
+		header: {
+			title: string;
+			subtitle: string;
+		};
+	};
+	solutionPrices: {
+		title: string;
+		image: { public_id: string };
+		description: {
+			html: string;
+		};
+		priceDetails: {
+			list: {
+				header: {
+					title: string;
+				};
+				content: {
+					html: string;
+				};
+			}[];
+		};
+	}[];
 	shareSummary: string;
 	shareTitle: string;
 	shareUrl: string;
@@ -54,6 +91,10 @@ type SolutionContentWidgetProps = {
 export const SolutionContentWidget = ({
 	pasBlock,
 	benefitsBlock,
+	projectsHeaderBlock,
+	projects,
+	pricingHeaderBlock,
+	solutionPrices,
 	shareSummary,
 	shareTitle,
 	shareUrl,
@@ -94,6 +135,44 @@ export const SolutionContentWidget = ({
 							))}
 						</div>
 					</div>
+
+					<div className="space-y-8">
+						<div>
+							<HeaderDisplayBlock
+								title={projectsHeaderBlock.header.title}
+								subtitle={projectsHeaderBlock.header.subtitle}
+							/>
+						</div>
+
+						<div>
+							<ProjectsCarouselBlock projects={projects} />
+						</div>
+					</div>
+
+					{pricingHeaderBlock && (
+						<div className="space-y-8">
+							<div>
+								<HeaderDisplayBlock
+									title={pricingHeaderBlock.header.title}
+									subtitle={pricingHeaderBlock.header.subtitle}
+								/>
+							</div>
+
+							<div className="grid grid-cols-1 gap-5 lg:grid-cols-3">
+								{solutionPrices.map((price, index) => (
+									<SolutionsPriceListBlock
+										key={index}
+										image={price.image.public_id}
+										title={price.title}
+										description={price.description.html}
+										priceDetails={price.priceDetails}
+									/>
+								))}
+							</div>
+						</div>
+					)}
+
+					<div className="space-y-8">FAQs</div>
 
 					<div className="my-5 items-center justify-between sm:flex">
 						<div className="mb-5">
