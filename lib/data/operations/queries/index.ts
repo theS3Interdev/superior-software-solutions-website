@@ -611,6 +611,41 @@ export const qrySolutionBySlug = gql`
 					}
 				}
 			}
+			projectsHeaderBlock {
+				header {
+					title
+					subtitle
+				}
+			}
+			projects(first: 89, orderBy: createdAt_DESC) {
+				title
+				slug
+				image
+				excerpt
+			}
+			pricingHeaderBlock {
+				header {
+					title
+					subtitle
+				}
+			}
+			solutionPrices {
+				title
+				image
+				description {
+					html
+				}
+				priceDetails {
+					list {
+						header {
+							title
+						}
+						content {
+							html
+						}
+					}
+				}
+			}
 			callToAction {
 				image
 				title

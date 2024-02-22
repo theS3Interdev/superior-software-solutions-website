@@ -54,6 +54,41 @@ type SolutionPageProps = {
 			}[];
 		};
 	};
+	projectsHeaderBlock: {
+		header: {
+			title: string;
+			subtitle: string;
+		};
+	};
+	projects: {
+		title: string;
+		slug: string;
+		image: { public_id: string };
+		excerpt: string;
+	}[];
+	pricingHeaderBlock?: {
+		header: {
+			title: string;
+			subtitle: string;
+		};
+	};
+	solutionPrices: {
+		title: string;
+		image: { public_id: string };
+		description: {
+			html: string;
+		};
+		priceDetails: {
+			list: {
+				header: {
+					title: string;
+				};
+				content: {
+					html: string;
+				};
+			}[];
+		};
+	}[];
 	callToAction: {
 		image: { public_id: string };
 		title: string;
@@ -108,6 +143,10 @@ const SolutionPage = async ({ params }: ParamsProps) => {
 		heroActionBlock,
 		pasBlock,
 		benefitsBlock,
+		projectsHeaderBlock,
+		projects,
+		pricingHeaderBlock,
+		solutionPrices,
 		callToAction,
 	} = await getSolutionBySlug(params.slug);
 
@@ -125,6 +164,10 @@ const SolutionPage = async ({ params }: ParamsProps) => {
 				<SolutionContentWidget
 					pasBlock={pasBlock}
 					benefitsBlock={benefitsBlock}
+					projectsHeaderBlock={projectsHeaderBlock}
+					projects={projects}
+					pricingHeaderBlock={pricingHeaderBlock}
+					solutionPrices={solutionPrices}
 					shareSummary={metaDescription}
 					shareTitle={title}
 					shareUrl={solutionAbsoluteUrl}
