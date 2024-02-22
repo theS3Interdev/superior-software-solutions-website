@@ -66,6 +66,12 @@ type SolutionPageProps = {
 		image: { public_id: string };
 		excerpt: string;
 	}[];
+	pricingHeaderBlock?: {
+		header: {
+			title: string;
+			subtitle: string;
+		};
+	};
 	callToAction: {
 		image: { public_id: string };
 		title: string;
@@ -122,6 +128,7 @@ const SolutionPage = async ({ params }: ParamsProps) => {
 		benefitsBlock,
 		projectsHeaderBlock,
 		projects,
+		pricingHeaderBlock,
 		callToAction,
 	} = await getSolutionBySlug(params.slug);
 
@@ -141,6 +148,7 @@ const SolutionPage = async ({ params }: ParamsProps) => {
 					benefitsBlock={benefitsBlock}
 					projectsHeaderBlock={projectsHeaderBlock}
 					projects={projects}
+					pricingHeaderBlock={pricingHeaderBlock}
 					shareSummary={metaDescription}
 					shareTitle={title}
 					shareUrl={solutionAbsoluteUrl}

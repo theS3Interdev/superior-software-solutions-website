@@ -623,6 +623,12 @@ export const qrySolutionBySlug = gql`
 				image
 				excerpt
 			}
+			pricingHeaderBlock {
+				header {
+					title
+					subtitle
+				}
+			}
 			callToAction {
 				image
 				title

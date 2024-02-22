@@ -54,6 +54,12 @@ type SolutionContentWidgetProps = {
 		image: { public_id: string };
 		excerpt: string;
 	}[];
+	pricingHeaderBlock?: {
+		header: {
+			title: string;
+			subtitle: string;
+		};
+	};
 	shareSummary: string;
 	shareTitle: string;
 	shareUrl: string;
@@ -69,6 +75,7 @@ export const SolutionContentWidget = ({
 	benefitsBlock,
 	projectsHeaderBlock,
 	projects,
+	pricingHeaderBlock,
 	shareSummary,
 	shareTitle,
 	shareUrl,
@@ -123,7 +130,18 @@ export const SolutionContentWidget = ({
 						</div>
 					</div>
 
-					<div className="space-y-8">Price List</div>
+					{pricingHeaderBlock && (
+						<div className="space-y-8">
+							<div>
+								<HeaderDisplayBlock
+									title={pricingHeaderBlock.header.title}
+									subtitle={pricingHeaderBlock.header.subtitle}
+								/>
+							</div>
+
+							<div>Price List</div>
+						</div>
+					)}
 
 					<div className="space-y-8">FAQs</div>
 
