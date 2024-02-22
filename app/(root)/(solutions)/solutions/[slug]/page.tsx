@@ -89,6 +89,25 @@ type SolutionPageProps = {
 			}[];
 		};
 	}[];
+	faqHeader: {
+		header: {
+			title: string;
+			subtitle: string;
+		};
+	};
+	faqs: {
+		title: string;
+		faqs: {
+			list: {
+				header: {
+					title: string;
+				};
+				content: {
+					html: string;
+				};
+			}[];
+		};
+	};
 	callToAction: {
 		image: { public_id: string };
 		title: string;
@@ -147,6 +166,8 @@ const SolutionPage = async ({ params }: ParamsProps) => {
 		projects,
 		pricingHeaderBlock,
 		solutionPrices,
+		faqHeader,
+		faqs,
 		callToAction,
 	} = await getSolutionBySlug(params.slug);
 
@@ -168,6 +189,8 @@ const SolutionPage = async ({ params }: ParamsProps) => {
 					projects={projects}
 					pricingHeaderBlock={pricingHeaderBlock}
 					solutionPrices={solutionPrices}
+					faqHeader={faqHeader}
+					faqs={faqs}
 					shareSummary={metaDescription}
 					shareTitle={title}
 					shareUrl={solutionAbsoluteUrl}
