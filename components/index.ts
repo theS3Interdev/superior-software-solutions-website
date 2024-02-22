@@ -1,4 +1,5 @@
 /* component blocks */
+import { AccordionBlock } from "@/components/blocks/accordion-block";
 import { BenefitCardBlock } from "@/components/blocks/benefit-card-block";
 import { BlogAuthorDetailsBlock } from "@/components/blocks/blog-author-details-block";
 import { BlogSummaryCardBlock } from "@/components/blocks/blog-summary-card-block";
@@ -17,6 +18,7 @@ import { ProjectSummaryCardBlock } from "@/components/blocks/project-summary-car
 import { ProjectsCarouselBlock } from "@/components/blocks/projects-carousel-block";
 import { RatingBlock } from "@/components/blocks/rating-block";
 import { SocialMediaSharingBlock } from "@/components/blocks/social-media-sharing-block";
+import { SolutionsPriceListBlock } from "@/components/blocks/solutions-price-list-block";
 import { SolutionsSummaryCardBlock } from "@/components/blocks/solutions-summary-card-block";
 import { SupportFormBlock } from "@/components/blocks/support-form-block";
 import { TestimonialCardBlock } from "@/components/blocks/testimonial-card-block";
@@ -27,6 +29,12 @@ import { ConsultBookingNotification } from "@/components/email/consult-booking-n
 import { SupportRequestNotification } from "@/components/email/support-request-notification";
 
 /* shadcn ui components */
+import {
+	Accordion,
+	AccordionContent,
+	AccordionItem,
+	AccordionTrigger,
+} from "@/components/ui/accordion";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
@@ -108,6 +116,7 @@ import { TestimonialsHeroWidget } from "@/components/widgets/testimonials-hero-w
 
 /* export components */
 export {
+	AccordionBlock,
 	BenefitCardBlock,
 	BlogAuthorDetailsBlock,
 	BlogSummaryCardBlock,
@@ -126,12 +135,17 @@ export {
 	PASHeaderBlock,
 	RatingBlock,
 	SocialMediaSharingBlock,
+	SolutionsPriceListBlock,
 	SolutionsSummaryCardBlock,
 	SupportFormBlock,
 	TestimonialCardBlock,
 	ThemeToggleBlock,
 	ConsultBookingNotification,
 	SupportRequestNotification,
+	Accordion,
+	AccordionContent,
+	AccordionItem,
+	AccordionTrigger,
 	Badge,
 	Button,
 	Calendar,

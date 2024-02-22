@@ -629,6 +629,23 @@ export const qrySolutionBySlug = gql`
 					subtitle
 				}
 			}
+			solutionPrices {
+				title
+				image
+				description {
+					html
+				}
+				priceDetails {
+					list {
+						header {
+							title
+						}
+						content {
+							html
+						}
+					}
+				}
+			}
 			callToAction {
 				image
 				title

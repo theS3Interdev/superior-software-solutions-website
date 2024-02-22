@@ -7,6 +7,7 @@ import {
 	ProjectsCarouselBlock,
 	Separator,
 	SocialMediaSharingBlock,
+	SolutionsPriceListBlock,
 } from "@/components/index";
 
 type SolutionContentWidgetProps = {
@@ -60,6 +61,23 @@ type SolutionContentWidgetProps = {
 			subtitle: string;
 		};
 	};
+	solutionPrices: {
+		title: string;
+		image: { public_id: string };
+		description: {
+			html: string;
+		};
+		priceDetails: {
+			list: {
+				header: {
+					title: string;
+				};
+				content: {
+					html: string;
+				};
+			}[];
+		};
+	}[];
 	shareSummary: string;
 	shareTitle: string;
 	shareUrl: string;
@@ -76,6 +94,7 @@ export const SolutionContentWidget = ({
 	projectsHeaderBlock,
 	projects,
 	pricingHeaderBlock,
+	solutionPrices,
 	shareSummary,
 	shareTitle,
 	shareUrl,
@@ -139,7 +158,17 @@ export const SolutionContentWidget = ({
 								/>
 							</div>
 
-							<div>Price List</div>
+							<div className="grid grid-cols-1 gap-5 lg:grid-cols-3">
+								{solutionPrices.map((price, index) => (
+									<SolutionsPriceListBlock
+										key={index}
+										image={price.image.public_id}
+										title={price.title}
+										description={price.description.html}
+										priceDetails={price.priceDetails}
+									/>
+								))}
+							</div>
 						</div>
 					)}
 
