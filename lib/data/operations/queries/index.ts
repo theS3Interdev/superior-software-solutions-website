@@ -646,6 +646,25 @@ export const qrySolutionBySlug = gql`
 					}
 				}
 			}
+			faqHeader {
+				header {
+					title
+					subtitle
+				}
+			}
+			faqs {
+				title
+				faqs {
+					list {
+						header {
+							title
+						}
+						content {
+							html
+						}
+					}
+				}
+			}
 			callToAction {
 				image
 				title
