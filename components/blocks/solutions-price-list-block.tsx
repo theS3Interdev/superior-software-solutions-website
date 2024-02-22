@@ -39,16 +39,16 @@ export const SolutionsPriceListBlock = ({
 					<div>
 						<ContentDisplayBlock content={description} />
 					</div>
-				</div>
 
-				<div>
-					{priceDetails.list.map((item, index) => (
-						<AccordionBlock
-							key={index}
-							title={item.header.title}
-							content={item.content.html}
-						/>
-					))}
+					<div>
+						{priceDetails.list.map((item, index) => (
+							<AccordionBlock
+								key={index}
+								title={item.header.title}
+								content={item.content.html}
+							/>
+						))}
+					</div>
 				</div>
 			</div>
 		</div>
