@@ -4,6 +4,7 @@ import {
 	CallToActionBlock,
 	HeaderDisplayBlock,
 	PASHeaderBlock,
+	ProjectsCarouselBlock,
 	Separator,
 	SocialMediaSharingBlock,
 } from "@/components/index";
@@ -41,6 +42,18 @@ type SolutionContentWidgetProps = {
 			};
 		}[];
 	};
+	projectsHeaderBlock: {
+		header: {
+			title: string;
+			subtitle: string;
+		};
+	};
+	projects: {
+		title: string;
+		slug: string;
+		image: { public_id: string };
+		excerpt: string;
+	}[];
 	shareSummary: string;
 	shareTitle: string;
 	shareUrl: string;
@@ -54,6 +67,8 @@ type SolutionContentWidgetProps = {
 export const SolutionContentWidget = ({
 	pasBlock,
 	benefitsBlock,
+	projectsHeaderBlock,
+	projects,
 	shareSummary,
 	shareTitle,
 	shareUrl,
@@ -94,6 +109,23 @@ export const SolutionContentWidget = ({
 							))}
 						</div>
 					</div>
+
+					<div className="space-y-8">
+						<div>
+							<HeaderDisplayBlock
+								title={projectsHeaderBlock.header.title}
+								subtitle={projectsHeaderBlock.header.subtitle}
+							/>
+						</div>
+
+						<div>
+							<ProjectsCarouselBlock projects={projects} />
+						</div>
+					</div>
+
+					<div className="space-y-8">Price List</div>
+
+					<div className="space-y-8">FAQs</div>
 
 					<div className="my-5 items-center justify-between sm:flex">
 						<div className="mb-5">

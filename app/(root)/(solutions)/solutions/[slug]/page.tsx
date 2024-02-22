@@ -54,6 +54,18 @@ type SolutionPageProps = {
 			}[];
 		};
 	};
+	projectsHeaderBlock: {
+		header: {
+			title: string;
+			subtitle: string;
+		};
+	};
+	projects: {
+		title: string;
+		slug: string;
+		image: { public_id: string };
+		excerpt: string;
+	}[];
 	callToAction: {
 		image: { public_id: string };
 		title: string;
@@ -108,6 +120,8 @@ const SolutionPage = async ({ params }: ParamsProps) => {
 		heroActionBlock,
 		pasBlock,
 		benefitsBlock,
+		projectsHeaderBlock,
+		projects,
 		callToAction,
 	} = await getSolutionBySlug(params.slug);
 
@@ -125,6 +139,8 @@ const SolutionPage = async ({ params }: ParamsProps) => {
 				<SolutionContentWidget
 					pasBlock={pasBlock}
 					benefitsBlock={benefitsBlock}
+					projectsHeaderBlock={projectsHeaderBlock}
+					projects={projects}
 					shareSummary={metaDescription}
 					shareTitle={title}
 					shareUrl={solutionAbsoluteUrl}

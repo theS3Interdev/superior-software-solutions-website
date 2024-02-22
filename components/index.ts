@@ -14,6 +14,7 @@ import { NavigationFooterBlock } from "@/components/blocks/navigation-footer-blo
 import { NavigationHeaderBlock } from "@/components/blocks/navigation-header-block";
 import { PASHeaderBlock } from "@/components/blocks/pas-header-block";
 import { ProjectSummaryCardBlock } from "@/components/blocks/project-summary-card-block";
+import { ProjectsCarouselBlock } from "@/components/blocks/projects-carousel-block";
 import { RatingBlock } from "@/components/blocks/rating-block";
 import { SocialMediaSharingBlock } from "@/components/blocks/social-media-sharing-block";
 import { SolutionsSummaryCardBlock } from "@/components/blocks/solutions-summary-card-block";
@@ -29,6 +30,14 @@ import { SupportRequestNotification } from "@/components/email/support-request-n
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
+import {
+	Carousel,
+	CarouselContent,
+	CarouselItem,
+	CarouselNext,
+	CarouselPrevious,
+	type CarouselApi,
+} from "@/components/ui/carousel";
 import { Checkbox } from "@/components/ui/checkbox";
 import {
 	DropdownMenu,
@@ -111,6 +120,7 @@ export {
 	HeroDisplayBlock,
 	ImageDisplayBlock,
 	ProjectSummaryCardBlock,
+	ProjectsCarouselBlock,
 	NavigationFooterBlock,
 	NavigationHeaderBlock,
 	PASHeaderBlock,
@@ -125,6 +135,12 @@ export {
 	Badge,
 	Button,
 	Calendar,
+	Carousel,
+	CarouselContent,
+	CarouselItem,
+	CarouselNext,
+	CarouselPrevious,
+	CarouselApi,
 	Checkbox,
 	DropdownMenu,
 	DropdownMenuContent,
