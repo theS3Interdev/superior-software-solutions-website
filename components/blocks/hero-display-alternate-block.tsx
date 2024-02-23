@@ -34,7 +34,7 @@ export const HeroDisplayAlternateBlock = ({
 }: HeroDisplayAlternateBlockProps) => {
 	return (
 		<Container>
-			<div className="flex flex-col space-y-5 py-10 lg:h-[32rem] lg:flex-row lg:items-center lg:py-16">
+			<div className="flex flex-col space-y-5 rounded-lg border p-1 py-10 lg:h-[32rem] lg:flex-row lg:items-center lg:py-16">
 				<div className="w-full lg:w-1/2">
 					{category && (
 						<div className="mb-3">
