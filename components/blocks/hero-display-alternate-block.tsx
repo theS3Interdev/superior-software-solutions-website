@@ -38,7 +38,7 @@ export const HeroDisplayAlternateBlock = ({
 				className="left-0 top-0 flex h-[32rem] w-full items-center justify-center rounded-lg bg-cover bg-center"
 				style={{ backgroundImage: `url(${image})` }}
 			>
-				<div className="flex h-full w-full items-center justify-center rounded-lg bg-neutral-800/30">
+				<div className="flex h-full w-full items-center justify-center rounded-lg bg-black/40">
 					<div className="w-full md:pl-8 lg:w-1/2">
 						{category && (
 							<div className="mb-3">
@@ -107,11 +107,7 @@ export const HeroDisplayAlternateBlock = ({
 						)}
 					</div>
 
-					<div className="flex h-96 w-full items-center justify-center lg:w-1/2">
-						{/* <div className="relative h-full w-full rounded-lg border">
-						<ImageDisplayBlock imageSrc={image} imageAlt="Hero Image" />
-					</div> */}
-					</div>
+					<div className="flex h-96 w-full items-center justify-center lg:w-1/2"></div>
 				</div>
 			</div>
 		</Container>

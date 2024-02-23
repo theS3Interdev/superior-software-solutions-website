@@ -4,7 +4,7 @@ type ConsultHeroWidgetProps = {
 	heroActionBlock: {
 		content: {
 			content: { header: { title: string } };
-			image: { public_id: string };
+			image: { public_id: string; secure_url: string };
 		};
 	};
 	pasBlock: {
@@ -23,7 +23,7 @@ export const ConsultHeroWidget = ({
 	return (
 		<div className="mx-1">
 			<HeroDisplayAlternateBlock
-				image={heroActionBlock.content.image.public_id}
+				image={heroActionBlock.content.image.secure_url}
 				title={heroActionBlock.content.content.header.title}
 				subtitleHT={pasBlock.header.content.header.title}
 				subtitleHS={pasBlock.header.content.header.subtitle}
