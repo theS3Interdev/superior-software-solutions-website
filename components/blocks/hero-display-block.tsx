@@ -1,37 +1,121 @@
-import { ImageDisplayBlock } from "@/components/index";
+import { Container } from "@/components/container";
+import {
+	Badge,
+	DateDisplayBlock,
+	HeaderDisplayBlock,
+	ImageDisplayBlock,
+	Separator,
+} from "@/components/index";
 
 type HeroDisplayBlockProps = {
-	title: string;
-	subtitle?: string;
 	image: string;
+	title?: string;
+	subtitleHT?: string;
+	subtitleHS?: string;
+	category?: string;
+	excerpt?: string;
+	authorImage?: string;
+	authorName?: string;
+	date?: string;
+	solutions?: { title: string }[];
 };
 
 export const HeroDisplayBlock = ({
-	title,
-	subtitle,
 	image,
+	title,
+	subtitleHT,
+	subtitleHS,
+	category,
+	excerpt,
+	authorImage,
+	authorName,
+	date,
+	solutions,
 }: HeroDisplayBlockProps) => {
 	return (
-		<div className="relative h-96 w-full lg:h-[34rem]">
-			<div className="relative h-full w-full rounded-lg border">
-				<ImageDisplayBlock imageSrc={image} imageAlt="Hero Image" />
-			</div>
+		<Container>
+			<div
+				className="left-0 top-0 flex h-[32rem] w-full items-center justify-center rounded-lg bg-cover bg-center"
+				style={{ backgroundImage: `url(${image})` }}
+			>
+				<div className="flex h-full w-full flex-col items-center justify-center rounded-lg bg-gray-900/40 md:flex-row">
+					<div className="px-3 md:w-1/2">
+						{category && (
+							<div className="mb-3">
+								<Badge className="m-[1px] text-sm text-white">{category}</Badge>
+							</div>
+						)}
 
-			<div className="absolute left-0 top-0 h-full w-full rounded-lg bg-black/10"></div>
+						{solutions &&
+							solutions.map((service, index) =>
+								index === 0 ? (
+									<Badge
+										key={index}
+										className="m-[1px] mb-3 text-sm text-white"
+									>
+										{service.title}
+									</Badge>
+								) : (
+									service.title && (
+										<Badge
+											key={index}
+											className="m-[1px] mb-3 text-sm text-white"
+										>
+											{service.title}
+										</Badge>
+									)
+								),
+							)}
 
-			{title && (
-				<div className="absolute left-1/2 top-1/2 w-72 -translate-x-1/2 -translate-y-1/2 rounded-lg bg-black/70 px-5 py-3 text-center lg:w-auto">
-					<div className="text-white">
-						<h1 className="mb-3 text-pretty text-3xl font-semibold tracking-wide lg:text-4xl">
-							{title}
-						</h1>
+						{title && (
+							<div>
+								<h1 className="text-pretty text-3xl font-semibold tracking-wide text-white lg:text-4xl">
+									{title}
+								</h1>
 
-						{subtitle && (
-							<p className="w-full text-pretty leading-loose">{subtitle}</p>
+								{subtitleHT && subtitleHS && (
+									<div className="mt-3 w-full">
+										<Separator className="my-3" />
+
+										<p className="text-pretty text-xl leading-loose text-white">
+											<span>{subtitleHT}</span>: <span>{subtitleHS}</span>
+										</p>
+
+										<Separator className="my-3" />
+									</div>
+								)}
+
+								{excerpt && (
+									<div className="my-3 w-full text-white">
+										<HeaderDisplayBlock subtitle={excerpt} />
+									</div>
+								)}
+							</div>
+						)}
+
+						{authorName && authorImage && date && (
+							<div className="flex items-center space-x-1">
+								<div className="relative mr-2 h-12 w-12 rounded-full">
+									<ImageDisplayBlock
+										imageSrc={authorImage}
+										imageAlt={authorName}
+									/>
+								</div>
+
+								<div className="flex flex-col text-muted-foreground text-white">
+									<p className="text-sm">{authorName}</p>
+
+									<p className="text-xs">
+										<DateDisplayBlock date={date} />
+									</p>
+								</div>
+							</div>
 						)}
 					</div>
+
+					<div className="px-3 text-white md:w-1/2"></div>
 				</div>
-			)}
-		</div>
+			</div>
+		</Container>
 	);
 };

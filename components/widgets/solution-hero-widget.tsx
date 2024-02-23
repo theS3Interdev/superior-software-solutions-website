@@ -1,4 +1,4 @@
-import { HeroDisplayAlternateBlock } from "@/components/index";
+import { HeroDisplayBlock } from "@/components/index";
 
 type SolutionHeroWidgetProps = {
 	title: string;
@@ -21,7 +21,7 @@ export const SolutionHeroWidget = ({
 }: SolutionHeroWidgetProps) => {
 	return (
 		<div className="mx-1">
-			<HeroDisplayAlternateBlock
+			<HeroDisplayBlock
 				image={heroActionBlock.content.image.secure_url}
 				subtitleHS={heroActionBlock.content.content.header.subtitle}
 				subtitleHT={heroActionBlock.content.content.header.title}

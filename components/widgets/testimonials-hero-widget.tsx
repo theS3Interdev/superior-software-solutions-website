@@ -1,4 +1,4 @@
-import { HeroDisplayAlternateBlock } from "@/components/index";
+import { HeroDisplayBlock } from "@/components/index";
 
 type TestimonialsHeroWidgetProps = {
 	heroActionBlock: {
@@ -22,7 +22,7 @@ export const TestimonialsHeroWidget = ({
 }: TestimonialsHeroWidgetProps) => {
 	return (
 		<div className="mx-1">
-			<HeroDisplayAlternateBlock
+			<HeroDisplayBlock
 				image={heroActionBlock.content.image.secure_url}
 				title={heroActionBlock.content.content.header.title}
 				subtitleHT={pasBlock.header.content.header.title}
