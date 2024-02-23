@@ -75,13 +75,13 @@ export const HeroDisplayBlock = ({
 
 								{subtitleHT && subtitleHS && (
 									<div className="mt-3 w-full">
-										<Separator className="my-3" />
+										<Separator className="my-3 bg-white" />
 
 										<p className="text-pretty text-xl leading-loose text-white">
 											<span>{subtitleHT}</span>: <span>{subtitleHS}</span>
 										</p>
 
-										<Separator className="my-3" />
+										<Separator className="my-3 bg-white" />
 									</div>
 								)}
 
