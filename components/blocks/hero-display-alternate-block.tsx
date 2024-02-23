@@ -34,78 +34,83 @@ export const HeroDisplayAlternateBlock = ({
 }: HeroDisplayAlternateBlockProps) => {
 	return (
 		<Container>
-			<div className="flex flex-col space-y-5 rounded-lg border p-1 py-10 lg:h-[32rem] lg:flex-row lg:items-center lg:py-16">
-				<div className="w-full lg:w-1/2">
-					{category && (
-						<div className="mb-3">
-							<Badge className="m-[1px] text-sm">{category}</Badge>
-						</div>
-					)}
+			<div
+				className="left-0 top-0 flex h-[32rem] w-full items-center justify-center rounded-lg bg-cover bg-center"
+				style={{ backgroundImage: `url(${image})` }}
+			>
+				<div className="flex h-full w-full items-center justify-center rounded-lg bg-neutral-800/30">
+					<div className="w-full md:pl-8 lg:w-1/2">
+						{category && (
+							<div className="mb-3">
+								<Badge className="m-[1px] text-sm">{category}</Badge>
+							</div>
+						)}
 
-					{solutions &&
-						solutions.map((service, index) =>
-							index === 0 ? (
-								<Badge key={index} className="m-[1px] mb-3 text-sm">
-									{service.title}
-								</Badge>
-							) : (
-								service.title && (
+						{solutions &&
+							solutions.map((service, index) =>
+								index === 0 ? (
 									<Badge key={index} className="m-[1px] mb-3 text-sm">
 										{service.title}
 									</Badge>
-								)
-							),
+								) : (
+									service.title && (
+										<Badge key={index} className="m-[1px] mb-3 text-sm">
+											{service.title}
+										</Badge>
+									)
+								),
+							)}
+
+						{title && (
+							<div className="lg:max-w-lg">
+								<h1 className="text-pretty text-3xl font-semibold tracking-wide text-white lg:text-4xl">
+									{title}
+								</h1>
+
+								{subtitleHT && subtitleHS && (
+									<div className="mt-3 w-full">
+										<Separator className="my-3" />
+
+										<p className="text-pretty text-xl leading-loose text-white">
+											<span>{subtitleHT}</span>: <span>{subtitleHS}</span>
+										</p>
+
+										<Separator className="my-3" />
+									</div>
+								)}
+
+								{excerpt && (
+									<div className="my-3 w-full">
+										<HeaderDisplayBlock subtitle={excerpt} />
+									</div>
+								)}
+							</div>
 						)}
 
-					{title && (
-						<div className="lg:max-w-lg">
-							<h1 className="text-pretty text-3xl font-semibold tracking-wide lg:text-4xl">
-								{title}
-							</h1>
+						{authorName && authorImage && date && (
+							<div className="flex items-center space-x-1">
+								<div className="relative mr-2 h-12 w-12 rounded-full">
+									<ImageDisplayBlock
+										imageSrc={authorImage}
+										imageAlt={authorName}
+									/>
+								</div>
 
-							{subtitleHT && subtitleHS && (
-								<div className="mt-3 w-full">
-									<Separator className="my-3" />
+								<div className="flex flex-col text-muted-foreground text-white">
+									<p className="text-sm">{authorName}</p>
 
-									<p className="text-pretty text-xl leading-loose text-muted-foreground">
-										<span>{subtitleHT}</span>: <span>{subtitleHS}</span>
+									<p className="text-xs">
+										<DateDisplayBlock date={date} />
 									</p>
-
-									<Separator className="my-3" />
 								</div>
-							)}
-
-							{excerpt && (
-								<div className="my-3 w-full">
-									<HeaderDisplayBlock subtitle={excerpt} />
-								</div>
-							)}
-						</div>
-					)}
-
-					{authorName && authorImage && date && (
-						<div className="flex items-center space-x-1">
-							<div className="relative mr-2 h-12 w-12 rounded-full">
-								<ImageDisplayBlock
-									imageSrc={authorImage}
-									imageAlt={authorName}
-								/>
 							</div>
+						)}
+					</div>
 
-							<div className="flex flex-col text-muted-foreground">
-								<p className="text-sm">{authorName}</p>
-
-								<p className="text-xs">
-									<DateDisplayBlock date={date} />
-								</p>
-							</div>
-						</div>
-					)}
-				</div>
-
-				<div className="flex h-96 w-full items-center justify-center lg:w-1/2">
-					<div className="relative h-full w-full rounded-lg border">
+					<div className="flex h-96 w-full items-center justify-center lg:w-1/2">
+						{/* <div className="relative h-full w-full rounded-lg border">
 						<ImageDisplayBlock imageSrc={image} imageAlt="Hero Image" />
+					</div> */}
 					</div>
 				</div>
 			</div>
