@@ -42,19 +42,25 @@ export const HeroDisplayAlternateBlock = ({
 					<div className="px-3 md:w-1/2">
 						{category && (
 							<div className="mb-3">
-								<Badge className="m-[1px] text-sm">{category}</Badge>
+								<Badge className="m-[1px] text-sm text-white">{category}</Badge>
 							</div>
 						)}
 
 						{solutions &&
 							solutions.map((service, index) =>
 								index === 0 ? (
-									<Badge key={index} className="m-[1px] mb-3 text-sm">
+									<Badge
+										key={index}
+										className="m-[1px] mb-3 text-sm text-white"
+									>
 										{service.title}
 									</Badge>
 								) : (
 									service.title && (
-										<Badge key={index} className="m-[1px] mb-3 text-sm">
+										<Badge
+											key={index}
+											className="m-[1px] mb-3 text-sm text-white"
+										>
 											{service.title}
 										</Badge>
 									)
@@ -80,7 +86,7 @@ export const HeroDisplayAlternateBlock = ({
 								)}
 
 								{excerpt && (
-									<div className="my-3 w-full">
+									<div className="my-3 w-full text-white">
 										<HeaderDisplayBlock subtitle={excerpt} />
 									</div>
 								)}
