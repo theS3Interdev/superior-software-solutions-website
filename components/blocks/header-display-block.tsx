@@ -13,17 +13,19 @@ export const HeaderDisplayBlock = ({
 		<div className="space-y-3">
 			<Separator className="mb-5" />
 
-			{title && (
-				<h1 className="text-2xl font-semibold tracking-wide lg:text-3xl">
-					{title}
-				</h1>
-			)}
+			<div>
+				{title && (
+					<h1 className="text-2xl font-semibold tracking-wide lg:text-3xl">
+						{title}
+					</h1>
+				)}
+			</div>
 
-			{subtitle && (
-				<p className="w-full text-pretty leading-loose text-muted-foreground">
-					{subtitle}
-				</p>
-			)}
+			<div>
+				{subtitle && (
+					<p className="w-full text-pretty leading-loose">{subtitle}</p>
+				)}
+			</div>
 
 			<Separator className="mt-5" />
 		</div>

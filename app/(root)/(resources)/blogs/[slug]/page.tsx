@@ -23,6 +23,7 @@ type BlogPageProps = {
 	};
 	image: {
 		public_id: string;
+		secure_url: string;
 	};
 	excerpt: string;
 	content: {
@@ -101,7 +102,7 @@ const BlogPage = async ({ params }: ParamsProps) => {
 					category={category.title}
 					date={date}
 					excerpt={excerpt}
-					image={image.public_id}
+					image={image.secure_url}
 					title={title}
 				/>
 			</section>
