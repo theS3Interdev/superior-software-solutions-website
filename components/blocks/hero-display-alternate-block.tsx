@@ -38,8 +38,8 @@ export const HeroDisplayAlternateBlock = ({
 				className="left-0 top-0 flex h-[32rem] w-full items-center justify-center rounded-lg bg-cover bg-center"
 				style={{ backgroundImage: `url(${image})` }}
 			>
-				<div className="flex h-full w-full items-center justify-center rounded-lg bg-black/40">
-					<div className="w-full md:pl-8 lg:w-1/2">
+				<div className="flex h-full w-full flex-col items-center justify-center rounded-lg bg-black/40 md:flex-row">
+					<div className="px-3 md:w-1/2">
 						{category && (
 							<div className="mb-3">
 								<Badge className="m-[1px] text-sm">{category}</Badge>
@@ -62,7 +62,7 @@ export const HeroDisplayAlternateBlock = ({
 							)}
 
 						{title && (
-							<div className="lg:max-w-lg">
+							<div>
 								<h1 className="text-pretty text-3xl font-semibold tracking-wide text-white lg:text-4xl">
 									{title}
 								</h1>
@@ -107,7 +107,7 @@ export const HeroDisplayAlternateBlock = ({
 						)}
 					</div>
 
-					<div className="flex h-96 w-full items-center justify-center lg:w-1/2"></div>
+					<div className="px-3 text-white md:w-1/2"></div>
 				</div>
 			</div>
 		</Container>
