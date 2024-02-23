@@ -1,4 +1,4 @@
-import { HeroDisplayAlternateBlock } from "@/components/index";
+import { HeroDisplayBlock } from "@/components/index";
 
 type BlogHeroWidgetProps = {
 	authorImage: string;
@@ -21,7 +21,7 @@ export const BlogHeroWidget = ({
 }: BlogHeroWidgetProps) => {
 	return (
 		<div className="mx-1">
-			<HeroDisplayAlternateBlock
+			<HeroDisplayBlock
 				authorImage={authorImage}
 				authorName={authorName}
 				category={category}

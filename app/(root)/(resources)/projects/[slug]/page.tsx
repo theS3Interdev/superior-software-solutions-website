@@ -10,7 +10,7 @@ const url = process.env.NEXT_PUBLIC_PRODUCTION_URL!;
 type ProjectPageProps = {
 	title: string;
 	slug: string;
-	image: { public_id: string };
+	image: { public_id: string; secure_url: string };
 	excerpt: string;
 	solutions: { title: string }[];
 	content: { html: string };
@@ -75,7 +75,7 @@ const ProjectPage = async ({ params }: ParamsProps) => {
 			<section id="hero">
 				<ProjectHeroWidget
 					title={title}
-					image={image.public_id}
+					image={image.secure_url}
 					solutions={solutions}
 					excerpt={excerpt}
 				/>

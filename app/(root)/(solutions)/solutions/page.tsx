@@ -9,7 +9,7 @@ type SolutionsPageProps = {
 	heroActionBlock: {
 		content: {
 			content: { header: { title: string } };
-			image: { public_id: string };
+			image: { public_id: string; secure_url: string };
 		};
 	};
 	pasBlock: {

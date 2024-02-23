@@ -655,7 +655,7 @@ export const qrySolutionBySlug = gql`
 			faqs {
 				title
 				faqs {
-					list {
+					list(first: 13) {
 						header {
 							title
 						}
