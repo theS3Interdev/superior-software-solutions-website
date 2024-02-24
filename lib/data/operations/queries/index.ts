@@ -721,6 +721,24 @@ export const qryAboutPage = gql`
 					}
 				}
 			}
+			benefitsBlock {
+				header {
+					content {
+						header {
+							title
+							subtitle
+						}
+					}
+				}
+				list {
+					content {
+						header {
+							title
+							subtitle
+						}
+					}
+				}
+			}
 			callToAction {
 				image
 				title
