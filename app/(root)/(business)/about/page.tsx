@@ -15,10 +15,26 @@ type AboutPageProps = {
 	pasBlock: {
 		header: {
 			content: {
-				header: { title: string; subtitle: string };
-				content: { html: string };
+				header: {
+					title: string;
+					subtitle: string;
+				};
+				content: {
+					html: string;
+				};
 			};
+			image: { public_id: string };
 		};
+		list: {
+			content: {
+				header: {
+					title: string;
+				};
+				content: {
+					html: string;
+				};
+			};
+		}[];
 	};
 	callToAction: {
 		image: { public_id: string };
@@ -72,7 +88,7 @@ const AboutPage = async () => {
 			</section>
 
 			<section id="content">
-				<AboutContentWidget callToAction={callToAction} />
+				<AboutContentWidget pasBlock={pasBlock} callToAction={callToAction} />
 			</section>
 		</article>
 	);

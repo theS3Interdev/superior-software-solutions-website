@@ -704,6 +704,20 @@ export const qryAboutPage = gql`
 							title
 							subtitle
 						}
+						content {
+							html
+						}
+					}
+					image
+				}
+				list {
+					content {
+						header {
+							title
+						}
+						content {
+							html
+						}
 					}
 				}
 			}
