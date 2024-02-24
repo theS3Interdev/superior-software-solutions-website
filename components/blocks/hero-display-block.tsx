@@ -38,8 +38,8 @@ export const HeroDisplayBlock = ({
 				className="left-0 top-0 flex h-[32rem] w-full items-center justify-center rounded-lg bg-cover bg-center"
 				style={{ backgroundImage: `url(${image})` }}
 			>
-				<div className="flex h-full w-full flex-col items-center justify-center rounded-lg bg-gray-900/40 md:flex-row">
-					<div className="px-3 md:w-1/2">
+				<div className="flex h-full w-full flex-col items-center justify-center rounded-lg bg-gray-900/40 lg:flex-row">
+					<div className="px-3 lg:w-1/2">
 						{category && (
 							<div className="mb-3">
 								<Badge className="m-[1px] text-sm text-white">{category}</Badge>
@@ -113,7 +113,7 @@ export const HeroDisplayBlock = ({
 						)}
 					</div>
 
-					<div className="px-3 text-white md:w-1/2"></div>
+					<div className="px-3 text-white lg:w-1/2"></div>
 				</div>
 			</div>
 		</Container>

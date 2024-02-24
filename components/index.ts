@@ -13,6 +13,7 @@ import { ImageDisplayBlock } from "@/components/blocks/image-display-block";
 import { NavigationFooterBlock } from "@/components/blocks/navigation-footer-block";
 import { NavigationHeaderBlock } from "@/components/blocks/navigation-header-block";
 import { PASHeaderBlock } from "@/components/blocks/pas-header-block";
+import { PASJumbotronBlock } from "@/components/blocks/pas-jumbotron-block";
 import { ProjectSummaryCardBlock } from "@/components/blocks/project-summary-card-block";
 import { ProjectsCarouselBlock } from "@/components/blocks/projects-carousel-block";
 import { RatingBlock } from "@/components/blocks/rating-block";
@@ -131,6 +132,7 @@ export {
 	NavigationFooterBlock,
 	NavigationHeaderBlock,
 	PASHeaderBlock,
+	PASJumbotronBlock,
 	RatingBlock,
 	SocialMediaSharingBlock,
 	SolutionsPriceListBlock,
