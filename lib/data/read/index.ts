@@ -1,4 +1,5 @@
 import {
+	qryAboutPage,
 	qryAllBlogSummary,
 	qryAllBlogSummaryCount,
 	qryAllProjectSummary,
@@ -358,5 +359,22 @@ export const getSolutionBySlug = async (slug: string) => {
 		return data.solutions[0];
 	} catch (error) {
 		console.log("GET_SOLUTION_BY_SLUG", error);
+	}
+};
+
+/* get about page */
+export const getAboutPage = async () => {
+	try {
+		const result = await fetch(endpoint, {
+			method: "POST",
+			body: JSON.stringify({ query: qryAboutPage }),
+			headers: { "Content-Type": "application/json" },
+		});
+
+		const { data } = await result.json();
+
+		return data.pages[0];
+	} catch (error) {
+		console.log("[GET_ABOUT_PAGE]", error);
 	}
 };

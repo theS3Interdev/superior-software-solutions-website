@@ -679,3 +679,45 @@ export const qrySolutionBySlug = gql`
 		}
 	}
 `;
+
+/* query to retrieve about page */
+export const qryAboutPage = gql`
+	query qryAboutPage {
+		pages(where: { slug: "about" }) {
+			pageTitle
+			slug
+			pageMetaDescription
+			heroActionBlock {
+				content {
+					content {
+						header {
+							title
+						}
+					}
+					image
+				}
+			}
+			pasBlock {
+				header {
+					content {
+						header {
+							title
+							subtitle
+						}
+					}
+				}
+			}
+			callToAction {
+				image
+				title
+				content {
+					html
+				}
+				link {
+					label
+					url
+				}
+			}
+		}
+	}
+`;
