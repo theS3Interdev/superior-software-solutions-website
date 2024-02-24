@@ -36,6 +36,24 @@ type AboutPageProps = {
 			};
 		}[];
 	};
+	benefitsBlock: {
+		header: {
+			content: {
+				header: {
+					title: string;
+					subtitle: string;
+				};
+			};
+		};
+		list: {
+			content: {
+				header: {
+					title: string;
+					subtitle: string;
+				};
+			};
+		}[];
+	};
 	callToAction: {
 		image: { public_id: string };
 		title: string;
@@ -75,8 +93,12 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 const AboutPage = async () => {
-	const { heroActionBlock, pasBlock, callToAction }: AboutPageProps =
-		await getAboutPage();
+	const {
+		heroActionBlock,
+		pasBlock,
+		benefitsBlock,
+		callToAction,
+	}: AboutPageProps = await getAboutPage();
 
 	return (
 		<article className="mt-24 space-y-8">
@@ -88,7 +110,11 @@ const AboutPage = async () => {
 			</section>
 
 			<section id="content">
-				<AboutContentWidget pasBlock={pasBlock} callToAction={callToAction} />
+				<AboutContentWidget
+					pasBlock={pasBlock}
+					benefitsBlock={benefitsBlock}
+					callToAction={callToAction}
+				/>
 			</section>
 		</article>
 	);
