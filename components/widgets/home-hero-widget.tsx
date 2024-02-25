@@ -34,8 +34,8 @@ export const HomeHeroWidget = ({ heroActionBlock }: HomeHeroWidgetProps) => {
 			>
 				<div className="flex h-full w-full flex-col items-center justify-center rounded-lg bg-gray-900/40 lg:flex-row lg:gap-8">
 					<div className="container mx-auto flex max-w-6xl">
-						<div className="space-y-5 px-3 lg:w-1/2">
-							<h1 className="text-pretty text-3xl font-semibold tracking-wide text-white lg:text-4xl">
+						<div className="space-y-5 lg:w-1/2">
+							<h1 className="text-pretty text-3xl font-semibold tracking-wide text-white lg:text-5xl">
 								{heroActionBlock.content.content.header.title}
 							</h1>
 
