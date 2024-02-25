@@ -116,6 +116,30 @@ export const qryHomePage = gql`
 					url
 				}
 			}
+			pasBlock {
+				header {
+					content {
+						header {
+							title
+							subtitle
+						}
+						content {
+							html
+						}
+					}
+					image
+				}
+				list {
+					content {
+						header {
+							title
+						}
+						content {
+							html
+						}
+					}
+				}
+			}
 			callToAction {
 				image
 				title

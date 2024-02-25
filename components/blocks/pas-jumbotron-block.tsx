@@ -6,6 +6,9 @@ import {
 } from "@/components/index";
 
 type PASJumbotronBlockProps = {
+	title?: string;
+	subtitle?: string;
+	displayTitle: boolean;
 	image: string;
 	content: string;
 	pasBlock: {
@@ -23,6 +26,9 @@ type PASJumbotronBlockProps = {
 };
 
 export const PASJumbotronBlock = ({
+	title,
+	subtitle,
+	displayTitle,
 	image,
 	content,
 	pasBlock,
@@ -30,10 +36,14 @@ export const PASJumbotronBlock = ({
 	return (
 		<div className="w-full space-y-5 rounded-lg border bg-secondary p-4">
 			<div>
-				<HeaderDisplayBlock
-					title="Bridging Success"
-					subtitle="The Superior Software Solutions story"
-				/>
+				{displayTitle ? (
+					<HeaderDisplayBlock
+						title="Bridging Success"
+						subtitle="The Superior Software Solutions story"
+					/>
+				) : (
+					<HeaderDisplayBlock title={title} subtitle={subtitle} />
+				)}
 			</div>
 
 			<div className="flex flex-col gap-5 rounded-lg lg:flex-row">
@@ -45,10 +55,17 @@ export const PASJumbotronBlock = ({
 
 				<div className="space-y-5 px-1 lg:w-1/2">
 					<div>
-						<HeaderDisplayBlock
-							title="Michael Caesar"
-							subtitle="Founder @Superior Software Solutions"
-						/>
+						{displayTitle ? (
+							<HeaderDisplayBlock
+								title="Michael Caesar"
+								subtitle="Founder @Superior Software Solutions."
+							/>
+						) : (
+							<HeaderDisplayBlock
+								title="Unmute Your Story"
+								subtitle="Crafting a digital experience that resonates."
+							/>
+						)}
 					</div>
 
 					<div>

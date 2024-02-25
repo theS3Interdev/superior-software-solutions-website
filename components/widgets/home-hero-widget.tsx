@@ -1,11 +1,20 @@
-import { Button, ImageDisplayBlock } from "@/components/index";
 import Link from "next/link";
+
+import { Button } from "@/components/index";
 
 type HomeHeroWidgetProps = {
 	heroActionBlock: {
 		content: {
-			content: { header: { title: string; subtitle: string } };
-			image: { public_id: string };
+			content: {
+				header: {
+					title: string;
+					subtitle: string;
+				};
+			};
+			image: {
+				public_id: string;
+				secure_url: string;
+			};
 		};
 		links: {
 			label: string;
@@ -17,40 +26,38 @@ type HomeHeroWidgetProps = {
 export const HomeHeroWidget = ({ heroActionBlock }: HomeHeroWidgetProps) => {
 	return (
 		<div className="mx-1">
-			<div className="relative">
-				<div className="relative h-[75vh] w-full">
-					<ImageDisplayBlock
-						imageSrc={heroActionBlock.content.image.public_id}
-						imageAlt={heroActionBlock.content.content.header.title}
-					/>
+			<div
+				className="left-0 top-0 flex h-[75vh] w-full items-center justify-center rounded-lg bg-cover bg-center"
+				style={{
+					backgroundImage: `url(${heroActionBlock.content.image.secure_url})`,
+				}}
+			>
+				<div className="flex h-full w-full flex-col items-center justify-center rounded-lg bg-gray-900/40 lg:flex-row lg:gap-8">
+					<div className="container mx-auto flex max-w-6xl">
+						<div className="space-y-5 lg:w-1/2">
+							<h1 className="text-pretty text-3xl font-semibold tracking-wide text-white lg:text-5xl">
+								{heroActionBlock.content.content.header.title}
+							</h1>
 
-					<div className="absolute left-0 top-0 h-[75vh] w-full rounded-lg bg-black/50"></div>
+							<p className="text-pretty text-lg leading-loose text-white">
+								{heroActionBlock.content.content.header.subtitle}
+							</p>
 
-					<div className="absolute left-0 top-0 flex h-full w-full items-center justify-center">
-						<div className="max-w-6xl md:flex md:gap-8">
-							<div className="px-3 md:w-1/2">
-								<h1 className="text-pretty text-3xl font-bold tracking-tight text-white">
-									{heroActionBlock.content.content.header.title}
-								</h1>
-
-								<p className="mt-6 text-pretty text-lg leading-loose text-white">
-									{heroActionBlock.content.content.header.subtitle}
-								</p>
-
-								<div className="mt-8">
-									<Button asChild>
+							<div>
+								{heroActionBlock.links.map((link, index) => (
+									<Button asChild key={index}>
 										<Link
-											href={heroActionBlock.links[0].url}
+											href={link.url}
 											className="text-lg font-semibold uppercase"
 										>
-											{heroActionBlock.links[0].label}
+											{link.label}
 										</Link>
 									</Button>
-								</div>
+								))}
 							</div>
-
-							<div className="px-3 md:w-1/2"></div>
 						</div>
+
+						<div className="px-3 lg:w-1/2"></div>
 					</div>
 				</div>
 			</div>
