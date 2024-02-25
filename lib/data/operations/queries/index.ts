@@ -108,6 +108,9 @@ export const qryHomePage = gql`
 							title
 							subtitle
 						}
+						content {
+							html
+						}
 					}
 					image
 				}

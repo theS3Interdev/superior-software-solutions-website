@@ -10,8 +10,19 @@ type HomePageProps = {
 	pageMetaDescription: string;
 	heroActionBlock: {
 		content: {
-			content: { header: { title: string; subtitle: string } };
-			image: { public_id: string };
+			content: {
+				header: {
+					title: string;
+					subtitle: string;
+				};
+				content: {
+					html: string;
+				};
+			};
+			image: {
+				public_id: string;
+				secure_url: string;
+			};
 		};
 		links: {
 			label: string;
@@ -58,7 +69,7 @@ const HomePage = async () => {
 	const { heroActionBlock, callToAction }: HomePageProps = await getHomePage();
 
 	return (
-		<article className="mt-24 space-y-8">
+		<article className="mt-24 space-y-10">
 			<section id="hero">
 				<HomeHeroWidget heroActionBlock={heroActionBlock} />
 			</section>
