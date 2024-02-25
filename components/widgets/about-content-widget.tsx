@@ -77,6 +77,7 @@ export const AboutContentWidget = ({
 							image={pasBlock.header.image.public_id}
 							content={pasBlock.header.content.content.html}
 							pasBlock={pasBlock}
+							displayTitle={true}
 						/>
 					</div>
 
