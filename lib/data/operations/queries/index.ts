@@ -165,6 +165,48 @@ export const qryHomePage = gql`
 					image
 				}
 			}
+			testimonialsHeader {
+				header {
+					title
+					subtitle
+				}
+			}
+			testimonials {
+				image
+				name
+				title
+				rating
+				content {
+					html
+				}
+			}
+			processBlock {
+				header {
+					content {
+						header {
+							title
+							subtitle
+						}
+					}
+				}
+				list {
+					content {
+						header {
+							title
+						}
+						content {
+							html
+						}
+					}
+					image
+				}
+			}
+			blogsHeader {
+				header {
+					title
+					subtitle
+				}
+			}
 			callToAction {
 				image
 				title
@@ -275,6 +317,19 @@ export const qryBlogsPage = gql`
 					url
 				}
 			}
+		}
+	}
+`;
+
+/* query to retrieve the latest 3 blogs in summary */
+export const qryLatestBlogSummary = gql`
+	query qryLatestBlogSummary {
+		blogs(first: 4, orderBy: createdAt_DESC) {
+			title
+			slug
+			date
+			image
+			excerpt
 		}
 	}
 `;

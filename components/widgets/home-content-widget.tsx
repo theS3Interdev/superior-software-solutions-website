@@ -1,14 +1,15 @@
-import Link from "next/link";
+import { getLatestBlogSummary } from "@/lib/data/read/index";
 
 import { Container } from "@/components/container";
 import {
-	Button,
+	BlogsCarouselBlock,
 	CallToActionBlock,
-	ContentDisplayBlock,
 	HeaderDisplayBlock,
-	ImageDisplayBlock,
+	HomeBenefitCardBlock,
+	HomeProcessCardBlock,
 	PASJumbotronBlock,
 	Separator,
+	TestimonialCardBlock,
 } from "@/components/index";
 
 type HomeContentWidgetProps = {
@@ -56,6 +57,48 @@ type HomeContentWidgetProps = {
 			image: { public_id: string };
 		}[];
 	};
+	testimonialsHeader: {
+		header: {
+			title: string;
+			subtitle: string;
+		};
+	};
+	testimonials: {
+		image: { public_id: string };
+		name: string;
+		title: string;
+		rating: number;
+		content: { html: string };
+	}[];
+	processBlock: {
+		header: {
+			content: {
+				header: {
+					title: string;
+					subtitle: string;
+				};
+			};
+		};
+		list: {
+			content: {
+				header: {
+					title: string;
+				};
+				content: {
+					html: string;
+				};
+			};
+			image: {
+				public_id: string;
+			};
+		}[];
+	};
+	blogsHeader: {
+		header: {
+			title: string;
+			subtitle: string;
+		};
+	};
 	callToAction: {
 		image: { public_id: string };
 		title: string;
@@ -69,15 +112,29 @@ type HomeContentWidgetProps = {
 	};
 };
 
-export const HomeContentWidget = ({
+type BlogProps = {
+	title: string;
+	slug: string;
+	date: string;
+	image: { public_id: string };
+	excerpt: string;
+};
+
+export const HomeContentWidget = async ({
 	pasBlock,
 	benefitsBlock,
+	testimonialsHeader,
+	testimonials,
+	processBlock,
+	blogsHeader,
 	callToAction,
 }: HomeContentWidgetProps) => {
+	const summary: BlogProps[] = await getLatestBlogSummary();
+
 	return (
 		<>
 			<Container>
-				<div className="py-8">
+				<div className="my-20">
 					<div className="space-y-8">
 						<div>
 							<PASJumbotronBlock
@@ -93,7 +150,7 @@ export const HomeContentWidget = ({
 				</div>
 			</Container>
 
-			<div className="bg-secondary py-8">
+			<div className="my-20 bg-secondary py-8">
 				<Container>
 					<div className="space-y-8">
 						<div>
@@ -105,44 +162,13 @@ export const HomeContentWidget = ({
 
 						<div className="grid grid-cols-1 gap-5 lg:grid-cols-3">
 							{benefitsBlock.list.map((benefit, index) => (
-								<div
+								<HomeBenefitCardBlock
 									key={index}
-									className="overflow-hidden rounded-lg border bg-secondary dark:border-gray-500"
-								>
-									<div className="relative h-64 w-full rounded lg:h-96">
-										<ImageDisplayBlock
-											imageSrc={benefit.image.public_id}
-											imageAlt={benefit.content.header.title}
-										/>
-									</div>
-
-									<div className="p-5">
-										<div className="space-y-3">
-											<p className="text-lg font-semibold tracking-wide">
-												{benefit.content.header.title}
-											</p>
-
-											<Separator className="my-3 dark:bg-gray-500" />
-
-											<div>
-												<ContentDisplayBlock
-													content={benefit.content.content.html}
-												/>
-											</div>
-
-											<div>
-												<Button
-													asChild
-													className="w-full font-semibold uppercase"
-												>
-													<Link href={benefit.content.header.subtitle}>
-														Click to Continue
-													</Link>
-												</Button>
-											</div>
-										</div>
-									</div>
-								</div>
+									image={benefit.image.public_id}
+									title={benefit.content.header.title}
+									subtitle={benefit.content.content.html}
+									content={benefit.content.content.html}
+								/>
 							))}
 						</div>
 					</div>
@@ -150,8 +176,73 @@ export const HomeContentWidget = ({
 			</div>
 
 			<Container>
-				<div className="py-8">
+				<div className="my-20">
+					<div className="space-y-20">
+						<div className="space-y-8">
+							<div>
+								<HeaderDisplayBlock
+									title={testimonialsHeader.header.title}
+									subtitle={testimonialsHeader.header.subtitle}
+								/>
+							</div>
+
+							<div className="grid grid-cols-1 gap-5 lg:grid-cols-3">
+								{testimonials.map((testimonial, index) => (
+									<TestimonialCardBlock
+										key={index}
+										image={testimonial.image.public_id}
+										name={testimonial.name}
+										title={testimonial.title}
+										rating={testimonial.rating}
+										content={testimonial.content.html}
+									/>
+								))}
+							</div>
+						</div>
+					</div>
+				</div>
+			</Container>
+
+			<div className="my-20 bg-secondary py-8">
+				<Container>
 					<div className="space-y-8">
+						<div>
+							<HeaderDisplayBlock
+								title={processBlock.header.content.header.title}
+								subtitle={processBlock.header.content.header.subtitle}
+							/>
+						</div>
+
+						<div className="grid grid-cols-1 gap-5 lg:grid-cols-3">
+							{processBlock.list.map((process, index) => (
+								<HomeProcessCardBlock
+									key={index}
+									image={process.image.public_id}
+									title={process.content.header.title}
+									content={process.content.content.html}
+								/>
+							))}
+						</div>
+					</div>
+				</Container>
+			</div>
+
+			<Container>
+				<div className="my-20">
+					<div className="space-y-8">
+						<div className="space-y-8">
+							<div>
+								<HeaderDisplayBlock
+									title={blogsHeader.header.title}
+									subtitle={blogsHeader.header.subtitle}
+								/>
+							</div>
+
+							<div>
+								<BlogsCarouselBlock summary={summary} />
+							</div>
+						</div>
+
 						<Separator className="my-8" />
 
 						<CallToActionBlock
