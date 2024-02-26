@@ -67,7 +67,7 @@ export const BlogsCarouselBlock = ({ summary }: BlogsCarouselBlockProps) => {
 			</Carousel>
 
 			<div className="block py-3 text-center text-sm text-muted-foreground lg:hidden">
-				Project {current} of {count}
+				Post {current} of {count}
 			</div>
 		</div>
 	);
