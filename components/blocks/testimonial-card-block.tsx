@@ -36,7 +36,7 @@ export const TestimonialCardBlock = ({
 				<Separator className="my-5" />
 
 				<div className="flex items-center">
-					<div className="relative h-10 w-10 rounded-full">
+					<div className="relative aspect-auto h-10 w-10 rounded-full">
 						<ImageDisplayBlock imageSrc={image} imageAlt={name} />
 					</div>
 

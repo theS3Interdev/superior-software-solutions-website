@@ -36,7 +36,7 @@ export const HeroDisplayBlock = ({
 		<Container>
 			<div
 				className="left-0 top-0 flex h-[32rem] w-full items-center justify-center rounded-lg bg-cover bg-center"
-				style={{ backgroundImage: `url(${image})` }}
+				style={{ backgroundImage: `url(${image})`, aspectRatio: "auto" }}
 			>
 				<div className="flex h-full w-full flex-col items-center justify-center rounded-lg bg-gray-900/40 lg:flex-row">
 					<div className="px-3 lg:w-1/2">

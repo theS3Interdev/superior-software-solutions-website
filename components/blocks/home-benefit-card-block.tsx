@@ -22,7 +22,7 @@ export const HomeBenefitCardBlock = ({
 }: HomeBenefitCardBlockProps) => {
 	return (
 		<div className="overflow-hidden rounded-lg border bg-secondary dark:border-gray-500">
-			<div className="relative h-64 w-full rounded lg:h-96">
+			<div className="relative aspect-auto h-64 w-full rounded lg:h-96">
 				<ImageDisplayBlock imageSrc={image} imageAlt={title} />
 			</div>
 

@@ -25,7 +25,7 @@ export const CallToActionBlock = ({
 		<div className="lg:flex lg:justify-center">
 			<div className="overflow-hidden border bg-secondary lg:mx-3 lg:flex lg:w-full lg:max-w-7xl lg:rounded-lg lg:shadow-md">
 				<div className="lg:w-1/2">
-					<div className="relative h-64 bg-cover lg:h-full">
+					<div className="relative aspect-auto h-64 bg-cover lg:h-full">
 						<ImageDisplayBlock
 							imageSrc={image}
 							imageAlt="Call to Action Image"
