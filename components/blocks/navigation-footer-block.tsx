@@ -55,7 +55,7 @@ export const NavigationFooterBlock = ({
 				<div className="mb-8 grid gap-16 lg:grid-cols-5">
 					<div className="lg:col-span-2 lg:max-w-lg">
 						<Link href="/" className="inline-flex items-center">
-							<div className="relative h-8 w-8">
+							<div className="relative aspect-square h-8 w-8">
 								<ImageDisplayBlock
 									imageSrc={siteLogo.secure_url}
 									imageAlt={siteName}

@@ -1,11 +1,8 @@
 import {
 	qryAboutPage,
 	qryAllBlogSummary,
-	qryAllBlogSummaryCount,
 	qryAllProjectSummary,
-	qryAllProjectSummaryCount,
 	qryAllSolutionSummary,
-	qryAllSolutionSummaryCount,
 	qryAllTestimonials,
 	qryBlogBySlug,
 	qryBlogsPage,
@@ -165,23 +162,6 @@ export const getAllBlogSummary = async () => {
 	}
 };
 
-/* get all blogs allowing for counting */
-export const getAllBlogSummaryCount = async () => {
-	try {
-		const result = await fetch(endpoint, {
-			method: "POST",
-			body: JSON.stringify({ query: qryAllBlogSummaryCount }),
-			headers: { "Content-Type": "application/json" },
-		});
-
-		const { data } = await result.json();
-
-		return data.blogs;
-	} catch (error) {
-		console.log("GET_ALL_BLOG_SUMMARY_COUNT", error);
-	}
-};
-
 /* get blog by slug */
 export const getBlogBySlug = async (slug: string) => {
 	try {
@@ -272,23 +252,6 @@ export const getAllProjectSummary = async () => {
 	}
 };
 
-/* get all projects allowing for counting */
-export const getAllProjectSummaryCount = async () => {
-	try {
-		const result = await fetch(endpoint, {
-			method: "POST",
-			body: JSON.stringify({ query: qryAllProjectSummaryCount }),
-			headers: { "Content-Type": "application/json" },
-		});
-
-		const { data } = await result.json();
-
-		return data.projects;
-	} catch (error) {
-		console.log("GET_ALL_PROJECT_SUMMARY_COUNT", error);
-	}
-};
-
 /* get project by slug */
 export const getProjectBySlug = async (slug: string) => {
 	try {
@@ -342,23 +305,6 @@ export const getAllSolutionSummary = async () => {
 		return data.solutions;
 	} catch (error) {
 		console.log("GET_ALL_SOLUTION_SUMMARY", error);
-	}
-};
-
-/* get all solutions allowing for counting */
-export const getAllSolutionSummaryCount = async () => {
-	try {
-		const result = await fetch(endpoint, {
-			method: "POST",
-			body: JSON.stringify({ query: qryAllSolutionSummaryCount }),
-			headers: { "Content-Type": "application/json" },
-		});
-
-		const { data } = await result.json();
-
-		return data.solutions;
-	} catch (error) {
-		console.log("GET_ALL_SOLUTION_SUMMARY_COUNT", error);
 	}
 };
 

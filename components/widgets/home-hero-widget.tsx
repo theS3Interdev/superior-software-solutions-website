@@ -30,6 +30,7 @@ export const HomeHeroWidget = ({ heroActionBlock }: HomeHeroWidgetProps) => {
 				className="left-0 top-0 flex h-[75vh] w-full items-center justify-center rounded-lg bg-cover bg-center"
 				style={{
 					backgroundImage: `url(${heroActionBlock.content.image.secure_url})`,
+					aspectRatio: "auto",
 				}}
 			>
 				<div className="flex h-full w-full flex-col items-center justify-center rounded-lg bg-gray-900/40 lg:flex-row lg:gap-8">

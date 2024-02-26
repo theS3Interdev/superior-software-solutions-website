@@ -101,7 +101,7 @@ export const NavigationHeaderBlock = ({
 						</Sheet>
 
 						<Link href="/" className="flex items-center space-x-1">
-							<div className="relative hidden h-8 w-8 lg:block">
+							<div className="relative hidden aspect-square h-8 w-8 lg:block">
 								<ImageDisplayBlock
 									imageSrc={siteLogo.secure_url}
 									imageAlt={siteName}

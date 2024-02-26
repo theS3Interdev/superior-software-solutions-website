@@ -1,42 +1,47 @@
+import { MetadataRoute } from "next";
+
 import {
-	getAllBlogSummaryCount,
-	getAllProjectSummaryCount,
-	getAllSolutionSummaryCount,
+	getAllBlogSummary,
+	getAllProjectSummary,
+	getAllSolutionSummary,
 } from "@/lib/data/read/index";
 
-type SitemapType = {
+type ResponseProps = {
+	blogs: string;
+	projects: string;
 	slug: string;
-};
+	solutions: string;
+}[];
 
-export default async function sitemap() {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 	const baseUrl = process.env.NEXT_PUBLIC_PRODUCTION_URL!;
 
-	const blogs = await getAllBlogSummaryCount();
+	const blogs: ResponseProps = await getAllBlogSummary();
 
-	const blogsUrl = blogs.map((blog: SitemapType) => ({
-		url: `${baseUrl}/blogs/${blog.slug}`,
+	const blogsUrl: MetadataRoute.Sitemap = blogs.map(({ slug }) => ({
+		url: `${baseUrl}/blogs/${slug}`,
 		lastModified: new Date(),
 		changeFrequency: "weekly",
-		priority: 0.5,
+		priority: 0.8,
 	}));
 
-	const projects = await getAllProjectSummaryCount();
+	const projects: ResponseProps = await getAllProjectSummary();
 
-	const projectUrl = projects.map((project: SitemapType) => ({
-		url: `${baseUrl}/projects/${project.slug}`,
+	const projectUrl: MetadataRoute.Sitemap = projects.map(({ slug }) => ({
+		url: `${baseUrl}/projects/${slug}`,
 		lastModified: new Date(),
 		changeFrequency: "weekly",
-		priority: 0.5,
+		priority: 0.8,
 	}));
 
-	const solutions = await getAllSolutionSummaryCount();
+	const solutions: ResponseProps = await getAllSolutionSummary();
 
-	// const solutionUrl = solutions.map((solution: SitemapType) => ({
-	// 	url: `${baseUrl}/solutions/${solution.slug}`,
-	// 	lastModified: new Date(),
-	// 	changeFrequency: "weekly",
-	// 	priority: 0.5,
-	// }));
+	const solutionUrl: MetadataRoute.Sitemap = solutions.map(({ slug }) => ({
+		url: `${baseUrl}/solutions/${slug}`,
+		lastModified: new Date(),
+		changeFrequency: "weekly",
+		priority: 0.8,
+	}));
 
 	return [
 		{
@@ -49,23 +54,23 @@ export default async function sitemap() {
 			url: `${baseUrl}/blogs`,
 			lastModified: new Date(),
 			changeFrequency: "weekly",
-			priority: 0.5,
+			priority: 0.8,
 		},
 		...blogsUrl,
 		{
 			url: `${baseUrl}/projects`,
 			lastModified: new Date(),
 			changeFrequency: "weekly",
-			priority: 0.5,
+			priority: 0.8,
 		},
 		...projectUrl,
 		{
 			url: `${baseUrl}/solutions`,
 			lastModified: new Date(),
 			changeFrequency: "weekly",
-			priority: 0.5,
+			priority: 0.8,
 		},
-		//...solutionUrl,
+		...solutionUrl,
 		{
 			url: `${baseUrl}/about`,
 			lastModified: new Date(),

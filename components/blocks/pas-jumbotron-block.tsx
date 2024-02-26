@@ -48,7 +48,7 @@ export const PASJumbotronBlock = ({
 
 			<div className="flex flex-col gap-5 rounded-lg lg:flex-row">
 				<div className="px-1 lg:w-1/2">
-					<div className="relative h-64 w-full lg:h-72">
+					<div className="relative aspect-auto h-64 w-full lg:h-72">
 						<ImageDisplayBlock imageSrc={image} imageAlt="About Image" />
 					</div>
 				</div>
