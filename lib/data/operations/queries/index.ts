@@ -165,6 +165,21 @@ export const qryHomePage = gql`
 					image
 				}
 			}
+			testimonialsHeader {
+				header {
+					title
+					subtitle
+				}
+			}
+			testimonials {
+				image
+				name
+				title
+				rating
+				content {
+					html
+				}
+			}
 			callToAction {
 				image
 				title

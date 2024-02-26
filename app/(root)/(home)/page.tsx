@@ -70,6 +70,19 @@ type HomePageProps = {
 			image: { public_id: string };
 		}[];
 	};
+	testimonialsHeader: {
+		header: {
+			title: string;
+			subtitle: string;
+		};
+	};
+	testimonials: {
+		image: { public_id: string };
+		name: string;
+		title: string;
+		rating: number;
+		content: { html: string };
+	}[];
 	callToAction: {
 		image: { public_id: string };
 		title: string;
@@ -111,6 +124,8 @@ const HomePage = async () => {
 		heroActionBlock,
 		pasBlock,
 		benefitsBlock,
+		testimonialsHeader,
+		testimonials,
 		callToAction,
 	}: HomePageProps = await getHomePage();
 
@@ -124,6 +139,8 @@ const HomePage = async () => {
 				<HomeContentWidget
 					pasBlock={pasBlock}
 					benefitsBlock={benefitsBlock}
+					testimonialsHeader={testimonialsHeader}
+					testimonials={testimonials}
 					callToAction={callToAction}
 				/>
 			</section>

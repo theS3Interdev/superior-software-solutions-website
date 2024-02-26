@@ -9,6 +9,7 @@ import {
 	ImageDisplayBlock,
 	PASJumbotronBlock,
 	Separator,
+	TestimonialCardBlock,
 } from "@/components/index";
 
 type HomeContentWidgetProps = {
@@ -56,6 +57,19 @@ type HomeContentWidgetProps = {
 			image: { public_id: string };
 		}[];
 	};
+	testimonialsHeader: {
+		header: {
+			title: string;
+			subtitle: string;
+		};
+	};
+	testimonials: {
+		image: { public_id: string };
+		name: string;
+		title: string;
+		rating: number;
+		content: { html: string };
+	}[];
 	callToAction: {
 		image: { public_id: string };
 		title: string;
@@ -72,6 +86,8 @@ type HomeContentWidgetProps = {
 export const HomeContentWidget = ({
 	pasBlock,
 	benefitsBlock,
+	testimonialsHeader,
+	testimonials,
 	callToAction,
 }: HomeContentWidgetProps) => {
 	return (
@@ -152,6 +168,28 @@ export const HomeContentWidget = ({
 			<Container>
 				<div className="py-8">
 					<div className="space-y-8">
+						<div className="space-y-8">
+							<div>
+								<HeaderDisplayBlock
+									title={testimonialsHeader.header.title}
+									subtitle={testimonialsHeader.header.subtitle}
+								/>
+							</div>
+
+							<div className="grid grid-cols-1 gap-5 lg:grid-cols-3">
+								{testimonials.map((testimonial, index) => (
+									<TestimonialCardBlock
+										key={index}
+										image={testimonial.image.public_id}
+										name={testimonial.name}
+										title={testimonial.title}
+										rating={testimonial.rating}
+										content={testimonial.content.html}
+									/>
+								))}
+							</div>
+						</div>
+
 						<Separator className="my-8" />
 
 						<CallToActionBlock
