@@ -83,6 +83,35 @@ type HomePageProps = {
 		rating: number;
 		content: { html: string };
 	}[];
+	processBlock: {
+		header: {
+			content: {
+				header: {
+					title: string;
+					subtitle: string;
+				};
+			};
+		};
+		list: {
+			content: {
+				header: {
+					title: string;
+				};
+				content: {
+					html: string;
+				};
+			};
+			image: {
+				public_id: string;
+			};
+		}[];
+	};
+	blogsHeader: {
+		header: {
+			title: string;
+			subtitle: string;
+		};
+	};
 	callToAction: {
 		image: { public_id: string };
 		title: string;
@@ -126,6 +155,8 @@ const HomePage = async () => {
 		benefitsBlock,
 		testimonialsHeader,
 		testimonials,
+		processBlock,
+		blogsHeader,
 		callToAction,
 	}: HomePageProps = await getHomePage();
 
@@ -141,6 +172,8 @@ const HomePage = async () => {
 					benefitsBlock={benefitsBlock}
 					testimonialsHeader={testimonialsHeader}
 					testimonials={testimonials}
+					processBlock={processBlock}
+					blogsHeader={blogsHeader}
 					callToAction={callToAction}
 				/>
 			</section>

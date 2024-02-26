@@ -12,6 +12,7 @@ import {
 	qryBookAConsultPage,
 	qryGlobals,
 	qryHomePage,
+	qryLatestBlogSummary,
 	qryPrivacyPolicyPage,
 	qryProjectBySlug,
 	qryProjectsPage,
@@ -123,6 +124,25 @@ export const getBlogsPage = async () => {
 		return data.pages[0];
 	} catch (error) {
 		console.log("[GET_BLOGS_PAGE]", error);
+	}
+};
+
+/* get latest blogs in summary */
+export const getLatestBlogSummary = async () => {
+	try {
+		const result = await fetch(endpoint, {
+			method: "POST",
+			body: JSON.stringify({
+				query: qryLatestBlogSummary,
+			}),
+			headers: { "Content-Type": "application/json" },
+		});
+
+		const { data } = await result.json();
+
+		return data.blogs;
+	} catch (error) {
+		console.log("GET_LATEST_BLOG_SUMMARY", error);
 	}
 };
 
