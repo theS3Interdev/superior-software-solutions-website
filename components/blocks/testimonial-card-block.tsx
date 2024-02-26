@@ -21,7 +21,7 @@ export const TestimonialCardBlock = ({
 	content,
 }: TestimonialCardBlockProps) => {
 	return (
-		<div className="overflow-hidden rounded-lg border bg-secondary dark:bg-transparent">
+		<div className="overflow-hidden rounded-lg border bg-secondary">
 			<div className="p-5">
 				<div className="space-y-3">
 					<div>

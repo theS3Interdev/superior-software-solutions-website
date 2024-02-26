@@ -3,12 +3,15 @@ import { AccordionBlock } from "@/components/blocks/accordion-block";
 import { BenefitCardBlock } from "@/components/blocks/benefit-card-block";
 import { BlogAuthorDetailsBlock } from "@/components/blocks/blog-author-details-block";
 import { BlogSummaryCardBlock } from "@/components/blocks/blog-summary-card-block";
+import { BlogsCarouselBlock } from "@/components/blocks/blogs-carousel-block";
 import { CallToActionBlock } from "@/components/blocks/call-to-action-block";
 import { ConsultationFormBlock } from "@/components/blocks/consultation-form-block";
 import { ContentDisplayBlock } from "@/components/blocks/content-display-block";
 import { DateDisplayBlock } from "@/components/blocks/date-display-block";
 import { HeaderDisplayBlock } from "@/components/blocks/header-display-block";
 import { HeroDisplayBlock } from "@/components/blocks/hero-display-block";
+import { HomeBenefitCardBlock } from "@/components/blocks/home-benefit-card-block";
+import { HomeProcessCardBlock } from "@/components/blocks/home-process-card-block";
 import { ImageDisplayBlock } from "@/components/blocks/image-display-block";
 import { NavigationFooterBlock } from "@/components/blocks/navigation-footer-block";
 import { NavigationHeaderBlock } from "@/components/blocks/navigation-header-block";
@@ -120,12 +123,15 @@ export {
 	BenefitCardBlock,
 	BlogAuthorDetailsBlock,
 	BlogSummaryCardBlock,
+	BlogsCarouselBlock,
 	CallToActionBlock,
 	ConsultationFormBlock,
 	ContentDisplayBlock,
 	DateDisplayBlock,
 	HeaderDisplayBlock,
 	HeroDisplayBlock,
+	HomeBenefitCardBlock,
+	HomeProcessCardBlock,
 	ImageDisplayBlock,
 	ProjectSummaryCardBlock,
 	ProjectsCarouselBlock,

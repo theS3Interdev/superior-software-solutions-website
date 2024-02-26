@@ -70,6 +70,48 @@ type HomePageProps = {
 			image: { public_id: string };
 		}[];
 	};
+	testimonialsHeader: {
+		header: {
+			title: string;
+			subtitle: string;
+		};
+	};
+	testimonials: {
+		image: { public_id: string };
+		name: string;
+		title: string;
+		rating: number;
+		content: { html: string };
+	}[];
+	processBlock: {
+		header: {
+			content: {
+				header: {
+					title: string;
+					subtitle: string;
+				};
+			};
+		};
+		list: {
+			content: {
+				header: {
+					title: string;
+				};
+				content: {
+					html: string;
+				};
+			};
+			image: {
+				public_id: string;
+			};
+		}[];
+	};
+	blogsHeader: {
+		header: {
+			title: string;
+			subtitle: string;
+		};
+	};
 	callToAction: {
 		image: { public_id: string };
 		title: string;
@@ -111,6 +153,10 @@ const HomePage = async () => {
 		heroActionBlock,
 		pasBlock,
 		benefitsBlock,
+		testimonialsHeader,
+		testimonials,
+		processBlock,
+		blogsHeader,
 		callToAction,
 	}: HomePageProps = await getHomePage();
 
@@ -124,6 +170,10 @@ const HomePage = async () => {
 				<HomeContentWidget
 					pasBlock={pasBlock}
 					benefitsBlock={benefitsBlock}
+					testimonialsHeader={testimonialsHeader}
+					testimonials={testimonials}
+					processBlock={processBlock}
+					blogsHeader={blogsHeader}
 					callToAction={callToAction}
 				/>
 			</section>
