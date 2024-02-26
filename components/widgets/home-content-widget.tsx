@@ -166,7 +166,7 @@ export const HomeContentWidget = async ({
 									key={index}
 									image={benefit.image.public_id}
 									title={benefit.content.header.title}
-									subtitle={benefit.content.content.html}
+									subtitle={benefit.content.header.subtitle}
 									content={benefit.content.content.html}
 								/>
 							))}
