@@ -50,6 +50,26 @@ type HomePageProps = {
 			};
 		}[];
 	};
+	benefitsBlock: {
+		header: {
+			content: {
+				header: {
+					title: string;
+					subtitle: string;
+				};
+			};
+		};
+		list: {
+			content: {
+				header: {
+					title: string;
+					subtitle: string;
+				};
+				content: { html: string };
+			};
+			image: { public_id: string };
+		}[];
+	};
 	callToAction: {
 		image: { public_id: string };
 		title: string;
@@ -87,8 +107,12 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 const HomePage = async () => {
-	const { heroActionBlock, pasBlock, callToAction }: HomePageProps =
-		await getHomePage();
+	const {
+		heroActionBlock,
+		pasBlock,
+		benefitsBlock,
+		callToAction,
+	}: HomePageProps = await getHomePage();
 
 	return (
 		<article className="mt-24 space-y-10">
@@ -97,7 +121,11 @@ const HomePage = async () => {
 			</section>
 
 			<section id="content">
-				<HomeContentWidget pasBlock={pasBlock} callToAction={callToAction} />
+				<HomeContentWidget
+					pasBlock={pasBlock}
+					benefitsBlock={benefitsBlock}
+					callToAction={callToAction}
+				/>
 			</section>
 		</article>
 	);

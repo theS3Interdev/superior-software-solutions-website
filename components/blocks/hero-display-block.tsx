@@ -102,7 +102,7 @@ export const HeroDisplayBlock = ({
 									/>
 								</div>
 
-								<div className="flex flex-col text-muted-foreground text-white">
+								<div className="flex flex-col text-white">
 									<p className="text-sm">{authorName}</p>
 
 									<p className="text-xs">

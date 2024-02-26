@@ -140,6 +140,31 @@ export const qryHomePage = gql`
 					}
 				}
 			}
+			benefitsBlock {
+				header {
+					content {
+						header {
+							title
+							subtitle
+						}
+						content {
+							html
+						}
+					}
+				}
+				list {
+					content {
+						header {
+							title
+							subtitle
+						}
+						content {
+							html
+						}
+					}
+					image
+				}
+			}
 			callToAction {
 				image
 				title
