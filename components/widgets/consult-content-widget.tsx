@@ -143,7 +143,7 @@ export const ConsultContentWidget = async ({
 
 									<Button asChild>
 										<Link
-											href="/solutions/custom-webapp-development"
+											href="/solutions/custom-web-app-development"
 											className="text-lg font-semibold uppercase"
 										>
 											Custom Webapp Development
