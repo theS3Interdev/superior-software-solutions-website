@@ -41,7 +41,7 @@ export const CallToActionBlock = ({
 					</div>
 
 					<div className="mt-5 inline-flex w-full sm:w-auto">
-						<Button asChild className="uppercase">
+						<Button asChild className="font-semibold uppercase">
 							<Link href={url}>{label}</Link>
 						</Button>
 					</div>

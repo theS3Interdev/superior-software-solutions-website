@@ -2,6 +2,7 @@ import {
 	AccordionBlock,
 	ContentDisplayBlock,
 	ImageDisplayBlock,
+	Separator,
 } from "@/components/index";
 
 type SolutionsPriceListBlockProps = {
@@ -35,6 +36,8 @@ export const SolutionsPriceListBlock = ({
 			<div className="p-5">
 				<div className="space-y-3">
 					<p className="text-lg font-semibold tracking-wide">{title}</p>
+
+					<Separator className="my-3 dark:bg-gray-500" />
 
 					<div>
 						<ContentDisplayBlock content={description} />
