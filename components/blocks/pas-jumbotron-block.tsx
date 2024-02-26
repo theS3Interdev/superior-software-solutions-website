@@ -85,7 +85,7 @@ export const PASJumbotronBlock = ({
 								{item.content.header.title}
 							</h3>
 
-							<Separator className="my-3 dark:bg-muted-foreground" />
+							<Separator className="my-3 dark:bg-gray-500" />
 
 							<ContentDisplayBlock content={item.content.content.html} />
 						</div>

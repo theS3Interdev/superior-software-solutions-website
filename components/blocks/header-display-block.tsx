@@ -11,7 +11,7 @@ export const HeaderDisplayBlock = ({
 }: HeaderDisplayBlockProps) => {
 	return (
 		<div className="space-y-3">
-			<Separator className="mb-5 dark:bg-white" />
+			<Separator className="mb-5 dark:bg-gray-500" />
 
 			<div>
 				{title && (
@@ -27,7 +27,7 @@ export const HeaderDisplayBlock = ({
 				)}
 			</div>
 
-			<Separator className="mt-5 dark:bg-white" />
+			<Separator className="mt-5 dark:bg-gray-500" />
 		</div>
 	);
 };

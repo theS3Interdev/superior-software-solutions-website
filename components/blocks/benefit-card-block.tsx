@@ -10,7 +10,7 @@ export const BenefitCardBlock = ({ title, content }: BenefitCardBlockProps) => {
 					{title}
 				</p>
 
-				<Separator className="my-3 dark:bg-muted-foreground" />
+				<Separator className="my-3 dark:bg-gray-500" />
 
 				<p className="w-full text-pretty leading-loose text-muted-foreground">
 					{content}
