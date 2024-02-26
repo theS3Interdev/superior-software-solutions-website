@@ -1,11 +1,13 @@
-export default function robots() {
-	const baseUrl = process.env.NEXT_PUBLIC_PRODUCTION_URL;
+import { MetadataRoute } from "next";
+
+export default function robots(): MetadataRoute.Robots {
+	const baseUrl = process.env.NEXT_PUBLIC_PRODUCTION_URL!;
 
 	return {
 		rules: {
-			userAgent: '*',
-			allow: '/',
-			disallow: '/private/',
+			userAgent: "*",
+			allow: "/",
+			disallow: ["/admin", "/private"],
 		},
 		sitemap: `${baseUrl}/sitemap.xml`,
 	};

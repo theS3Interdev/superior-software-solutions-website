@@ -17,7 +17,7 @@ export const SolutionsSummaryCardBlock = ({
 }: SolutionsSummaryCardBlockProps) => {
 	return (
 		<div>
-			<div className="relative z-10 h-96 w-full">
+			<div className="relative z-10 aspect-auto h-96 w-full">
 				<ImageDisplayBlock imageSrc={image} imageAlt={title} />
 			</div>
 
