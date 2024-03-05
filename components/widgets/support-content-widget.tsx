@@ -64,6 +64,32 @@ export const SupportContentWidget = ({
 									</div>
 								</div>
 							</div>
+
+							<div className="mt-3">
+								<div className="mx-auto max-w-full rounded-lg border bg-secondary p-3">
+									<div>
+										<h3 className="mb-3 text-lg font-semibold tracking-wide">
+											No Hourly Billing
+										</h3>
+
+										<Separator className="my-3" />
+
+										<p className="text-pretty leading-loose">
+											You will notice that we don’t provide an hourly billing
+											cost. This is harmful to you in the sense that it
+											discourages efficiency and creativity from our part and in
+											the end, we are both focused on the outcome and not
+											inefficient hours worked.
+										</p>
+
+										<p className="mt-3 text-pretty leading-loose">
+											The prices we provide are fixed, which means there are no
+											hidden fees and we absorb all the risk in completing the
+											project within these boundaries.
+										</p>
+									</div>
+								</div>
+							</div>
 						</div>
 
 						<div className="mt-5 space-y-3 lg:mt-0 lg:w-1/4 lg:px-3">
@@ -106,7 +132,7 @@ export const SupportContentWidget = ({
 												<span className="font-semibold">
 													Not on maintenance plan:
 												</span>{" "}
-												$69/hour
+												$200
 											</p>
 											<p>
 												<span className="font-semibold">
@@ -140,13 +166,13 @@ export const SupportContentWidget = ({
 												<span className="font-semibold">
 													Not on maintenance plan:
 												</span>{" "}
-												$99/hour
+												$300
 											</p>
 											<p>
 												<span className="font-semibold">
 													On maintenance plan:
 												</span>{" "}
-												$29/hour
+												$100
 											</p>
 										</div>
 									</div>
@@ -176,7 +202,7 @@ export const SupportContentWidget = ({
 											<p>Depends on the source of the issue</p>
 											<p>
 												<span className="font-semibold">Client error:</span>{" "}
-												$69/hour
+												$200
 											</p>
 											<p>
 												<span className="font-semibold">
