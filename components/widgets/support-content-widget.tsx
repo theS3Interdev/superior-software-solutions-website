@@ -110,7 +110,7 @@ export const SupportContentWidget = ({
 												custom app, or a new domain to your email account,
 												please{" "}
 												<Link
-													href="https://calendly.com/superior-software-solutions"
+													href="https://tidycal.com/superior-software-solutions/15-minute-discovery-call"
 													target="_blank"
 													className="text-blue-500 hover:underline"
 												>
@@ -230,7 +230,7 @@ export const SupportContentWidget = ({
 
 									<Button asChild className="mt-3 w-full">
 										<Link
-											href="https://calendly.com/superior-software-solutions"
+											href="https://tidycal.com/superior-software-solutions/15-minute-discovery-call"
 											target="_blank"
 											className="text-lg font-semibold uppercase"
 										>
