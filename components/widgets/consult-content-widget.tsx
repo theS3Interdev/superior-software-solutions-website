@@ -106,7 +106,7 @@ export const ConsultContentWidget = async ({
 
 									<Button asChild>
 										<Link
-											href="https://calendly.com/superior-software-solutions"
+											href="https://tidycal.com/superior-software-solutions/15-minute-discovery-call"
 											target="_blank"
 											className="text-lg font-semibold uppercase"
 										>
